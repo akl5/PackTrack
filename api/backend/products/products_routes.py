@@ -48,6 +48,8 @@ def get_products():
     # send the response back to the client
     return response
 
+
+
 # ------------------------------------------------------------
 # get product information about a specific product
 # notice that the route takes <id> and then you see id
