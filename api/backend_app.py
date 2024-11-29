@@ -15,3 +15,6 @@ if __name__ == '__main__':
     # Take a look at the docker-compose.yml to see 
     # what port this might be mapped to... 
     app.run(debug = True, host = '0.0.0.0', port = 4000)
+
+
+#Mihalis: Make sure this aligns with our ports. Will keep this for now. 
