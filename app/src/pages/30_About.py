@@ -16,3 +16,7 @@ st.markdown (
     Stay tuned for more information and features to come!
     """
         )
+
+
+#Mihalis: Change the name of this page to match out program, and make sure it aligns with the number order! This will be a 
+#nice feature to add.
