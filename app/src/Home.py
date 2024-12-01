@@ -2,6 +2,7 @@ import streamlit as st
 import logging
 from modules.nav import SideBarLinks
 
+<<<<<<< Updated upstream
 # Set up basic logging infrastructure
 logging.basicConfig(format='%(filename)s:%(lineno)s:%(levelname)s -- %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -83,6 +84,56 @@ if st.button('Some text on the button',
     st.session_state['role'] = 'Professor'
     st.switch_page('pages/20_Admin_Home.py')
 =======
+=======
+import logging
+logger = logging.getLogger(__name__)
+
+
+import streamlit as st
+from modules.nav import SideBarLinks
+
+
+st.set_page_config(layout = 'wide')
+
+
+# Show appropriate sidebar links for the role of the currently logged in user
+SideBarLinks()
+
+
+st.title(f"Warehouse Manager Portal.")
+st.write('')
+st.write('')
+st.write('### Reports')
+
+
+if st.button('Show All Reorders',
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/41_Reorders.py')
+
+
+if st.button('Show Low Stock',
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/42_Low_Stock.py')
+
+
+st.write('')
+st.write('')
+st.write('### New Products and Categories')
+
+
+if st.button("Add New Product Category",
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/43_New_Cat.py')
+
+
+if st.button("Add New Product",
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/44_New_Product.py')
+>>>>>>> Stashed changes
 
 # Create 3 columns to display the containers
 col1, col2, col3 = st.columns(3)
