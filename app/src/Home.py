@@ -2,7 +2,6 @@ import streamlit as st
 import logging
 from modules.nav import SideBarLinks
 
-<<<<<<< Updated upstream
 # Set up basic logging infrastructure
 logging.basicConfig(format='%(filename)s:%(lineno)s:%(levelname)s -- %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -58,7 +57,7 @@ st.markdown("""
 # ***************************************************
 
 logger.info("Loading the Home page of the app")
-st.title('PackTrack')
+st.title('CS 3200 Sample Semester Project App')
 st.write('\n\n')
 st.write('### HI! As which user would you like to log in?')
 
@@ -76,68 +75,9 @@ st.write('### HI! As which user would you like to log in?')
 # }
 # :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 
 
-<<<<<<< HEAD
-if st.button('Some text on the button', 
-            type = 'secondary', 
-            use_container_width=True):
-    st.session_state['authenticated'] = True
-    st.session_state['role'] = 'Professor'
-    st.switch_page('pages/20_Admin_Home.py')
-=======
-=======
-import logging
-logger = logging.getLogger(__name__)
-
-
-import streamlit as st
-from modules.nav import SideBarLinks
-
-
-st.set_page_config(layout = 'wide')
-
-
-# Show appropriate sidebar links for the role of the currently logged in user
-SideBarLinks()
-
-
-st.title(f"Warehouse Manager Portal.")
-st.write('')
-st.write('')
-st.write('### Reports')
-
-
-if st.button('Show All Reorders',
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/41_Reorders.py')
-
-
-if st.button('Show Low Stock',
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/42_Low_Stock.py')
-
-
-st.write('')
-st.write('')
-st.write('### New Products and Categories')
-
-
-if st.button("Add New Product Category",
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/43_New_Cat.py')
-
-
-if st.button("Add New Product",
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/44_New_Product.py')
->>>>>>> Stashed changes
 
 # Create 3 columns to display the containers
 col1, col2, col3 = st.columns(3)
->>>>>>> 96beee9599b0968da50fab6d902bff94aae17756
 
 # Content for the first container (Political Strategy Advisor)
 with col1:
