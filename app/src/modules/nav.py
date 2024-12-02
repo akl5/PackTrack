@@ -7,11 +7,14 @@ import streamlit as st
 
 #### ------------------------ General ------------------------
 def HomeNav():
-    st.sidebar.page_link("Home.py", label="Home", icon="🏠")
+    st.sidebar.page_link("Home.py", label="Home")
 
 
 def AboutPageNav():
-    st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
+    st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
+
+def GithubRepoNav():
+    st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️🛠️")
 
 
 #### ------------------------ Examples for Role of pol_strat_advisor ------------------------
@@ -64,6 +67,8 @@ def SideBarLinks(show_home=False):
 
     # add a logo to the sidebar always
     st.sidebar.image("assets/logo.png", width=150)
+    st.write('### PackTrack')
+
 
     # If there is no logged in user, redirect to the Home (Landing) page
     if "authenticated" not in st.session_state:
@@ -95,6 +100,7 @@ def SideBarLinks(show_home=False):
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
+    GithubRepoNav()
 
     if st.session_state["authenticated"]:
         # Always show a logout button if there is a logged in user
