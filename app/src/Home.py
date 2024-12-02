@@ -75,7 +75,7 @@ logger.info("Loading the Home page of the app")
 st.title('CS 3200 Sample Semester Project App')
 st.write('\n\n')
 st.markdown("""
-<div style="display: flex; justify-content: space-between; align-items: right;">
+<div style="display: flex; justify-content: flex-end; gap: 20px; padding-right: 20px; font-size: 20px;">
    <a href="/pages/CO_OP_Listings" style="text-decoration: none; color: #3E4B8B;">
        <h3>View CO-OP Listings</h3>
    </a>
@@ -84,7 +84,6 @@ st.markdown("""
    </a>
 </div>
 """, unsafe_allow_html=True)
-
 
 # Create 3 columns to display the containers
 col1, col2, col3 = st.columns(3)

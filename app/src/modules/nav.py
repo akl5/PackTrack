@@ -4,11 +4,9 @@
 
 import streamlit as st
 
-
 #### ------------------------ General ------------------------
 def HomeNav():
     st.sidebar.page_link("Home.py", label="Home")
-
 
 def AboutPageNav():
     st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
@@ -193,9 +191,6 @@ def SideBarLinks(show_home=False):
             del st.session_state["role"]
             del st.session_state["authenticated"]
             st.switch_page("Home.py")
-
-
-
 
 # def SideBarLinks(show_home=False):
 #     """
