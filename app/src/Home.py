@@ -13,11 +13,14 @@ st.set_page_config(layout='wide')
 # Change the 'authenticated' value in the streamlit session_state to false.
 st.session_state['authenticated'] = False
 
+# Apply theme settings
 Theme()
-# Use the SideBarLinks function from src/modules/nav.py to control the links
-# displayed on the left-side panel. 
-SideBarLinks(show_home=True)
 
+# Use the SideBarLinks function from modules/nav.py to control the links
+# displayed on the left-side panel.
+SideBarLinks(show_home=False)  # This hides the "Home" link in the sidebar
+
+# The rest of your content...
 st.markdown("""
     <style>
         /* General style for all h3 headers */
@@ -52,29 +55,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ***************************************************
 # The major content of this page
-# ***************************************************
-
 logger.info("Loading the Home page of the app")
 st.title('CS 3200 Sample Semester Project App')
 st.write('\n\n')
 st.write('### HI! As which user would you like to log in?')
-
-# ***************************************************
-# Add three containers spaced evenly across the page
-# ***************************************************
-
-# :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 
-#FETCHING DATA TO FRONTEND LOGIC: 
-# for every row in SELECT STATEMENT (every co-op listing we can find): 
-# {
-# build a statement that can create code to replicate what line 80 does but col1...coln, st.columns(n)
-# create a container, feed it with co-op name, company name, location, and # OF REVIEWS OF LISTING
-# can be done similarly to "for object in map"
-# }
-# :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 
-
 
 # Create 3 columns to display the containers
 col1, col2, col3 = st.columns(3)
@@ -121,6 +106,4 @@ with col3:
     </div>
     """, unsafe_allow_html=True)
 
-# ***************************************************
 # End of the major content of the page
-# ***************************************************
