@@ -59,8 +59,7 @@ def AdminPageNav():
     )
 
 #Function for font styling for all pages 
-def Theme():
-    
+def Theme():  
     st.markdown(
     """
     <style>
@@ -83,7 +82,7 @@ def Theme():
     }
 
     /* Apply to labels, titles, and any other text */
-    label, .stLabel, .stText {
+    label, .stLabel, .stText, st.Title {
         font-family: 'Parkinsans', sans-serif;
     }
 
