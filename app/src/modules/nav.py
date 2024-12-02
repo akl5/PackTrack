@@ -75,9 +75,9 @@ def SideBarLinks(show_home=False):
         st.session_state.authenticated = False
         st.switch_page("Home.py")
 
-    if show_home:
-        # Show the Home page link (the landing page)
-        HomeNav()
+    # if show_home:
+    #     # Show the Home page link (the landing page)
+    #     HomeNav()
 
     # Show the other page navigators depending on the users' role.
     if st.session_state["authenticated"]:
@@ -98,7 +98,8 @@ def SideBarLinks(show_home=False):
         if st.session_state["role"] == "administrator":
             AdminPageNav()
 
-    # Always show the About page at the bottom of the list of links
+    # Always show the Home, About, and Github Repo page at the bottom of the list of links
+    HomeNav()
     AboutPageNav()
     GithubRepoNav()
 
