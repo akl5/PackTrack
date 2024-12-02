@@ -88,8 +88,7 @@ st.markdown("""
 # Create 3 columns to display the containers
 col1, col2, col3 = st.columns(3)
 
-
-# Content for the first container (Political Strategy Advisor)
+# Content for the first container
 with col1:
    st.markdown(f"""
    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
@@ -104,7 +103,7 @@ with col1:
    """, unsafe_allow_html=True)
 
 
-# Content for the second container (USAID Worker)
+# Content for the second container
 with col2:
    st.markdown(f"""
    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
@@ -119,7 +118,7 @@ with col2:
    """, unsafe_allow_html=True)
 
 
-# Content for the third container (System Administrator)
+# Content for the third container
 with col3:
    st.markdown(f"""
    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
