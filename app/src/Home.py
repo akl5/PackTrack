@@ -32,14 +32,15 @@ st.markdown("""
         .styled-container {
             background-color: #DAEEFE;  /* Background color */
             border-radius: 60px;  /* 60px rounded corners */
-            padding: 20px;  /* Padding inside the container */
-            height: 100%;  /* Ensure container height fits content */
+            padding: 10%;  /* Padding inside the container */
+            width: 25rem;
+            height: 20rem;  /* Ensure container height fits content */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Optional: slight shadow for depth */
             display: flex;  /* Use flexbox to make sure content stays inside the container */
+            justify-content: center;
             flex-direction: column;
-            justify-content: space-around;
             text-align: left;  /* Left align the text */
-            padding-left: 20px; /* Add padding to the left to align the text better */
+            padding-left: 2rem; /* Add padding to the left to align the text better */
             cursor: pointer;  /* Make the container appear clickable */
         }
 
@@ -87,8 +88,8 @@ with col1:
             <h3>Political Strategy Advisor</h3>
         </div>
         <p>This container is for Political Strategy Advisors. Click anywhere inside to log in as John.</p>
-        <div class="styled-button">
-            <button>Act as John, a Political Strategy Advisor</button>
+        <div class="number-of-reviews">
+            <h5> 3 Reviews </h5> 
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -96,13 +97,13 @@ with col1:
 # Content for the second container (USAID Worker)
 with col2:
     st.markdown(f"""
-    <div class="styled-container" onclick="window.location.href='/pages/10_USAID_Worker_Home.py';">
+    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
         <div class="styled-header">
-            <h3>USAID Worker</h3>
+            <h3>Political Strategy Advisor</h3>
         </div>
-        <p>This container is for USAID Workers. Click anywhere inside to log in as Mohammad.</p>
-        <div class="styled-button">
-            <button>Act as Mohammad, an USAID Worker</button>
+        <p>This container is for Political Strategy Advisors. Click anywhere inside to log in as John.</p>
+        <div class="number-of-reviews">
+            <h5> 3 Reviews </h5> 
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -110,13 +111,13 @@ with col2:
 # Content for the third container (System Administrator)
 with col3:
     st.markdown(f"""
-    <div class="styled-container" onclick="window.location.href='/pages/20_Admin_Home.py';">
+    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
         <div class="styled-header">
-            <h3>System Administrator</h3>
+            <h3>Political Strategy Advisor</h3>
         </div>
-        <p>This container is for Administrators. Click anywhere inside to log in as SysAdmin.</p>
-        <div class="styled-button">
-            <button>Act as System Administrator</button>
+        <p>This container is for Political Strategy Advisors. Click anywhere inside to log in as John.</p>
+        <div class="number-of-reviews">
+            <h5> 3 Reviews </h5> 
         </div>
     </div>
     """, unsafe_allow_html=True)
