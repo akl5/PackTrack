@@ -14,7 +14,7 @@ def AboutPageNav():
     st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
 
 def GithubRepoNav():
-    st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️🛠️")
+    st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️")
 
 
 #### ------------------------ Examples for Role of pol_strat_advisor ------------------------
