@@ -66,7 +66,7 @@ def SideBarLinks(show_home=False):
     """
 
     # add a logo to the sidebar always
-    st.sidebar.image("assets/logo.png", width=150)
+    st.sidebar.image("assets/PackTrack logo.png", width=150)
     st.write('### PackTrack')
 
 
