@@ -91,26 +91,29 @@ col1, col2, col3 = st.columns(3)
 # Content for the first container
 with col1:
    st.markdown(f"""
-   <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
-       <div class="styled-header">
-           <h3>CO-OP Review</h3>
+   <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
+       <div class="styled-container">
+           <div class="styled-header">
+               <h3>CO-OP Review</h3>
+           </div>
+           <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+           <div class="number-of-reviews">
+               <h5>3 Reviews</h5>
+           </div>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
+   </a>
    """, unsafe_allow_html=True)
-
 
 # Content for the second container
 with col2:
    st.markdown(f"""
    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
        <div class="styled-header">
+           <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
            <h3>CO-OP Review</h3>
+           </a>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+       <p>This container is an Example CO-OP Review. Click the title to view.</p>
        <div class="number-of-reviews">
            <h5> 3 Reviews </h5>
        </div>
@@ -123,9 +126,11 @@ with col3:
    st.markdown(f"""
    <div class="styled-container" onclick=switchPageToReview()>
        <div class="styled-header">
+           <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
            <h3>CO-OP Review</h3>
+           </a>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+       <p>This container is an Example CO-OP Review. Click the title to view.</p>
        <div class="number-of-reviews">
            <h5> 3 Reviews </h5>
        </div>
