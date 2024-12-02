@@ -1,6 +1,6 @@
 import streamlit as st
 import logging
-from modules.nav import SideBarLinks
+from modules.nav import SideBarLinks, Theme
 
 # Set up basic logging infrastructure
 logging.basicConfig(format='%(filename)s:%(lineno)s:%(levelname)s -- %(message)s', level=logging.INFO)
@@ -13,18 +13,17 @@ st.set_page_config(layout='wide')
 # Change the 'authenticated' value in the streamlit session_state to false.
 st.session_state['authenticated'] = False
 
+Theme()
 # Use the SideBarLinks function from src/modules/nav.py to control the links
 # displayed on the left-side panel. 
 SideBarLinks(show_home=True)
 
-# Inject custom CSS for font sizes, background color, and rounded corners
 st.markdown("""
     <style>
         /* General style for all h3 headers */
         .styled-header h3 {
             font-size: 22px;  /* Font size for the header */
-            font-weight: bold;  /* Optional: make the header bold */
-            color: #2a3d66;  /* Optional: change text color */
+            font-weight: light;  /* Optional: make the header bold */
             text-decoration: underline; /* Underline the header */
         }
 

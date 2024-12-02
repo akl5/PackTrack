@@ -58,6 +58,93 @@ def AdminPageNav():
         "pages/21_ML_Model_Mgmt.py", label="ML Model Management", icon="🏢"
     )
 
+#Function for font styling for all pages 
+def Theme():
+    
+    st.markdown(
+    """
+    <style>
+    /* Importing the Parkinsans font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Park+Sans:wght@300..800&display=swap');
+
+    /* Apply Parkinsans font to the entire app */
+    body {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    /* Apply to all headers (h1, h2, h3, etc.) */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    /* Apply to all Streamlit widgets like buttons, sliders, etc. */
+    .stButton, .stTextInput, .stTextArea, .stSelectbox, .stSlider, .stRadio, .stCheckbox, .stDateInput, .stNumberInput {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    /* Apply to labels, titles, and any other text */
+    label, .stLabel, .stText {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    /* Apply to sidebar elements, including page links and titles */
+    .css-1d391kg, .css-1v0mbdj, .stSidebar .stSelectbox, .stSidebar .stTextInput, .stSidebar .stRadio, .stSidebar .stButton, .stSidebar .stCheckbox, .stSidebar .stNumberInput, .stSidebar .stTextArea, .stSidebar .stDateInput {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    /* Apply specifically to the page links in the sidebar */
+    .css-1d391kg a {
+        font-family: 'Park Sans', sans-serif;
+        text-decoration: none;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+    
+    st.markdown(
+    """
+    <style>
+    /* Importing the Parkinsans font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Park+Sans:wght@300..800&display=swap');
+
+    /* Apply Parkinsans font to the entire app */
+    body {
+        font-family: 'Parkinsans', sans-serif;
+    }
+
+    /* Apply to all headers (h1, h2, h3, etc.) */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Parkinsans', sans-serif;
+    }
+
+    /* Apply to all Streamlit widgets like buttons, sliders, etc. */
+    .stButton, .stTextInput, .stTextArea, .stSelectbox, .stSlider, .stRadio, .stCheckbox, .stDateInput, .stNumberInput {
+        font-family: 'Parkinsans', sans-serif;
+    }
+
+    /* Apply to labels, titles, and any other text */
+    label, .stLabel, .stText {
+        font-family: 'Parkinsans', sans-serif;
+    }
+
+    /* Apply to sidebar elements, including page links and titles */
+    .css-1d391kg, .css-1v0mbdj, .stSidebar .stSelectbox, .stSidebar .stTextInput, .stSidebar .stRadio, .stSidebar .stButton, .stSidebar .stCheckbox, .stSidebar .stNumberInput, .stSidebar .stTextArea, .stSidebar .stDateInput {
+        font-family: 'Parkinsans', sans-serif;
+    }
+
+    /* Apply specifically to the page links in the sidebar */
+    .css-1d391kg a {
+        font-family: 'Parkinsans', sans-serif;
+        text-decoration: none;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):
@@ -99,6 +186,7 @@ def SideBarLinks(show_home=False):
             AdminPageNav()
 
     # Always show the Home, About, and Github Repo page at the bottom of the list of links
+    Theme()
     HomeNav()
     AboutPageNav()
     GithubRepoNav()

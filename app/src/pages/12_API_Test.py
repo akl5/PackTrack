@@ -7,6 +7,31 @@ from modules.nav import SideBarLinks
 
 SideBarLinks()
 
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Park+Sans&display=swap');
+
+    body {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    .stButton, .stTextInput, .stTextArea, .stSelectbox, .stSlider, .stRadio, .stCheckbox, .stDateInput, .stNumberInput {
+        font-family: 'Park Sans', sans-serif;
+    }
+
+    label, .stLabel, .stText {
+        font-family: 'Park Sans', sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write("# Accessing a REST API from Within Streamlit")
 
 """
