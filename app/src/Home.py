@@ -136,8 +136,8 @@ with col3:
 
 # Content for the entire blue background section
 st.markdown("""
-<div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 20px; text-align: center; width: 100vw; 
-    position: relative; left: 50%; transform: translateX(-50%); height: calc(100rem);">
+<div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 25px; margin-bottom: 0px; text-align: center; width: 100vw; 
+    position: relative; left: 50%; transform: translateX(-50%); height: 600px;">
     <h2>View Roles with Latest Reviews</h2>
     <p>Users Will Go Below</p>
     <div style="display: flex; justify-content: center; margin-top: 30px; gap: 20px; max-width: 80%; margin: 0 auto;">
@@ -148,8 +148,8 @@ st.markdown("""
             <!-- Text Content -->
             <div>
                 <h3 style="margin: 0;">John Doe</h3>
-                <p style="margin: 5px 0;">Degree: Bachelor of Computer Science</p>
-                <p style="margin: 5px 0;">Internship: Software Developer</p>
+                <p style="margin: 5px 0;">Degree: BS in Computer Science</p>
+                <p style="margin: 5px 0;">CO-OP: Software Developer</p>
                 <p style="margin: 5px 0;">Description: Worked on full-stack application development and database design.</p>
             </div>
         </div>
@@ -160,12 +160,14 @@ st.markdown("""
             <!-- Text Content -->
             <div>
                 <h3 style="margin: 0;">Jane Smith</h3>
-                <p style="margin: 5px 0;">Degree: Master of Data Science</p>
-                <p style="margin: 5px 0;">Internship: Data Analyst</p>
+                <p style="margin: 5px 0;">Degree: Masters in Data Science</p>
+                <p style="margin: 5px 0;">CO-OP: Data Analyst</p>
                 <p style="margin: 5px 0;">Description: Conducted data analysis and visualization to drive business decisions.</p>
             </div>
         </div>
     </div>
+    <!-- View More Link -->
+    <a href="/show_more" style="color: #3E4B8B; text-decoration: underline; margin-top: 20px; display: inline-block; font-size: 28px;">View More</a>
 </div>
 """, unsafe_allow_html=True)
 
