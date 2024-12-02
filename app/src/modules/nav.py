@@ -69,32 +69,32 @@ def Theme():
 
     /* Apply Parkinsans font to the entire app */
     body {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
     }
 
     /* Apply to all headers (h1, h2, h3, etc.) */
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
     }
 
     /* Apply to all Streamlit widgets like buttons, sliders, etc. */
     .stButton, .stTextInput, .stTextArea, .stSelectbox, .stSlider, .stRadio, .stCheckbox, .stDateInput, .stNumberInput {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
     }
 
     /* Apply to labels, titles, and any other text */
     label, .stLabel, .stText {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
     }
 
     /* Apply to sidebar elements, including page links and titles */
     .css-1d391kg, .css-1v0mbdj, .stSidebar .stSelectbox, .stSidebar .stTextInput, .stSidebar .stRadio, .stSidebar .stButton, .stSidebar .stCheckbox, .stSidebar .stNumberInput, .stSidebar .stTextArea, .stSidebar .stDateInput {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
     }
 
     /* Apply specifically to the page links in the sidebar */
     .css-1d391kg a {
-        font-family: 'Park Sans', sans-serif;
+        font-family: 'Parkinsans', sans-serif;
         text-decoration: none;
     }
 
