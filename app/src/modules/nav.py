@@ -21,7 +21,6 @@ def PolStratAdvHomeNav():
         "pages/00_Pol_Strat_Home.py", label="Political Strategist Home", icon="👤"
     )
 
-
 def WorldBankVizNav():
     st.sidebar.page_link(
         "pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon="🏦"
@@ -157,9 +156,8 @@ def SideBarLinks(show_home=False):
         st.session_state.authenticated = False
         st.switch_page("Home.py")
 
-    # Show the Home page link (the landing page) only if show_home is True
-    if show_home:
-        HomeNav()
+    # Show the Home page link 
+    HomeNav()
 
     # Show the other page navigators depending on the users' role.
     if st.session_state["authenticated"]:

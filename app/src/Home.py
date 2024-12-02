@@ -32,16 +32,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Define the login button to switch to another page
-def login_button():
-    # Create a button that acts as the "Login" button
-    if st.button("Login"):
-        # This will switch to the login page
-        st.switch_page("pages/2a_Coop_Posting.py")  # Change "Login_Page.py" to your target page
-
-# You can place the button wherever you want in the layout
-login_button()
-
 # The rest of your content...
 st.markdown("""
    <style>
@@ -131,7 +121,7 @@ with col2:
 # Content for the third container
 with col3:
    st.markdown(f"""
-   <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
+   <div class="styled-container" onclick=switchPageToReview()>
        <div class="styled-header">
            <h3>CO-OP Review</h3>
        </div>
@@ -141,6 +131,11 @@ with col3:
        </div>
    </div>
    """, unsafe_allow_html=True)
+
+# Define the login button to switch to another page
+def switchPageToReview():
+    if st.button("switch"):
+        st.switch_page("pages/2a_Coop_Posting.py")  # Change "Login_Page.py" to your target page
 
 # Content for the entire blue background section
 st.markdown("""
