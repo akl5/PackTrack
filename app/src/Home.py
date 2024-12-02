@@ -2,29 +2,24 @@ import streamlit as st
 import logging
 from modules.nav import SideBarLinks, Theme
 
-
 # Set up basic logging infrastructure
 logging.basicConfig(format='%(filename)s:%(lineno)s:%(levelname)s -- %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Streamlit configuration: wide layout minimizes sidebar
+st.set_page_config(layout="wide")
 
-# Streamlit configuration
-st.set_page_config(layout='wide')
-
+# Trick to "collapse" the sidebar
+placeholder = st.sidebar.empty()
 
 # If a user is at this page, we assume they are not authenticated.
-# Change the 'authenticated' value in the streamlit session_state to false.
 st.session_state['authenticated'] = False
-
 
 # Apply theme settings
 Theme()
 
-
-# Use the SideBarLinks function from modules/nav.py to control the links
-# displayed on the left-side panel.
-SideBarLinks(show_home=False)  # This hides the "Home" link in the sidebar
-
+# Control the sidebar content
+SideBarLinks(show_home=False)
 
 # The login button
 st.markdown("""
@@ -36,7 +31,6 @@ st.markdown("""
    </a>
 </div>
 """, unsafe_allow_html=True)
-
 
 # The rest of your content...
 st.markdown("""
@@ -60,7 +54,7 @@ st.markdown("""
            display: flex;  /* Use flexbox to make sure content stays inside the container */
            justify-content: center;
            flex-direction: column;
-           text-align: left;  /* Left align the text */
+           text-align: center;  /* Left align the text */
            padding-left: 2rem; /* Add padding to the left to align the text better */
            cursor: pointer;  /* Make the container appear clickable */
        }
@@ -103,7 +97,7 @@ with col1:
        <div class="styled-header">
            <h3>CO-OP Review</h3>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to log in as John.</p>
+       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
        <div class="number-of-reviews">
            <h5> 3 Reviews </h5>
        </div>
@@ -118,7 +112,7 @@ with col2:
        <div class="styled-header">
            <h3>CO-OP Review</h3>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to log in as John.</p>
+       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
        <div class="number-of-reviews">
            <h5> 3 Reviews </h5>
        </div>
@@ -133,43 +127,47 @@ with col3:
        <div class="styled-header">
            <h3>CO-OP Review</h3>
        </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to log in as John.</p>
+       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
        <div class="number-of-reviews">
            <h5> 3 Reviews </h5>
        </div>
    </div>
    """, unsafe_allow_html=True)
 
-
-# Darker blue background section
+# Content for the entire blue background section
 st.markdown("""
-<div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 20px; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+<div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 20px; text-align: center; width: 100vw; 
+    position: relative; left: 50%; transform: translateX(-50%); height: calc(100rem);">
     <h2>View Roles with Latest Reviews</h2>
     <p>Users Will Go Below</p>
     <div style="display: flex; justify-content: center; margin-top: 30px; gap: 20px; max-width: 80%; margin: 0 auto;">
         <!-- First Container -->
-        <div style="background-color: white; color: #3E4B8B; border-radius: 10px; text-align: left; padding: 20px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-            <h3 style="margin: 0;">John Doe</h3>
-            <p style="margin: 5px 0;">Degree: Bachelor of Computer Science</p>
-            <p style="margin: 5px 0;">Internship: Software Developer</p>
-            <p style="margin: 5px 0;">Description: Worked on full-stack application development and database design.</p>
+        <div style="background-color: white; color: #3E4B8B; border-radius: 20px; text-align: left; padding: 20px; width: 380px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
+            <!-- Circular Image -->
+            <img src="https://via.placeholder.com/80" alt="John's Picture" style="border-radius: 50%; width: 120px; height: 120px; margin-right: 15px;">
+            <!-- Text Content -->
+            <div>
+                <h3 style="margin: 0;">John Doe</h3>
+                <p style="margin: 5px 0;">Degree: Bachelor of Computer Science</p>
+                <p style="margin: 5px 0;">Internship: Software Developer</p>
+                <p style="margin: 5px 0;">Description: Worked on full-stack application development and database design.</p>
+            </div>
         </div>
         <!-- Second Container -->
-        <div style="background-color: white; color: #3E4B8B; border-radius: 10px; text-align: left; padding: 20px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-            <h3 style="margin: 0;">Jane Smith</h3>
-            <p style="margin: 5px 0;">Degree: Master of Data Science</p>
-            <p style="margin: 5px 0;">Internship: Data Analyst</p>
-            <p style="margin: 5px 0;">Description: Conducted data analysis and visualization to drive business decisions.</p>
+        <div style="background-color: white; color: #3E4B8B; border-radius: 20px; text-align: left; padding: 20px; width: 380px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
+            <!-- Circular Image -->
+            <img src="https://via.placeholder.com/80" alt="Jane's Picture" style="border-radius: 50%; width: 120px; height: 120px; margin-right: 15px;">
+            <!-- Text Content -->
+            <div>
+                <h3 style="margin: 0;">Jane Smith</h3>
+                <p style="margin: 5px 0;">Degree: Master of Data Science</p>
+                <p style="margin: 5px 0;">Internship: Data Analyst</p>
+                <p style="margin: 5px 0;">Description: Conducted data analysis and visualization to drive business decisions.</p>
+            </div>
         </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 
-
-
-
-
-
 # End of the major content of the page
-
