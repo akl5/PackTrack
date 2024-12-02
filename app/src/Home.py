@@ -143,16 +143,30 @@ with col3:
 
 # Darker blue background section
 st.markdown("""
-<div style="background-color: #DBEFFF; color: 3E4B8B; padding: 40px; margin-top: 20px; text-align: center; border-radius: 10px;">
-   <h2>View Roles with Latest Reviews.</h2>
-   <p>Users Will go Below.</p>
-   <a href="/explore" style="text-decoration: none; background-color: #DBEFFF; color: #747EAC;
-      padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-       Temporary User Button
-   </a>
+<div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 20px; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+    <h2>View Roles with Latest Reviews</h2>
+    <p>Users Will Go Below</p>
+    <div style="display: flex; justify-content: center; margin-top: 30px; gap: 20px; max-width: 80%; margin: 0 auto;">
+        <!-- First Container -->
+        <div style="background-color: white; color: #3E4B8B; border-radius: 10px; text-align: left; padding: 20px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3 style="margin: 0;">John Doe</h3>
+            <p style="margin: 5px 0;">Degree: Bachelor of Computer Science</p>
+            <p style="margin: 5px 0;">Internship: Software Developer</p>
+            <p style="margin: 5px 0;">Description: Worked on full-stack application development and database design.</p>
+        </div>
+        <!-- Second Container -->
+        <div style="background-color: white; color: #3E4B8B; border-radius: 10px; text-align: left; padding: 20px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3 style="margin: 0;">Jane Smith</h3>
+            <p style="margin: 5px 0;">Degree: Master of Data Science</p>
+            <p style="margin: 5px 0;">Internship: Data Analyst</p>
+            <p style="margin: 5px 0;">Description: Conducted data analysis and visualization to drive business decisions.</p>
+        </div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
+
+
+
 
 
 
