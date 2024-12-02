@@ -5,8 +5,13 @@ import requests
 from streamlit_extras.app_logo import add_logo
 from modules.nav import SideBarLinks, Theme
 
-def display_coop_page():
-    st.markdown("""
+# Apply theme settings
+Theme()
+
+# Control the sidebar content
+SideBarLinks(show_home=False)
+
+st.markdown("""
     <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 900px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
         <!-- Header Section -->
         <div style="margin-bottom: 20px;">
@@ -35,7 +40,7 @@ def display_coop_page():
                 </p>
             </div>
             <!-- Right Side: Necessary Skills -->
-            <div style="flex: 1; background-color: #ffffff; color: #3E4B8B; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+            <div style="flex: 1; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
                 <h4 style="margin: 0;">Necessary Skills</h4>
                 <ul style="margin: 15px 0 0 20px; padding: 0; list-style: disc;">
                     <li>Proficiency in Python and JavaScript</li>
@@ -44,7 +49,21 @@ def display_coop_page():
                     <li>Strong problem-solving skills</li>
                     <li>Excellent teamwork and communication</li>
                 </ul>
+                <!-- Apply Now Button -->
+                    <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none; background-color: #003366; color: white;
+                    padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: bold;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                    Apply Now
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
+def onClickApplyNow():
+    # When the button is clicked
+    if st.button("Apply Now"):
+        # Rickroll (Since this is a page that will be managed by NUWorks, not us)
+        st.switchPage("https://www.youtube.com/watch?v=dQw4w9WgXcQ")

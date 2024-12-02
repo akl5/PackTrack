@@ -32,6 +32,16 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Define the login button to switch to another page
+def login_button():
+    # Create a button that acts as the "Login" button
+    if st.button("Login"):
+        # This will switch to the login page
+        st.switch_page("pages/2a_Coop_Posting.py")  # Change "Login_Page.py" to your target page
+
+# You can place the button wherever you want in the layout
+login_button()
+
 # The rest of your content...
 st.markdown("""
    <style>
@@ -168,6 +178,5 @@ st.markdown("""
     <a href="/show_more" style="color: #3E4B8B; text-decoration: underline; margin-top: 20px; display: inline-block; font-size: 28px;">View More</a>
 </div>
 """, unsafe_allow_html=True)
-
 
 # End of the major content of the page
