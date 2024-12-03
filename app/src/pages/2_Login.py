@@ -19,7 +19,7 @@ if st.button("Log in as Co-Op Manager",
     # subsequent pages). 
     # landing page for this particular user type
     logger.info("Logging in Co-Op Manager...")
-    st.switch_page('pages/5_CoopManager_Dashboard')
+    st.switch_page('pages/5_CoopManager_Dashboard.py')
 
 if st.button('Log in as Company Representative', 
             type = 'primary', 
