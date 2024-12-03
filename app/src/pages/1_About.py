@@ -33,8 +33,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-SideBarLinks()
-
 st.write("# About this App")
 
 st.markdown (
