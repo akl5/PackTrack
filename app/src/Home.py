@@ -17,11 +17,9 @@ st.session_state['authenticated'] = False
 
 # Apply theme settings
 Theme()
-
-# Control the sidebar content
 SideBarLinks(show_home=False)
 
-# The login button using Streamlit's native method (alternative method)
+# LOG IN TO DIFFERENT USER TYPES 
 if st.button("Log In"):
     st.switch_page("pages/2_Login.py")
 
@@ -63,26 +61,18 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
-# # Define the login button to switch to another page
-# def login_button():
-#     # Create a button that acts as the "Login" button
-#     if st.button("Test"):
-#         # This will switch to the login page
-#         st.page_link("2a_Coop_Posting.py") 
 
-# The major content of this page
+#PAGE SETUP + HEADERS:
 logger.info("Loading the Home page of PackTrack..")
 st.write('\n\n')
-st.markdown("""
-<div style="display: flex; justify-content: flex-end; gap: 20px; padding-right: 20px; font-size: 20px;">
-   <a href="/pages/CO_OP_Listings" style="text-decoration: none; color: #3E4B8B;">
-       <h3>View CO-OP Listings</h3>
-   </a>
-   <a href="/pages/Latest_Reviews" style="text-decoration: none; color: #3E4B8B;">
-       <h3>View Latest Reviews</h3>
-   </a>
-</div>
-""", unsafe_allow_html=True)
+# VIEW CO-OP LISTINGS SECTION + VIEW LATEST REVIEWS SECTION
+
+with st.container():
+    # Create a vertical layout (rows) using single columns
+    st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
+    st.write("")  # Adds space between the rows
+    st.page_link("pages/3_Coop_Listings.py", label="[VIEW LATEST REVIEWS]", icon = "💡")
+
 
 # Create the first row of 3 containers
 col1, col2, col3 = st.columns(3)

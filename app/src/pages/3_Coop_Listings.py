@@ -11,7 +11,19 @@ Theme()
 # Control the sidebar content
 SideBarLinks(show_home=False)
 
-# Format for Co-op listings
+# API endpoint URL to fetch SQL Data from Co-Op Postings: 
+API_URL = "http://web-api:4000/coop_postings"
+
+# Fetch coop postings from API
+try:
+    response = requests.get(API_URL)
+    response.raise_for_status()
+    coop_postings_data = response.json()  # Get JSON data
+except requests.exceptions.RequestException as e:
+    logger.error(f"Error fetching data: {e}")
+    coop_postings_data = []
+
+# STYLING for Co-op listings
 st.markdown("""
    <style>
        /* General style for all h3 headers */
@@ -48,8 +60,38 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(3)
 
+# Loop through the data and display it
+if coop_postings_data:
+    for posting in coop_postings_data:
+        coopPosting_id = posting[0]
+        jobTitle = posting[2]
+        jobDescription = posting[3]
+        location = posting[4]
+        jobType = posting[5]
+        pay = posting[6]
+        companyBenefits = posting[7]
+        startDate = posting[8]
+        endDate = posting[9]
+        linkToApply = posting[10]
+        hiringManagerEmail = posting[11]
+        
+        # Concatenate and display the data using st.markdown
+        st.markdown(f"### Job Title: {jobTitle}")
+        st.markdown(f"**Location:** {location}")
+        st.markdown(f"**Job Type:** {jobType}")
+        st.markdown(f"**Pay:** ${pay}")
+        st.markdown(f"**Company Benefits:** {companyBenefits}")
+        st.markdown(f"**Start Date:** {startDate}")
+        st.markdown(f"**End Date:** {endDate}")
+        st.markdown(f"**Hiring Manager Email:** {hiringManagerEmail}")
+        st.markdown(f"**Job Description:** {jobDescription}")
+        st.markdown(f"**Link to Apply:** {linkToApply}")
+        st.markdown("---")
+else:
+    st.write("No coop postings available.")
+
+col1, col2, col3 = st.columns(3)
 
 # Content for the first container
 with col1:
