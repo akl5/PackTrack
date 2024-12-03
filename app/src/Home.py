@@ -57,6 +57,7 @@ st.markdown("""
            text-align: center;  /* Left align the text */
            padding-left: 2rem; /* Add padding to the left to align the text better */
            cursor: pointer;  /* Make the container appear clickable */
+           
        }
 
 
@@ -69,6 +70,12 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
+# # Define the login button to switch to another page
+# def login_button():
+#     # Create a button that acts as the "Login" button
+#     if st.button("Test"):
+#         # This will switch to the login page
+#         st.page_link("2a_Coop_Posting.py") 
 
 # The major content of this page
 logger.info("Loading the Home page of the app")
@@ -85,62 +92,258 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Create 3 columns to display the containers
+# Create the first row of 3 containers
 col1, col2, col3 = st.columns(3)
 
-# Content for the first container
+
+# First row
 with col1:
-   st.markdown(f"""
-   <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
-       <div class="styled-container">
-           <div class="styled-header">
-               <h3>CO-OP Review</h3>
-           </div>
-           <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
-           <div class="number-of-reviews">
-               <h5>3 Reviews</h5>
-           </div>
-       </div>
-   </a>
-   """, unsafe_allow_html=True)
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 1):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
 
-# Content for the second container
 with col2:
-   st.markdown(f"""
-   <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
-       <div class="styled-header">
-           <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
-           <h3>CO-OP Review</h3>
-           </a>
-       </div>
-       <p>This container is an Example CO-OP Review. Click the title to view.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 2):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
 
-
-# Content for the third container
 with col3:
-   st.markdown(f"""
-   <div class="styled-container" onclick=switchPageToReview()>
-       <div class="styled-header">
-           <a href="/pages/2a_Coop_Posting.py" target="_self" style="text-decoration: none;">
-           <h3>CO-OP Review</h3>
-           </a>
-       </div>
-       <p>This container is an Example CO-OP Review. Click the title to view.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 3):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
 
-# Define the login button to switch to another page
-def switchPageToReview():
-    if st.button("switch"):
-        st.switch_page("pages/2a_Coop_Posting.py")  # Change "Login_Page.py" to your target page
+# Add space between the rows
+st.markdown("<div style='margin: 30px 0;'></div>", unsafe_allow_html=True)
+
+
+# Create the second row of 3 containers
+col4, col5, col6 = st.columns(3)
+
+# Second row
+with col4:
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 4):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
+
+with col5:
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 5):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
+
+with col6:
+    with st.container():
+        st.markdown(
+            """
+            <div style="
+                background-color: #DAEEFE; 
+                border-radius: 60px; 
+                padding: 10%; 
+                width: 18rem; 
+                height: 18rem; 
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 22px; 
+                    font-weight: light; 
+                    text-decoration: underline; 
+                    margin-bottom: 10px;
+                ">
+                    CO-OP Review
+                </div>
+                <p>This container is an Example CO-OP Review. Click the button to view the full review.</p>
+                <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                    3 Reviews
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("\n")
+        # Button to navigate to full review (could use on_click for page navigation or other actions)
+        if st.button("View Full Review", 6):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/2a_Coop_Posting.py")
 
 # Content for the entire blue background section
 st.markdown("""

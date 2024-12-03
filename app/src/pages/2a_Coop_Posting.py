@@ -10,6 +10,7 @@ Theme()
 
 # Control the sidebar content
 SideBarLinks(show_home=False)
+
 def doAll():
     st.markdown("""
         <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 900px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
@@ -67,8 +68,6 @@ def doAll():
     st.markdown("""
         <h2 style="text-align: center;">Reviews From Previous Placements</h2>
     """, unsafe_allow_html=True)
-
-    import streamlit as st
 
     # Define the container HTML structure with custom styles
     st.markdown("""
