@@ -14,19 +14,19 @@ if st.button("Log in as Co-Op Manager",
     # when user clicks the button, they are now considered authenticated
     st.session_state['authenticated'] = True
     # we set the role of the current user
-    st.session_state['role'] = 'coop_manager'
+    st.session_state['role'] = 'coopmanager'
     # we add the first name of the user (so it can be displayed on 
     # subsequent pages). 
     # landing page for this particular user type
-    logger.info("Logging in Co-Op Manager..")
-    st.switch_page('pages/00_Pol_Strat_Home.py')
+    logger.info("Logging in Co-Op Manager...")
+    st.switch_page('pages/5_CoopManager_Das')
 
 if st.button('Log in as Company Representative', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'usaid_worker'
-    logger.info("Logging in Co-Op Manager..")
+    logger.info("Logging in Company Representative...")
     st.switch_page('pages/10_USAID_Worker_Home.py')
 
 if st.button('Log in as System Administrator', 
