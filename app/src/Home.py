@@ -65,6 +65,7 @@ st.markdown("""
 #PAGE SETUP + HEADERS:
 logger.info("Loading the Home page of PackTrack..")
 st.write('\n\n')
+<<<<<<< HEAD
 # VIEW CO-OP LISTINGS SECTION + VIEW LATEST REVIEWS SECTION
 
 with st.container():
@@ -72,6 +73,23 @@ with st.container():
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
     st.write("")  # Adds space between the rows
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW LATEST REVIEWS]", icon = "💡")
+=======
+# st.markdown("""
+# <div style="display: flex; justify-content: flex-end; gap: 20px; padding-right: 20px; font-size: 20px;">
+#    <a href="/pages/CO_OP_Listings" style="text-decoration: none; color: #3E4B8B;">
+#        <h3>View CO-OP Listings</h3>
+#    </a>
+#    <a href="/pages/Latest_Reviews" style="text-decoration: none; color: #3E4B8B;">
+#        <h3>View Latest Reviews</h3>
+#    </a>
+# </div>
+# """, unsafe_allow_html=True)
+def latestReviewsButton():
+    if(st.button("View Latest Reviews")):
+        st.switch_page("pages/5a_Latest_Coop_Postings.py")
+
+latestReviewsButton()
+>>>>>>> f177861 (Fixed go to latest reviews button)
 
 
 # Create the first row of 3 containers
