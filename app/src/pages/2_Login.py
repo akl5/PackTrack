@@ -21,14 +21,15 @@ if st.button("Log in as Co-Op Manager",
     logger.info("Logging in Co-Op Manager..")
     st.switch_page('pages/00_Pol_Strat_Home.py')
 
-if st.button('Act as Mohammad, an USAID worker', 
+if st.button('Log in as Company Representative', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'usaid_worker'
+    logger.info("Logging in Co-Op Manager..")
     st.switch_page('pages/10_USAID_Worker_Home.py')
 
-if st.button('Act as System Administrator', 
+if st.button('Log in as System Administrator', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
