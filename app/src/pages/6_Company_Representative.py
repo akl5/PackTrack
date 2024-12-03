@@ -5,5 +5,8 @@ import requests
 from streamlit_extras.app_logo import add_logo
 from modules.nav import SideBarLinks, Theme
 
+# Apply theme settings
 Theme()
-SideBarLinks()
+
+# Control the sidebar content
+SideBarLinks(show_home=False)

@@ -10,3 +10,6 @@ Theme()
 
 # Control the sidebar content
 SideBarLinks(show_home=False)
+
+st.write("## Welcome, Co-op Manager!")
+st.write("### Latest Co-ops Sorted by Date")
