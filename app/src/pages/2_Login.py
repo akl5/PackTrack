@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logging
 logger = logging.getLogger(__name__)
 import streamlit as st
@@ -34,3 +35,5 @@ if st.button('Log in as System Administrator',
             use_container_width=True):
     st.session_state['authenticated'] = True
     st.switch_page('pages/7_System_Admin.py')
+=======
+>>>>>>> f0945a3 (Temp storage)
