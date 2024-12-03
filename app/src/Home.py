@@ -21,16 +21,9 @@ Theme()
 # Control the sidebar content
 SideBarLinks(show_home=False)
 
-# The login button
-st.markdown("""
-<div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-   <a href="/pages/2_Login" style="text-decoration: none; background-color: #3E4B8B; color: white;
-      padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-       Login
-   </a>
-</div>
-""", unsafe_allow_html=True)
+# The login button using Streamlit's native method (alternative method)
+if st.button("Log In"):
+    st.switch_page("pages/2_Login.py")
 
 # The rest of your content...
 st.markdown("""
@@ -78,8 +71,7 @@ st.markdown("""
 #         st.page_link("2a_Coop_Posting.py") 
 
 # The major content of this page
-logger.info("Loading the Home page of the app")
-st.title('CS 3200 Sample Semester Project App')
+logger.info("Loading the Home page of PackTrack..")
 st.write('\n\n')
 st.markdown("""
 <div style="display: flex; justify-content: flex-end; gap: 20px; padding-right: 20px; font-size: 20px;">
@@ -110,9 +102,9 @@ with col1:
                 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
                 display: flex; 
                 flex-direction: column; 
-                align-items: center; 
+                align-items: left; 
                 justify-content: center; 
-                text-align: center;
+                text-align: left;
             ">
                 <div style="
                     font-size: 22px; 
@@ -150,9 +142,9 @@ with col2:
                 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
                 display: flex; 
                 flex-direction: column; 
-                align-items: center; 
+                align-items: left; 
                 justify-content: center; 
-                text-align: center;
+                text-align: left;
             ">
                 <div style="
                     font-size: 22px; 
@@ -190,9 +182,9 @@ with col3:
                 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
                 display: flex; 
                 flex-direction: column; 
-                align-items: center; 
+                align-items: left; 
                 justify-content: center; 
-                text-align: center;
+                text-align: left;
             ">
                 <div style="
                     font-size: 22px; 
