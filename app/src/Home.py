@@ -24,7 +24,7 @@ SideBarLinks(show_home=False)
 # The login button
 st.markdown("""
 <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-   <a href="/login" style="text-decoration: none; background-color: #3E4B8B; color: white;
+   <a href="/pages/2_Login" style="text-decoration: none; background-color: #3E4B8B; color: white;
       padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
        Login
@@ -135,7 +135,7 @@ with col1:
         if st.button("View Full Review", 1):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 with col2:
     with st.container():
@@ -175,7 +175,7 @@ with col2:
         if st.button("View Full Review", 2):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 with col3:
     with st.container():
@@ -215,7 +215,7 @@ with col3:
         if st.button("View Full Review", 3):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 # Add space between the rows
 st.markdown("<div style='margin: 30px 0;'></div>", unsafe_allow_html=True)
@@ -263,7 +263,7 @@ with col4:
         if st.button("View Full Review", 4):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 with col5:
     with st.container():
@@ -303,7 +303,7 @@ with col5:
         if st.button("View Full Review", 5):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 with col6:
     with st.container():
@@ -343,7 +343,7 @@ with col6:
         if st.button("View Full Review", 6):
             st.write("Redirecting to the full review...")  # Placeholder action for the button
             # Optionally, you can use st.switch_page() for actual navigation:
-            st.switch_page("pages/2a_Coop_Posting.py")
+            st.switch_page("pages/3a_Coop_Posting.py")
 
 # Content for the entire blue background section
 st.markdown("""
