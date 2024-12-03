@@ -1,0 +1,2 @@
+Project Name: PackTrack
+This project is a web application that is intended to enhance the current Northeastern University co-op search tool called NUWorks. On top of the existing NUWorks functionality, our PackTrack application enables students to provide objective feedback for co=op positions they have worked at.
