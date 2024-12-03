@@ -65,6 +65,7 @@ st.markdown("""
 #PAGE SETUP + HEADERS:
 logger.info("Loading the Home page of PackTrack..")
 st.write('\n\n')
+
 # VIEW CO-OP LISTINGS SECTION + VIEW LATEST REVIEWS SECTION
 
 with st.container():
@@ -73,10 +74,8 @@ with st.container():
     st.write("")  # Adds space between the rows
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW LATEST REVIEWS]", icon = "💡")
 
-
 # Create the first row of 3 containers
 col1, col2, col3 = st.columns(3)
-
 
 # First row
 with col1:

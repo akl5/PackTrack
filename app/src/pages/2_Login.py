@@ -19,7 +19,7 @@ if st.button("Log in as Co-Op Manager",
     # subsequent pages). 
     # landing page for this particular user type
     logger.info("Logging in Co-Op Manager...")
-    st.switch_page('pages/5_CoopManager_Dashboard')
+    st.switch_page('pages/5_CoopManager_Dashboard.py')
 
 if st.button('Log in as Company Representative', 
             type = 'primary', 
@@ -27,7 +27,7 @@ if st.button('Log in as Company Representative',
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'usaid_worker'
     logger.info("Logging in Company Representative...")
-    st.switch_page('pages/5_Company_Representative.py')
+    st.switch_page('pages/6_Company_Representative.py')
 
 if st.button('Log in as System Administrator', 
             type = 'primary', 

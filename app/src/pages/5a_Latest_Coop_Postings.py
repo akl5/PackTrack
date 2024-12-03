@@ -9,4 +9,4 @@ from modules.nav import SideBarLinks, Theme
 Theme()
 
 # Control the sidebar content
-SideBarLinks(show_home=False)
+SideBarLinks(show_home=True)
