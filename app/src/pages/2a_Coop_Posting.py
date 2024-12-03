@@ -118,8 +118,6 @@ def doAll():
         unsafe_allow_html=True,
     )
 
-    st.write("\n")
-
     # Second Container
     st.markdown(
         """
@@ -169,5 +167,14 @@ def doAll():
         unsafe_allow_html=True,
     )
 
+    def writeButton():
+        # Center the button using columns
+        col1, col2, col3 = st.columns([1, 2, 1])  # Adjust column width for centering
+        with col2:
+            if st.button("Write a Review", key="write_review"):
+                st.write("Redirecting to the writing review page...")
+                st.switch_page("pages/4a_Writing_Review.py")  # Switch to the desired page
+
+    writeButton()
 
 doAll()
