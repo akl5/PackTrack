@@ -68,86 +68,22 @@ def doAll():
     st.markdown("""
         <h2 style="text-align: center;">Reviews From Previous Placements</h2>
     """, unsafe_allow_html=True)
-
-    # Define the container HTML structure with custom styles
-    st.markdown("""
-        <style>
-        /* Style for the container */
-        .review-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 1000px;
-            margin: 50px auto;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Left section with the profile image and dates */
-        .profile-info {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .profile-info img {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-
-        .profile-info .dates {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Name, degree, company info section */
-        .info-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Return offer status */
-        .offer-status {
-            background-color: #3E4B8B;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            width: fit-content;
-            margin-top: 10px;
-        }
-
-        /* Section for the brief review, skills, and challenges */
-        .review-section {
-            margin-top: 20px;
-        }
-
-        .review-section p {
-            margin: 5px 0;
-        }
-
-        /* Skills and challenges list styling */
-        .skills-challenges ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        </style>
-
-        <div class="review-container">
+    
+    # First Container
+    st.markdown(
+        """
+        <div style="background-color: white; padding: 20px; border-radius: 15px; width: 90%; max-width: 1000px; margin: 50px auto; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
             <!-- Profile and Dates -->
-            <div class="profile-info">
-                <img src="https://via.placeholder.com/80" alt="Profile Image">
-                <div class="dates">
+            <div style="display: flex; gap: 20px;">
+                <img src="https://via.placeholder.com/80" alt="Profile Image" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
                     <p><strong>Last Updated:</strong> December 1, 2024</p>
                     <p><strong>Created:</strong> October 15, 2024</p>
                 </div>
             </div>
 
             <!-- Info Details -->
-            <div class="info-details">
+            <div style="margin-top: 20px;">
                 <p><strong>Name:</strong> John Doe</p>
                 <p><strong>Degree:</strong> Computer Science</p>
                 <p><strong>College Class:</strong> Class of 2025</p>
@@ -156,28 +92,82 @@ def doAll():
             </div>
 
             <!-- Return Offer Status -->
-            <div class="offer-status">
+            <div style="background-color: #3E4B8B; color: white; padding: 8px 15px; border-radius: 20px; width: fit-content; margin-top: 10px;">
                 <p>Return Offer: Yes</p>
             </div>
 
             <!-- Review, Skills, and Challenges -->
-            <div class="review-section">
+            <div style="margin-top: 20px;">
                 <p><strong>Brief Review:</strong> Worked on scalable applications, participated in code reviews, and collaborated with a diverse team.</p>
-                <div class="skills-challenges">
+                <div>
                     <p><strong>Skills Learned:</strong></p>
-                    <ul>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
                         <li>Python & JavaScript</li>
                         <li>React & Node.js</li>
                         <li>Cloud Platforms (AWS, Azure)</li>
                     </ul>
                     <p><strong>Challenges Faced:</strong></p>
-                    <ul>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
                         <li>Debugging complex multi-threaded applications</li>
                         <li>Learning to manage time effectively in a fast-paced environment</li>
                     </ul>
                 </div>
             </div>
         </div>
-    """, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.write("\n")
+
+    # Second Container
+    st.markdown(
+        """
+        <div style="background-color: white; padding: 20px; border-radius: 15px; width: 90%; max-width: 1000px; margin: 50px auto; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
+            <!-- Profile and Dates -->
+            <div style="display: flex; gap: 20px;">
+                <img src="https://via.placeholder.com/80" alt="Profile Image" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <p><strong>Last Updated:</strong> December 1, 2024</p>
+                    <p><strong>Created:</strong> October 15, 2024</p>
+                </div>
+            </div>
+
+            <!-- Info Details -->
+            <div style="margin-top: 20px;">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Degree:</strong> Computer Science</p>
+                <p><strong>College Class:</strong> Class of 2025</p>
+                <p><strong>Company:</strong> Tech Innovators Inc.</p>
+                <p><strong>Position:</strong> Software Developer Intern</p>
+            </div>
+
+            <!-- Return Offer Status -->
+            <div style="background-color: #3E4B8B; color: white; padding: 8px 15px; border-radius: 20px; width: fit-content; margin-top: 10px;">
+                <p>Return Offer: Yes</p>
+            </div>
+
+            <!-- Review, Skills, and Challenges -->
+            <div style="margin-top: 20px;">
+                <p><strong>Brief Review:</strong> Worked on scalable applications, participated in code reviews, and collaborated with a diverse team.</p>
+                <div>
+                    <p><strong>Skills Learned:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Python & JavaScript</li>
+                        <li>React & Node.js</li>
+                        <li>Cloud Platforms (AWS, Azure)</li>
+                    </ul>
+                    <p><strong>Challenges Faced:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Debugging complex multi-threaded applications</li>
+                        <li>Learning to manage time effectively in a fast-paced environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 doAll()
