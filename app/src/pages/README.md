@@ -22,8 +22,8 @@ Page written in python that allows a student employee to write an objective revi
 5_CoopManager_Dashboard.py
 Page written in python that displays the dashboard of a co-op manager.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+5a_Latest_Coop_Postings.py
+Page written in python that displays the most recent co-op posts.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
