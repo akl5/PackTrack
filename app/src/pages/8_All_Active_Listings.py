@@ -45,7 +45,7 @@ def create_coop_container(coop_name, coop_id, company, created_time, num_applica
                         border: none;
                         border-radius: 5px;
                         cursor: pointer;
-                    ">Contact Company</button>
+                    ">Delete </button>
                 </div>
             </div>
             """,
