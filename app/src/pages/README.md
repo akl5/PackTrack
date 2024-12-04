@@ -28,8 +28,8 @@ Page written in python that displays the most recent co-op posts.
 6_Company_Representative.py
 Page written in python that displays the dashboard of the representative of a company that provides co-op positions.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+7_System_Admin.py
+Page written in python that displays the dashboard of a system administrator of the app.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
