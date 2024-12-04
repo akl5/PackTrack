@@ -7,8 +7,8 @@ TODO: Describe the pages folder and include link to documentation. Don't forget 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+2_Login.py
+Page written in python that displays the users to login as
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
