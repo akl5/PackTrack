@@ -358,9 +358,11 @@ st.markdown("""
             </div>
         </div>
     </div>
-    <!-- View More Link -->
-    <a href="/show_more" style="color: #3E4B8B; text-decoration: underline; margin-top: 20px; display: inline-block; font-size: 28px;">View More</a>
 </div>
 """, unsafe_allow_html=True)
+if st.button("View More", 16):
+    st.write("Redirecting to the full review...")  # Placeholder action for the button
+    # Optionally, you can use st.switch_page() for actual navigation:
+    st.switch_page("pages/3_Coop_Listings.py")
 
 # End of the major content of the page
