@@ -6,3 +6,42 @@ TODO: Describe the pages folder and include link to documentation. Don't forget 
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
+
+1_About.py
+Page written in python that gives a brief introduction of our app PackTrack
