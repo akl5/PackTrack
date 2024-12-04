@@ -10,8 +10,8 @@ Page written in python that gives a brief introduction of our app PackTrack.
 2_Login.py
 Page written in python that displays the users to login as.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+3_Coop_Listings.py
+Page written in python that displays all the information for each co-op listing.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
