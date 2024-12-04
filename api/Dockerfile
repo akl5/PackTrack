@@ -10,4 +10,3 @@ COPY . .
 EXPOSE 4000
 
 CMD [ "python", "backend_app.py"]
-
