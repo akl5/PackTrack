@@ -16,8 +16,8 @@ Page written in python that displays all the information for each co-op listing.
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+4a_Writing_Review.py
+Page written in python that allows a student employee to write an objective review.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
