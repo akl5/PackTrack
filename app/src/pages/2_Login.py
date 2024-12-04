@@ -33,4 +33,4 @@ if st.button('Log in as System Administrator',
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.switch_page('pages/7_System_Admin.py')
+    st.switch_page('pages/7_System_Admin_Dashboard.py')
