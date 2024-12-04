@@ -42,6 +42,3 @@ Page written in python that gives a brief introduction of our app PackTrack
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
-
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
