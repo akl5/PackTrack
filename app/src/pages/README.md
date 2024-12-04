@@ -19,8 +19,8 @@ Page written in python that gives a brief introduction of our app PackTrack
 4a_Writing_Review.py
 Page written in python that allows a student employee to write an objective review.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+5_CoopManager_Dashboard.py
+Page written in python that displays the dashboard of a co-op manager.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
