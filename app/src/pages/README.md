@@ -34,8 +34,8 @@ Page written in python that displays the dashboard of a system administrator of 
 8_All_Active_Listings.py
 Page written in python that displays all the currently active listings that a co-op manager is hiring for.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+9_Listings_By_Date.py
+Page written in python that lists a co-op manager's co-op postings by date.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
