@@ -37,8 +37,8 @@ Page written in python that displays all the currently active listings that a co
 9_Listings_By_Date.py
 Page written in python that lists a co-op manager's co-op postings by date.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+12_API_Test.py
+Page written in python to test if the API is functional.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
