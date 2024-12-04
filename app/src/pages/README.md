@@ -31,8 +31,8 @@ Page written in python that displays the dashboard of the representative of a co
 7_System_Admin.py
 Page written in python that displays the dashboard of a system administrator of the app.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+8_All_Active_Listings.py
+Page written in python that displays all the currently active listings that a co-op manager is hiring for.
 
 1_About.py
 Page written in python that gives a brief introduction of our app PackTrack
