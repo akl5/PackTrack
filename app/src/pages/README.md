@@ -40,5 +40,5 @@ Page written in python that lists a co-op manager's co-op postings by date.
 12_API_Test.py
 Page written in python to test if the API is functional.
 
-1_About.py
-Page written in python that gives a brief introduction of our app PackTrack
+README.md
+File written in markdown that describes the purpose of each page.
