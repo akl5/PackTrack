@@ -1,21 +1,17 @@
 import streamlit as st
 import requests
 
-# Set the URL for the API endpoint (adjust the base URL to match your app)
+# Set the URL for the API endpoint
 API_URL = "http://web-api:4000/coop_postings"
 
 # Streamlit UI
 st.title("Co-Op Posting Viewer")
 
-# Assuming state_id is available and initialized (this would be the co-op posting ID)
-if 'state_id' not in st.session_state:
-    st.session_state.state_id = 1  # Replace this with your actual default or logic for state_id
+# Ensure 'coopPosting_id' exists in session state, otherwise initialize it with a default value (1 in this case)
+if 'coopPosting_id' not in st.session_state or not st.session_state.coopPosting_id:
+    st.session_state.coopPosting_id = 1  # Default to ID 1 (or any default ID you want)
 
-# Use session state to store coopPosting_id and fetched data based on state_id
-if 'coopPosting_id' not in st.session_state:
-    st.session_state.coopPosting_id = st.session_state.state_id  # Initialize with state_id
-
-coopPosting_id = st.session_state.coopPosting_id  # The co-op posting ID to fetch data for
+coopPosting_id = st.session_state.coopPosting_id  # Use the stored coopPosting_id
 
 # Fetch and display data based on the coopPosting_id
 if coopPosting_id and coopPosting_id != 0:
@@ -26,16 +22,28 @@ if coopPosting_id and coopPosting_id != 0:
                 # Send GET request to the API to get the co-op posting data
                 response = requests.get(f"{API_URL}/{coopPosting_id}")
 
-                # If the response is successful (status code 200), save the data in session state
+                # Check if the response is successful (status code 200)
                 if response.status_code == 200:
-                    st.session_state.coop_data = response.json()  # Save the fetched data to session state
+                    try:
+                        # Try to parse JSON response
+                        st.session_state.coop_data = response.json()
+                    except ValueError:
+                        # If JSON parsing fails, print an error message
+                        st.session_state.coop_data = None
+                        st.markdown(f"### Error: Failed to parse JSON from the response. Invalid JSON format.")
+                        st.markdown(f"**Response Text**: {response.text}")
                 else:
-                    st.session_state.coop_data = None  # No data found, clear the previous data
-                    st.error(f"Error: {response.json().get('error', 'Unknown error occurred')}")
+                    # If the response status code is not 200
+                    st.session_state.coop_data = None
+                    st.markdown(f"### Error: API call failed with status code {response.status_code}.")
+                    st.markdown(f"**Response Text**: {response.text}")
+
             except requests.exceptions.RequestException as e:
+                # Catch network or connection-related errors
                 st.session_state.coop_data = None
-                st.error(f"Error fetching data: {e}")
-    
+                st.markdown(f"### Error: Failed to fetch data due to a network issue.")
+                st.markdown(f"**Error Message**: {e}")
+
     # Display fetched data if it's available
     if st.session_state.coop_data:
         data = st.session_state.coop_data
@@ -52,3 +60,6 @@ if coopPosting_id and coopPosting_id != 0:
         st.write("**Hiring Manager Email**:", data['hiringManagerEmail'])
         st.write("**Start Date**:", data['startDate'])
         st.write("**End Date**:", data['endDate'])
+    else:
+        # If no data is available, display an error message
+        st.write("### Error fetching data for current Co-Op Listing.")
