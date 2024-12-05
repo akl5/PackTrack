@@ -21,6 +21,7 @@ if st.button("Log in as Co-Op Manager",
     logger.info("Logging in Co-Op Manager...")
     st.switch_page('pages/5_CoopManager_Dashboard.py')
 
+# ************ Alice will do the company representative this afternoon *************
 if st.button('Log in as Company Representative', 
             type = 'primary', 
             use_container_width=True):
