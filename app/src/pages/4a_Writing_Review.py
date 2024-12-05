@@ -27,16 +27,22 @@ def write_review_form():
 
         # Submit button
         if st.button("Submit"):
-            # Display entered data for now (can be extended to save to a database)
-            st.success("Your review has been submitted!")
-            st.write("### Review Summary")
-            st.write(f"**Name:** {name}")
-            st.write(f"**Student ID:** {student_id}")
-            st.write(f"**Student Employee ID:** {employee_id}")
-            st.write(f"**Return Offer:** {return_offer}")
-            st.write(f"**Skills Learned:** {skills_learned}")
-            st.write(f"**Challenges:** {challenges}")
-            st.write(f"**Written Review:** {written_review}")
+            # Validation
+            if not all([name, student_id, employee_id, skills_learned, challenges, written_review]):
+                st.error("Please fill out all fields before submitting.")
+            else:
+                # Display entered data for now (can be extended to save to a database)
+                st.success("Your review has been submitted!")
+                st.write("### Review Summary")
+                st.write(f"**Name:** {name}")
+                st.write(f"**Student ID:** {student_id}")
+                st.write(f"**Student Employee ID:** {employee_id}")
+                st.write(f"**Return Offer:** {return_offer}")
+                st.write(f"**Skills Learned:** {skills_learned}")
+                st.write(f"**Challenges:** {challenges}")
+                st.write(f"**Written Review:** {written_review}")
 
 # Display the review form
 write_review_form()
+
+# "We need to add a route here to have the review inserted into a specific posting" -Danny
