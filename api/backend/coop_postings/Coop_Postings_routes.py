@@ -8,6 +8,7 @@ from backend.db_connection import db
 coop_postings = Blueprint('coop_posting', __name__)
 
 # A ROUTE TO FETCH ALL CO-OP POSTINGS. THIS IS FOR THE 2_COOP_LISTINGS.PY PAGE
+@coop_postings.route('/coop_postings', methods=['GET'])
 def get_coop_postings():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
@@ -48,6 +49,7 @@ def get_single_coop_posting(coopPosting_id):
     return the_response
 
 # A ROUTE TO FETCH ALL CO-OP POSTINGS BY MOST RECENTLY UPDATED. THIS IS FOR THE 9_Listings_By_Date.py PAGE
+@coop_postings.route('/coop_postings', methods=['GET'])
 def get_coop_postings_by_date():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
