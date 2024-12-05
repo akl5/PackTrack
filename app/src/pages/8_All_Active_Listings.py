@@ -13,6 +13,7 @@ SideBarLinks(show_home=False)
 
 # API endpoint URL to fetch SQL Data from Co-Op Postings: 
 API_URL = "http://web-api:4000/coop_postings"
+DELETE_URL = "http://web-api:4000/delete_coop_posting/"
 
 # Fetch coop postings from API
 try:
@@ -27,7 +28,7 @@ except requests.exceptions.RequestException as e:
 def delete_coop_posting(coopPosting_id):
     """Call the backend API to delete a co-op posting."""
     try:
-        response = requests.delete(f"{API_URL}/delete_coop_posting/{coopPosting_id}")
+        response = requests.delete(f"{DELETE_URL}{coopPosting_id}")
         if response.status_code == 200:
             st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
         elif response.status_code == 404:
@@ -105,7 +106,7 @@ if coop_postings_data:
         st.markdown(f"**Link to Apply:** {linkToApply}")
 
         # Add Delete button
-        if st.button(f"Delete Co-op Posting {coopPosting_id}"):
+        if st.button(f"Delete {posting.get('jobTitle')}", key=f"delete-{coopPosting_id}"):
             response = delete_coop_posting(coopPosting_id)  # Call the delete function
             if response.status_code == 200:
                 st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")

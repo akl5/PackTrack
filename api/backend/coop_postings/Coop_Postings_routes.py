@@ -91,7 +91,7 @@ def get_coop_postings_by_latest_review():
     return the_response    
 
 # A ROUTE TO DELETE A CERTAIN CO-OP POSTING
-@coop_postings.route('/delete_coop_posting/<int:coopPosting_id>', methods=['DELETE'])
+@coop_postings.route('/delete_coop_posting/<any:coopPosting_id>', methods=['DELETE'])
 def delete_coop_posting(coopPosting_id):
     try:
         # Get database cursor
