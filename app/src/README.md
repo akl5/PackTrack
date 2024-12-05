@@ -1,0 +1,1 @@
+This directory contains all the necessary files for the frontend portion of PackTrack.
