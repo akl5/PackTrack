@@ -70,7 +70,7 @@ def get_coop_postings_by_date():
     return the_response
 
 # A ROUTE TO FETCH ALL CO-OP POSTINGS BY WHICH RECEIVED THE LATEST REVIEW. THIS IS FOR THE 4_Coops_By_Latest.Reviews.py PAGE
-@coop_postings.route('/coop_postings', methods=['GET'])
+@coop_postings.route('/coop_postings_by_latest', methods=['GET'])
 def get_coop_postings_by_latest_review():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
