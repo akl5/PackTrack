@@ -353,11 +353,11 @@ INSERT INTO majors (student_id, department_id, name) VALUES
 (5, 3, 'Human Resources');
 
 INSERT INTO minors (student_id, department_id, name) VALUES
-(6, 2, 'Business Administration'),
-(7, 3, 'Psychology'),
-(8, 1, 'Statistics'),
-(9, 3, 'Law'),
-(10, 2, 'Finance');
+(1, 2, 'Business Administration'),
+(2, 3, 'Psychology'),
+(3, 1, 'Statistics'),
+(4, 3, 'Law'),
+(5, 2, 'Finance');
 
 INSERT INTO application_metrics (student_id, metricName, obtainedAt) VALUES
 (1, 'GPA', '2024-01-01'),
