@@ -91,48 +91,50 @@ if coop_postings_data:
 else:
     st.write("No coop postings available.")
 
-col1, col2, col3 = st.columns(3)
-
-# Content for the first container
-with col1:
-   st.markdown(f"""
-   <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
-       <div class="styled-header">
-           <h3>CO-OP Review</h3>
-       </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+# col1, col2, col3 = st.columns(3)
 
 
-# Content for the second container
-with col2:
-   st.markdown(f"""
-   <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
-       <div class="styled-header">
-           <h3>CO-OP Review</h3>
-       </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+
+# # Content for the first container
+# with col1:
+#    st.markdown(f"""
+#    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
+#        <div class="styled-header">
+#            <h3>CO-OP Review</h3>
+#        </div>
+#        <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+#        <div class="number-of-reviews">
+#            <h5> 3 Reviews </h5>
+#        </div>
+#    </div>
+#    """, unsafe_allow_html=True)
 
 
-# Content for the third container
-with col3:
-   st.markdown(f"""
-   <div class="styled-container" onclick=switchPageToReview()>
-       <div class="styled-header">
-           <h3>CO-OP Review</h3>
-       </div>
-       <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
-       <div class="number-of-reviews">
-           <h5> 3 Reviews </h5>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+# # Content for the second container
+# with col2:
+#    st.markdown(f"""
+#    <div class="styled-container" onclick="window.location.href='/pages/00_Pol_Strat_Home.py';">
+#        <div class="styled-header">
+#            <h3>CO-OP Review</h3>
+#        </div>
+#        <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+#        <div class="number-of-reviews">
+#            <h5> 3 Reviews </h5>
+#        </div>
+#    </div>
+#    """, unsafe_allow_html=True)
+
+
+# # Content for the third container
+# with col3:
+#    st.markdown(f"""
+#    <div class="styled-container" onclick=switchPageToReview()>
+#        <div class="styled-header">
+#            <h3>CO-OP Review</h3>
+#        </div>
+#        <p>This container is an Example CO-OP Review. Click anywhere inside to view the full review.</p>
+#        <div class="number-of-reviews">
+#            <h5> 3 Reviews </h5>
+#        </div>
+#    </div>
+#    """, unsafe_allow_html=True)

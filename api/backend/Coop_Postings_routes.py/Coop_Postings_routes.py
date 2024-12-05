@@ -7,7 +7,7 @@ from backend.db_connection import db
 
 coop_postings = Blueprint('coop_posting', __name__)
 
-@coop_postings.route('/coop_postings', methods=['GET'])
+@coop_postings.route('/Coop_Listings', methods=['GET'])
 def get_coop_postings():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
