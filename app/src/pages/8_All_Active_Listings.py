@@ -23,6 +23,20 @@ except requests.exceptions.RequestException as e:
     logger.error(f"Error fetching data: {e}")
     coop_postings_data = []
 
+# Delete function
+def delete_coop_posting(coopPosting_id):
+    """Call the backend API to delete a co-op posting."""
+    try:
+        response = requests.delete(f"{BASE_URL}/delete_coop_posting/{coopPosting_id}")
+        if response.status_code == 200:
+            st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+        elif response.status_code == 404:
+            st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
+        else:
+            st.error("Failed to delete co-op posting.")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
 # STYLING for Co-op listings
 st.markdown("""
    <style>
@@ -89,6 +103,12 @@ if coop_postings_data:
         st.markdown(f"**Hiring Manager Email:** {hiringManagerEmail}")
         st.markdown(f"**Job Description:** {jobDescription}")
         st.markdown(f"**Link to Apply:** {linkToApply}")
+
+        # Add Delete button
+        if st.button(f"Delete {jobTitle}", key=f"delete-{coopPosting_id}"):
+            delete_coop_posting(coopPosting_id)
+            st.experimental_rerun()  # Refresh the page to show updated data
+        
         st.markdown("---")
 else:
     st.write("No coop postings available.")

@@ -89,3 +89,32 @@ def get_coop_postings_by_latest_review():
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response    
+
+# A ROUTE TO DELETE A CERTAIN CO-OP POSTING
+@coop_postings.route('/delete_coop_posting/<int:coopPosting_id>', methods=['DELETE'])
+def delete_coop_posting(coopPosting_id):
+    try:
+        # Get database cursor
+        cursor = db.get_db().cursor()
+        
+        # Check if the record exists
+        cursor.execute('SELECT * FROM coop_postings WHERE coopPosting_id = %s;', (coopPosting_id,))
+        record = cursor.fetchone()
+        
+        if not record:
+            # If no record is found, return a 404 response
+            current_app.logger.warning(f"Co-op posting with ID {coopPosting_id} not found.")
+            return make_response(jsonify({"error": "Co-op posting not found"}), 404)
+        
+        # Delete the record
+        cursor.execute('DELETE FROM coop_postings WHERE coopPosting_id = %s;', (coopPosting_id,))
+        db.get_db().commit()
+        
+        # Log and respond with success
+        current_app.logger.info(f"Co-op posting with ID {coopPosting_id} successfully deleted.")
+        return make_response(jsonify({"message": "Co-op posting deleted successfully"}), 200)
+    
+    except Exception as e:
+        # Log any errors
+        current_app.logger.error(f"Error deleting co-op posting: {e}")
+        return make_response(jsonify({"error": "Internal server error"}), 500)
