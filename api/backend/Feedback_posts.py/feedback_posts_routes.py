@@ -10,9 +10,7 @@ feedback_posts = Blueprint('feedback_post', __name__)
 @feedback_posts.route('/feedback_posts', methods=['GET'])
 def get_feedback_posts():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
-                           companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
-                           createdAt, updatedAt FROM coop_postings;''')
+    cursor.execute('''SELECT * FROM feedback_posts;''')
     theData = cursor.fetchall()
     
     if not theData:
