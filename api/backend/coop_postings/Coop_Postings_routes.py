@@ -98,7 +98,7 @@ def delete_coop_posting(coopPosting_id):
         cursor = db.get_db().cursor()
         
         # Check if the record exists
-        cursor.execute('SELECT * FROM coop_postings WHERE coopPosting_id = %s;', (coopPosting_id,))
+        cursor.execute('SELECT * FROM coop_postings WHERE coopPosting_id = %s;', (coopPosting_id))
         record = cursor.fetchone()
         
         if not record:
@@ -107,7 +107,7 @@ def delete_coop_posting(coopPosting_id):
             return make_response(jsonify({"error": "Co-op posting not found"}), 404)
         
         # Delete the record
-        cursor.execute('DELETE FROM coop_postings WHERE coopPosting_id = %s;', (coopPosting_id,))
+        cursor.execute('DELETE FROM coop_postings WHERE ID = %s;', (coopPosting_id))
         db.get_db().commit()
         
         # Log and respond with success
