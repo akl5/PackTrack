@@ -46,3 +46,20 @@ def get_single_coop_posting(coopPosting_id):
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response
+
+# A ROUTE TO FETCH ALL CO-OP POSTINGS BY MOST RECENTLY UPDATED. THIS IS FOR THE 9_Listings_By_Date.py PAGE
+def get_coop_postings_by_date():
+    cursor = db.get_db().cursor()
+    cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
+                           companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
+                           createdAt, updatedAt FROM coop_postings ORDER BY updatedAt;''')
+    theData = cursor.fetchall()
+    
+    if not theData:
+        current_app.logger.warning("No data found in coop_postings.")
+    else:
+        current_app.logger.info(f"Fetched {len(theData)} records.")
+        
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    return the_response
