@@ -62,6 +62,7 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
+st.session_state.coopPosting_id = 0
 
 #PAGE SETUP + HEADERS:
 logger.info("Loading the Home page of PackTrack..")
@@ -74,7 +75,6 @@ with st.container():
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
     st.write("")  # Adds space between the rows
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW LATEST REVIEWS]", icon = "💡")
-
 
 
 # Fetch coop postings from API
@@ -152,7 +152,9 @@ if coop_postings_data:
                     # Button to navigate to full review (or any specific action)
                     if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
                         st.write(f"Redirecting to the full review of {jobTitle}...")
-                        st.switch_page(f"pages/coop_postings/{coopPosting_id}")
+                        st.session_state.coopPosting_id = {coopPosting_id}
+                        st.switch_page(f"pages/3b_Coop_Posting_Single.py")
+                        
             else:
                 # If there are fewer postings than columns, we leave the extra columns empty
                 with col:
