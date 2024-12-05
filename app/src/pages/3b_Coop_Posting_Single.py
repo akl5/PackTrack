@@ -1,5 +1,9 @@
 import streamlit as st
 import requests
+from modules.nav import SideBarLinks, Theme
+
+Theme()
+SideBarLinks()
 
 # Set the URL for the API endpoint
 API_URL = "http://web-api:4000/coop_postings"
