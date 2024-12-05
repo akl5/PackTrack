@@ -11,10 +11,20 @@ Theme()
 # Control the sidebar content
 SideBarLinks(show_home=False)
 
+
 def write_review_form():
+
+    # Retrieve coop_id from query parameters
+    query_params = st.query_params()
+    coop_id = query_params.get("coop_id", [None])[0]
+
+    if not coop_id:
+        st.error("No Co-op selected. Please return to the reviews page.")
+        return
+
     # Create a white container
     with st.container():
-        st.title("Write a Review")  # Container title
+        st.title(f"Write a Review for Co-op ID {coop_id}")
 
         # Input boxes for each field
         name = st.text_input("Your Name")
@@ -32,7 +42,7 @@ def write_review_form():
                 st.error("Please fill out all fields before submitting.")
             else:
                 # Display entered data for now (can be extended to save to a database)
-                st.success("Your review has been submitted!")
+                st.success(f"Review submitted for Co-op ID {coop_id}!")
                 st.write("### Review Summary")
                 st.write(f"**Name:** {name}")
                 st.write(f"**Student ID:** {student_id}")
