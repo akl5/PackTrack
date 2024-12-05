@@ -205,3 +205,7 @@ if st.button("View More", 16):
 # End of the major content of the page
 
 
+if st.button("ALICE TESTING TO OLD CO OP POSTING PAGE BUTTON", 126):
+            st.write("Redirecting to the full review...")  # Placeholder action for the button
+            # Optionally, you can use st.switch_page() for actual navigation:
+            st.switch_page("pages/3a_Coop_Posting.py")
