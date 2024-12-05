@@ -114,7 +114,7 @@ CREATE TABLE student_employees (
     jobTitle VARCHAR(200),
     startDATE DATE NULL,
     endDATE DATE NULL,
-    payWeekly DECIMAL(4, 2),
+    payWeekly DECIMAL,
     hoursWeekly INT,
     wayOfWorking ENUM('On-site', 'Hybrid', 'Remote') NOT NULL,
     FOREIGN KEY (student_id) REFERENCES students (student_id) ON UPDATE CASCADE ON DELETE CASCADE,
