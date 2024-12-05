@@ -330,6 +330,8 @@ INSERT INTO coop_postings (
 'Currently pursuing a degree in Human Resources or related field. Strong organizational skills and attention to detail.', 
 'Human resources, Recruitment, Employee onboarding', NOW(), NOW());
 
+
+
 INSERT INTO students (nu_id, enrollmentDate, graduationYear, gpa, transcript, resume, coverLetter) VALUES
 (1001, '2020-09-01', 2024, 3.85, 'Transcript content', 'Resume content', 'Cover letter content'),
 (1002, '2019-09-01', 2023, 3.90, 'Transcript content', 'Resume content', 'Cover letter content'),
@@ -337,19 +339,25 @@ INSERT INTO students (nu_id, enrollmentDate, graduationYear, gpa, transcript, re
 (1004, '2020-09-01', 2024, 3.75, 'Transcript content', 'Resume content', 'Cover letter content'),
 (1005, '2019-09-01', 2023, 3.95, 'Transcript content', 'Resume content', 'Cover letter content');
 
+INSERT INTO departments (departmentName) VALUES ('College of Science');
+INSERT INTO departments (departmentName) VALUES ('Business');
+INSERT INTO departments (departmentName) VALUES ('College of Social Sciences');
+INSERT INTO departments (departmentName) VALUES ('Engineering');
+INSERT INTO departments (departmentName) VALUES ('Computer Science');
+
 INSERT INTO majors (student_id, department_id, name) VALUES
-(1, 1, 'Computer Science'),
+(1, 5, 'Computer Science'),
 (2, 2, 'Marketing'),
 (3, 3, 'Data Science'),
-(4, 4, 'Graphic Design'),
-(5, 5, 'Human Resources');
+(4, 4, 'Mechanical Engineering'),
+(5, 3, 'Human Resources');
 
 INSERT INTO minors (student_id, department_id, name) VALUES
 (6, 2, 'Business Administration'),
 (7, 3, 'Psychology'),
 (8, 1, 'Statistics'),
-(9, 5, 'Law'),
-(10, 4, 'Finance');
+(9, 3, 'Law'),
+(10, 2, 'Finance');
 
 INSERT INTO application_metrics (student_id, metricName, obtainedAt) VALUES
 (1, 'GPA', '2024-01-01'),
