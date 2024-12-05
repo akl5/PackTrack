@@ -4,6 +4,7 @@ import streamlit as st
 import requests
 from streamlit_extras.app_logo import add_logo
 from modules.nav import SideBarLinks, Theme
+import time
 
 # Apply theme settings
 Theme()
@@ -30,7 +31,9 @@ def delete_coop_posting(coopPosting_id):
     try:
         response = requests.delete(f"{DELETE_URL}{coopPosting_id}")
         if response.status_code == 200:
-            st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+            # st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+            time.sleep(0.1)
+            st.rerun()
         elif response.status_code == 404:
             st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
         else:
@@ -109,8 +112,10 @@ if coop_postings_data:
         if st.button(f"Delete {posting.get('jobTitle')}", key=f"delete-{coopPosting_id}"):
             response = delete_coop_posting(coopPosting_id)  # Call the delete function
             if response.status_code == 200:
-                st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
-                st.rerun()  # Refresh the page to show updated data
+                # st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+                time.sleep(500)
+                st.experimental_rerun()  # Refresh the page after deletion
+                # st.rerun()  # Refresh the page to show updated data
             elif response.status_code == 404:
                 st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
             else:
