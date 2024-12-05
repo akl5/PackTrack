@@ -13,7 +13,8 @@ def get_coop_postings():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
                            companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
-                           createdAT, updatedAT FROM coop_postings;''')
+                           createdAT, updatedAT 
+                      FROM coop_postings;''')
     theData = cursor.fetchall()
     
     if not theData:
@@ -54,7 +55,9 @@ def get_coop_postings_by_date():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
                            companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
-                           createdAT, updatedAT FROM coop_postings ORDER BY updatedAT;''')
+                           createdAT, updatedAT 
+                      FROM coop_postings 
+                      ORDER BY updatedAT;''')
     theData = cursor.fetchall()
     
     if not theData:
@@ -72,7 +75,9 @@ def get_coop_postings_by_latest_review():
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
                            companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
-                           createdAT, updatedAT FROM coop_postings cp JOIN feedback_posts fp 
+                           createdAT, updatedAT 
+                      FROM coop_postings cp 
+                      JOIN feedback_posts fp 
                            ON cp.coopPosting_id = fp.coopPosting.id ORDER BY fp.updatedAT;''')
     theData = cursor.fetchall()
     
