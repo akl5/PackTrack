@@ -10,9 +10,7 @@ coop_postings = Blueprint('coop_posting', __name__)
 @coop_postings.route('/coop_postings', methods=['GET'])
 def get_coop_postings():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT coopPosting_id, company_id, jobTitle, jobDescription, location, jobType, pay, 
-                           companyBenefits, startDate, endDate, linkToApply, requirements, hiringManagerEmail, 
-                           createdAt, updatedAt FROM coop_postings;''')
+    cursor.execute('''SELECT * FROM coop_postings;''')
     theData = cursor.fetchall()
     
     if not theData:
