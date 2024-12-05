@@ -60,23 +60,25 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
-
-# Loop through the data and display it
 if coop_postings_data:
     for posting in coop_postings_data:
-        coopPosting_id = posting[0]
-        jobTitle = posting[2]
-        jobDescription = posting[3]
-        location = posting[4]
-        jobType = posting[5]
-        pay = posting[6]
-        companyBenefits = posting[7]
-        startDate = posting[8]
-        endDate = posting[9]
-        linkToApply = posting[10]
-        hiringManagerEmail = posting[11]
+        try:
+            coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
+            jobTitle = posting['jobTitle']
+            jobDescription = posting['jobDescription']
+            location = posting['location']
+            jobType = posting['jobType']
+            pay = posting['pay']
+            companyBenefits = posting['companyBenefits']
+            startDate = posting['startDate']
+            endDate = posting['endDate']
+            linkToApply = posting['linkToApply']
+            hiringManagerEmail = posting['hiringManagerEmail']
+        except KeyError as e:
+            logger.error(f"Missing key: {e}")
+            continue  # Skip this posting if a key is missing
         
-        # Concatenate and display the data using st.markdown
+        # Display the data using Streamlit
         st.markdown(f"### Job Title: {jobTitle}")
         st.markdown(f"**Location:** {location}")
         st.markdown(f"**Job Type:** {jobType}")
@@ -90,6 +92,7 @@ if coop_postings_data:
         st.markdown("---")
 else:
     st.write("No coop postings available.")
+
 
 # col1, col2, col3 = st.columns(3)
 
