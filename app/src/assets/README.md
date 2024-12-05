@@ -6,6 +6,3 @@ TODO: Refactor assets folder into static folder per https://docs.streamlit.io/de
 
 PackTrack_Logo.png
 png file of the logo for our PackTrack application.
-
-README.md
-Markdown file that describes the purpose of each page.

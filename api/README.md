@@ -28,8 +28,4 @@ Copies Application Code: Moves all the app files into the container.
 Exposes a Port: Opens port 4000 for external access, letting the app talk with the outside world.
 Defines the Application Entry Point: Defines that the container needs to run backend_app.py with Python upon start.
 
-
-README.md
-Markdown that describes the purpose of each page.
-
 requirements.txt

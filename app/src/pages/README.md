@@ -39,6 +39,3 @@ Page written in python that lists a co-op manager's co-op postings by date.
 
 12_API_Test.py
 Page written in python to test if the API is functional.
-
-README.md
-File written in markdown that describes the purpose of each file.
