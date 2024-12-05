@@ -1,7 +1,7 @@
 from flask import Flask
 
 from backend.db_connection import db
-from backend.coop_postings_routes.Coop_Postings_routes import coop_postings
+from backend.coop_postings.Coop_Postings_routes import coop_postings
 # from backend.customers.customer_routes import customers
 # from backend.products.products_routes import products
 # from backend.simple.simple_routes import simple_routes
