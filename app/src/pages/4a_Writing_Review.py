@@ -59,10 +59,10 @@ with st.form("new_feedback_form"):
             # Check the response status
             if response.status_code == 201:
                 st.success("Review submitted successfully!")
-            # elif response.status_code == 400:
-            #     st.warning("Please ensure all required fields are filled out correctly.")
-            # else:
-            #     st.error(f"An error occurred while submitting your review:")
+            elif response.status_code == 400:
+                st.warning("Please ensure all required fields are filled out correctly.")
+            else:
+                st.error(f"An error occurred while submitting your review: {response.status_code}")
         except requests.exceptions.RequestException as e:
             logger.error(f"An error occurred: {e}")
             st.error(f"An error occurred: {e}")
