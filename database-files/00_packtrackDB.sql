@@ -347,14 +347,45 @@ INSERT INTO hiring_managers (
     hiringManager_id, company_id, jobTitle, experience, university, registeredAT, updatedAT
 ) VALUES
 (1, 1, 'Senior Recruitment Manager', 8, 'Stanford University', NOW(), NOW()),
-
 (2, 2, 'Marketing Director', 10, 'Harvard University', NOW(), NOW()),
-
 (3, 3, 'Chief Data Scientist', 12, 'University of Chicago', NOW(), NOW()),
-
 (4, 4, 'Creative Director', 7, 'California Institute of the Arts', NOW(), NOW()),
-
-(5, 5, 'HR Manager', 5, 'University of Texas', NOW(), NOW());
+(5, 5, 'HR Manager', 5, 'University of Texas', NOW(), NOW()),
+(6, 6, 'Lead Engineer', 9, 'Massachusetts Institute of Technology', NOW(), NOW()),
+(7, 7, 'Operations Director', 15, 'University of Michigan', NOW(), NOW()),
+(8, 8, 'Product Development Manager', 6, 'University of California, Berkeley', NOW(), NOW()),
+(9, 9, 'Sales Executive', 4, 'University of Pennsylvania', NOW(), NOW()),
+(10, 10, 'Cybersecurity Specialist', 8, 'Carnegie Mellon University', NOW(), NOW()),
+(11, 11, 'Logistics Manager', 10, 'Texas A&M University', NOW(), NOW()),
+(12, 12, 'Customer Relations Manager', 7, 'University of Washington', NOW(), NOW()),
+(13, 13, 'Innovation Strategist', 6, 'University of Colorado', NOW(), NOW()),
+(14, 14, 'Chief Operations Officer', 20, 'Cornell University', NOW(), NOW()),
+(15, 15, 'Healthcare Consultant', 9, 'University of Southern California', NOW(), NOW()),
+(16, 16, 'Software Engineering Manager', 11, 'University of Illinois', NOW(), NOW()),
+(17, 17, 'Data Analytics Lead', 10, 'Columbia University', NOW(), NOW()),
+(18, 18, 'Cloud Architect', 12, 'Duke University', NOW(), NOW()),
+(19, 19, 'Environmental Scientist', 8, 'Yale University', NOW(), NOW()),
+(20, 20, 'Creative Advertising Manager', 5, 'Princeton University', NOW(), NOW()),
+(21, 21, 'Financial Analyst', 6, 'University of California, Los Angeles', NOW(), NOW()),
+(22, 22, 'HR Specialist', 3, 'University of Florida', NOW(), NOW()),
+(23, 23, 'Biotech Research Manager', 14, 'Johns Hopkins University', NOW(), NOW()),
+(24, 24, 'Marketing Analyst', 5, 'New York University', NOW(), NOW()),
+(25, 25, 'Retail Manager', 7, 'Boston University', NOW(), NOW()),
+(26, 26, 'Robotics Engineer', 8, 'Georgia Institute of Technology', NOW(), NOW()),
+(27, 27, 'Urban Planning Manager', 10, 'University of Toronto', NOW(), NOW()),
+(28, 28, 'Quality Assurance Lead', 6, 'University of Waterloo', NOW(), NOW()),
+(29, 29, 'AI Specialist', 13, 'University of California, San Diego', NOW(), NOW()),
+(30, 30, 'Aerospace Engineer', 15, 'Purdue University', NOW(), NOW()),
+(31, 31, 'Healthcare Operations Manager', 10, 'University of North Carolina', NOW(), NOW()),
+(32, 32, 'Supply Chain Coordinator', 8, 'McGill University', NOW(), NOW()),
+(33, 33, 'Education Specialist', 9, 'University of British Columbia', NOW(), NOW()),
+(34, 34, 'Cloud Computing Consultant', 11, 'University of Maryland', NOW(), NOW()),
+(35, 35, 'Renewable Energy Analyst', 7, 'University of Alberta', NOW(), NOW()),
+(36, 36, 'Entertainment Manager', 5, 'University of California, Irvine', NOW(), NOW()),
+(37, 37, 'Chief Financial Officer', 18, 'Wharton School of Business', NOW(), NOW()),
+(38, 38, 'Public Relations Specialist', 4, 'University of Western Ontario', NOW(), NOW()),
+(39, 39, 'Chief Marketing Officer', 14, 'Northwestern University', NOW(), NOW()),
+(40, 40, 'Agricultural Consultant', 8, 'University of Saskatchewan', NOW(), NOW());
 
 
 INSERT INTO coop_postings (
@@ -392,7 +423,112 @@ INSERT INTO coop_postings (
 'https://example.com/apply/machine-learning-intern', 'hiring.manager1@example.com', 
 'Currently enrolled in a computer science, data science, or related field program. Basic knowledge of machine learning algorithms, data preprocessing, and Python is required.', 
 'Python, TensorFlow, Scikit-learn, Data preprocessing, Machine learning algorithms', 
-'2024-12-01', '2024-12-05');
+'2024-12-01', '2024-12-05'),
+
+(2, 2, 'Product Marketing Intern', 'Help develop marketing strategies, assist in product launches, and create content for promotional materials.', 'New York, NY', 'Internship', 21.00, 
+'Health insurance, Paid vacation, Flexible working hours', '2024-02-15', '2024-07-15', 'https://example.com/apply/product-marketing', 'hiring.manager2@example.com', 
+'Currently pursuing a degree in Marketing, Business, or a related field. Strong written communication skills.', 
+'Marketing strategy, Content creation, Product launch', '2024-11-20', '2024-11-25'),
+
+(3, 3, 'Junior Data Scientist', 'Assist senior data scientists in analyzing large datasets, performing machine learning tasks, and generating reports for business analysis.', 'Chicago, IL', 'Full-time', 28.00, 
+'Health benefits, 401k matching, Paid time off', '2024-03-15', '2025-03-15', 'https://example.com/apply/junior-data-scientist', 'hiring.manager3@example.com', 
+'Bachelors degree in Data Science or a related field. Experience with machine learning frameworks like PyTorch or TensorFlow.', 
+'Python, PyTorch, TensorFlow, Data Science', '2024-11-18', '2024-11-25'),
+
+(4, 4, 'Web Developer Intern', 'As a Web Developer Intern, you will assist in building and maintaining websites, ensuring optimal functionality, and collaborating with the development team.', 'Los Angeles, CA', 'Internship', 22.00, 
+'Health insurance, Paid time off, Professional development', '2024-04-01', '2024-09-01', 'https://example.com/apply/web-developer', 'hiring.manager4@example.com', 
+'Currently enrolled in a Computer Science or related degree program. Basic knowledge of HTML, CSS, and JavaScript is required.', 
+'HTML, CSS, JavaScript, Web development', '2024-11-18', '2024-11-20'),
+
+(5, 5, 'Operations Assistant', 'Assist the operations team in managing daily processes, coordinating with other departments, and ensuring efficiency in day-to-day operations.', 'Dallas, TX', 'Full-time', 22.00, 
+'Health insurance, 401k, Paid time off', '2024-05-01', '2025-05-01', 'https://example.com/apply/operations-assistant', 'hiring.manager5@example.com', 
+'Bachelors degree in Business Administration or related field. Strong organizational and communication skills.', 
+'Operations, Coordination, Administrative support', '2024-11-22', '2024-11-25'),
+
+(1, 1, 'Backend Developer Intern', 'Help the backend development team in building server-side applications, databases, and APIs.', 'San Francisco, CA', 'Internship', 28.00, 
+'Health insurance, 401k matching, Paid time off', '2024-01-01', '2024-06-01', 'https://example.com/apply/backend-developer', 'hiring.manager1@example.com', 
+'Currently pursuing a degree in Computer Science or related field. Knowledge of backend programming languages like Java or Python.', 
+'Java, Python, REST APIs, Backend development', '2024-12-01', '2024-12-05'),
+
+(2, 2, 'Sales Intern', 'Assist the sales team with lead generation, client meetings, and research on industry trends.', 'New York, NY', 'Internship', 18.00, 
+'Health insurance, Paid sick leave, Team-building events', '2024-02-01', '2024-07-01', 'https://example.com/apply/sales-intern', 'hiring.manager2@example.com', 
+'Strong communication skills, Interest in sales and business development.', 
+'Lead generation, Sales presentations, Client relationship', '2024-11-15', '2024-11-20'),
+
+(3, 3, 'Junior Software Developer', 'Work with a team of developers to build, test, and maintain software applications.', 'Chicago, IL', 'Full-time', 26.00, 
+'Health benefits, 401k matching, Paid vacation', '2024-03-01', '2025-03-01', 'https://example.com/apply/junior-software-developer', 'hiring.manager3@example.com', 
+'Bachelors degree in Computer Science or a related field. Familiarity with software development principles.', 
+'Java, Python, Software development', '2024-11-22', '2024-11-25'),
+
+(5, 5, 'Human Resources Intern', 'Assist with recruitment, employee onboarding, and HR administrative tasks within the organization.', 'Dallas, TX', 'Internship', 20.00, 
+'Health insurance, Paid time off, Professional development opportunities', '2024-05-15', '2024-08-15', 'https://example.com/apply/hr-intern', 'hiring.manager5@example.com', 
+'Currently pursuing a degree in Human Resources or related field. Strong organizational skills and attention to detail.', 
+'Human resources, Recruitment, Employee onboarding', '2024-11-15', '2024-11-18'),
+
+(6, 6, 'Data Science Intern', 'Help our data science team build predictive models, conduct analysis, and develop insights for decision-making.', 'Austin, TX', 'Internship', 27.00, 
+'Health insurance, 401k matching, Paid sick leave', '2024-02-15', '2024-07-15', 'https://example.com/apply/data-science-intern', 'hiring.manager6@example.com', 
+'Currently pursuing a degree in Data Science, Statistics, or a related field. Strong knowledge of Python and machine learning is required.', 
+'Python, Machine learning, Data analysis', '2024-12-02', '2024-12-06'),
+
+(7, 7, 'Marketing Research Intern', 'Assist in gathering and analyzing market data, helping to shape strategies for new campaigns.', 'Seattle, WA', 'Internship', 22.00, 
+'Health benefits, Paid vacation, Flexible hours', '2024-03-01', '2024-08-01', 'https://example.com/apply/marketing-research-intern', 'hiring.manager7@example.com', 
+'Pursuing a degree in Marketing, Economics, or related field. Strong analytical skills and proficiency with Microsoft Excel required.', 
+'Market research, Data analysis, Microsoft Excel', '2024-11-30', '2024-12-03'),
+
+(8, 8, 'Content Writer Intern', 'Write blog posts, articles, and create content for marketing campaigns.', 'San Jose, CA', 'Internship', 20.00, 
+'Health insurance, Paid time off, Travel stipends', '2024-04-10', '2024-08-10', 'https://example.com/apply/content-writer-intern', 'hiring.manager8@example.com', 
+'Strong writing skills, Ability to work independently, Experience in writing for digital media.', 
+'Blog writing, Content creation, SEO optimization', '2024-12-01', '2024-12-05'),
+
+(9, 9, 'UX Design Intern', 'Collaborate with the design team to create user-friendly interfaces and improve user experience for our web applications.', 'Chicago, IL', 'Internship', 23.00, 
+'Health insurance, Paid holidays, Free lunch', '2024-05-01', '2024-09-01', 'https://example.com/apply/ux-design-intern', 'hiring.manager9@example.com', 
+'Experience with wireframing tools, knowledge of user-centered design principles is required.', 
+'Wireframing, UX design, User research, Sketch, Figma', '2024-12-01', '2024-12-05'),
+
+(10, 10, 'Business Analyst Intern', 'Assist in gathering and analyzing business data to help improve operational efficiency and decision-making.', 'Los Angeles, CA', 'Internship', 24.00, 
+'Health benefits, Paid time off, Performance bonuses', '2024-03-15', '2024-08-15', 'https://example.com/apply/business-analyst-intern', 'hiring.manager10@example.com', 
+'Pursuing a degree in Business Administration, Finance, or related field. Strong analytical skills and experience with data visualization tools preferred.', 
+'Business analysis, Data visualization, Excel, Tableau', '2024-11-20', '2024-11-25'),
+
+(11, 11, 'Social Media Intern', 'Help with managing and creating content for the company’s social media platforms and increase audience engagement.', 'New York, NY', 'Internship', 19.00, 
+'Health insurance, Paid sick leave, Professional growth opportunities', '2024-06-01', '2024-12-01', 'https://example.com/apply/social-media-intern', 'hiring.manager11@example.com', 
+'Experience with social media platforms and content creation. Strong communication skills are essential.', 
+'Social media management, Content creation, Instagram, Twitter', '2024-11-25', '2024-11-28'),
+
+(12, 12, 'Sales Intern', 'Assist the sales team in identifying leads, generating reports, and supporting customer acquisition strategies.', 'Houston, TX', 'Internship', 21.00, 
+'Health benefits, Paid vacation, Sales incentives', '2024-04-01', '2024-09-01', 'https://example.com/apply/sales-intern', 'hiring.manager12@example.com', 
+'Strong communication and interpersonal skills. Ability to work in a fast-paced environment is essential.', 
+'Sales, Customer relations, Market research', '2024-11-15', '2024-11-20'),
+
+(13, 13, 'Financial Analyst Intern', 'Assist the finance team with analyzing budgets, forecasting, and financial reporting.', 'San Francisco, CA', 'Internship', 25.00, 
+'Health insurance, Paid time off, 401k matching', '2024-01-10', '2024-06-10', 'https://example.com/apply/financial-analyst-intern', 'hiring.manager13@example.com', 
+'Pursuing a degree in Finance, Accounting, or related field. Strong knowledge of Excel and financial modeling is required.', 
+'Financial analysis, Excel, Budgeting, Forecasting', '2024-12-05', '2024-12-08'),
+
+(14, 14, 'Customer Support Intern', 'Assist with customer inquiries, troubleshoot issues, and provide support to customers over phone and email.', 'Chicago, IL', 'Internship', 18.00, 
+'Health insurance, Paid vacation, Flexible working hours', '2024-02-20', '2024-07-20', 'https://example.com/apply/customer-support-intern', 'hiring.manager14@example.com', 
+'Strong communication skills and customer-focused attitude. Ability to work in a fast-paced environment.', 
+'Customer support, Troubleshooting, Communication skills', '2024-11-18', '2024-11-22'),
+
+(15, 15, 'Operations Intern', 'Work alongside the operations team to optimize processes and improve operational efficiency.', 'New York, NY', 'Internship', 22.00, 
+'Health benefits, Paid time off, Performance bonuses', '2024-03-01', '2024-08-01', 'https://example.com/apply/operations-intern', 'hiring.manager15@example.com', 
+'Currently pursuing a degree in Business Administration, Operations Management, or related field. Strong organizational skills are a must.', 
+'Operations management, Process improvement, Organizational skills', '2024-11-12', '2024-11-15'),
+
+(16, 16, 'Supply Chain Intern', 'Support the supply chain department in managing logistics, inventory, and suppliers.', 'Dallas, TX', 'Internship', 20.50, 
+'Health insurance, Paid time off, Career development opportunities', '2024-04-15', '2024-09-15', 'https://example.com/apply/supply-chain-intern', 'hiring.manager16@example.com', 
+'Pursuing a degree in Supply Chain Management, Logistics, or related field. Strong organizational and problem-solving skills.', 
+'Supply chain management, Logistics, Inventory control', '2024-11-22', '2024-11-25'),
+
+(17, 17, 'Engineering Intern', 'Work with engineers on real-world projects, including prototyping, testing, and implementation of designs.', 'San Diego, CA', 'Internship', 26.00, 
+'Health benefits, Paid sick leave, Career advancement opportunities', '2024-01-01', '2024-06-01', 'https://example.com/apply/engineering-intern', 'hiring.manager17@example.com', 
+'Pursuing a degree in Engineering, Mechanics, or related field. Strong knowledge of CAD software preferred.', 
+'Engineering, CAD software, Prototyping', '2024-11-10', '2024-11-15'),
+
+(18, 18, 'Legal Intern', 'Assist the legal team with legal research, documentation, and case management tasks.', 'Houston, TX', 'Internship', 23.00, 
+'Health benefits, Paid time off, Professional networking opportunities', '2024-05-01', '2024-09-01', 'https://example.com/apply/legal-intern', 'hiring.manager18@example.com', 
+'Currently pursuing a law degree or related field. Strong research and writing skills required.', 
+'Legal research, Document preparation, Case management', '2024-12-03', '2024-12-07');
 
 
 INSERT INTO students (nu_id, enrollmentDate, graduationYear, gpa, transcript, resume, coverLetter) VALUES
