@@ -11,5 +11,6 @@ said job and other Northeastern students with valuable insights into the reality
 at said company. Companies can then make changes to their positions so that they become more enticing to future 
 applicants by generating better reviews/feedback from other students. 
 
+*When I say students providing feedback, I am talking about students who have completed at least one co-op. 
 
 
