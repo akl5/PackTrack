@@ -8,9 +8,6 @@ SideBarLinks()
 # Set the URL for the API endpoint
 API_URL = "http://web-api:4000/coop_postings"
 
-# Streamlit UI
-st.title("Co-Op Posting Viewer")
-
 # Ensure 'coopPosting_id' exists in session state, otherwise initialize it with a default value (1 in this case)
 if 'coopPosting_id' not in st.session_state or not st.session_state.coopPosting_id:
     st.session_state.coopPosting_id = 1  # Default to ID 1 (or any default ID you want)
@@ -71,27 +68,15 @@ if coopPosting_id and coopPosting_id != 0:
         startDate = data['startDate']
         endDate = data['endDate']
         linkToApply = data['linkToApply']
-        
-        # Display the Co-op Posting Information
-        st.write(f"### Co-op Posting Details for ID {coopPosting_id}")
-        st.write("**Company ID**:", company_id)
-        st.write("**Job Title**:", jobTitle)
-        st.write("**Job Description**:", jobDescription)
-        st.write("**Location**:", location)
-        st.write("**Job Type**:", jobType)
-        st.write("**Pay**:", pay)
-        st.write("**Company Benefits**:", companyBenefits)
-        st.write("**Hiring Manager Email**:", hiringManagerEmail)
-        st.write("**Start Date**:", startDate)
-        st.write("**End Date**:", endDate)
 
         st.markdown(f"""
-                <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 900px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 100%; max-width: 90rem; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                     <!-- Header Section -->
                     <div style="margin-bottom: 20px;">
-                        <h1 style="margin: 0;">{jobTitle}</h1>
-                        <h5 style="margin: 5px 0;">{companyName}</h5>
-                        <h6 style="margin:0, font-weight:700;">{location}</h6>
+                        <h1 style="margin:0;">{jobTitle}</h1>
+                        <h4 style="margin:0;">{companyName}</h4>
+                        <h6 style="margin:0">{location}</h6>
+                        <p style="margin:0, font-weight:400;"><strong>Role Type:</strong> {jobType}</p>
                     </div>
                     <!-- Description Section -->
                     <div style="display: flex; gap: 20px;">
@@ -105,23 +90,27 @@ if coopPosting_id and coopPosting_id != 0:
                                 <p style="font-weight:300"; text-align: justify;">
                                     {requirements}
                                 </p>
-                                <p style="margin:0;"><strong>Preferred Skills</strong></p>
+                                <h5> Preferred Skills </h5>
                                 <p style="font-weight:300"; text-align: justify;">
                                     {preferredSkills}
                                 </p>
                                 <h5>About the Company</h5>
-                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Industry:</strong>{companyIndustry}</p>
-                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Company Size:</strong>{companySize}</p>
-                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Company Headquarters:</strong>{companyHeadquarters}</p>                                
+                                <p style="font-weight:300, margin:0, text-align: justify;"><strong>Industry:</strong></p>
+                                <p>{companyIndustry}</p>
+                                <p style="font-weight:300, margin:0, text-align: justify;"><strong>Company Size:</strong></p>
+                                <p>{companySize}</p>
+                                <p style="font-weight:300, margin:0, text-align: justify;"><strong>Company Headquarters:</strong></p>       
+                                <p>{companyHeadquarters}</p>
                             </div>
                         <!-- Right Side: Job Information -->
                         <div style="flex: 1; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);">
-                            <h5> Information</h5>
+                            <h5 style="margin: 0;"> Role Information</h5>
                             <p style="margin: 0;"> <strong>Start Date:</strong> {startDate}</p> 
                             <p style="margin: 0;"> <strong>End Date:</strong> {endDate}</p> 
                             <p> <strong>Pay:</strong> ${pay}/hr</p> 
-                            <h5>More Information</h5>
-                            <p style="margin: 0;"> <strong> Contact: </strong> Hiring Manager <a href="mailto:{hiringManagerEmail}" target="_blank">{hiringManagerEmail}</a></p>
+                            <h5 style="margin: 0;"> Company Benefits</h5>
+                            <p style="margin: 0;"> {companyBenefits}</p> 
+                            <p style="margin: 0;"> <strong> Contact Hiring Manager: </strong><a href="mailto:{hiringManagerEmail}" target="_blank"> {hiringManagerEmail}</a></p>
                             <!-- Apply Now Button -->
                                 <div style="text-align: center; margin-top: 20px;">
                                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none; background-color: #003366; color: white;
