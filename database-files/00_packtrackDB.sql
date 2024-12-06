@@ -676,7 +676,26 @@ INSERT INTO minors (student_id, department_id, name) VALUES
 (2, 3, 'Psychology'),
 (3, 1, 'Statistics'),
 (4, 3, 'Law'),
-(5, 2, 'Finance');
+(5, 2, 'Finance'),
+(6, 4, 'Environmental Studies'),
+(7, 5, 'Mechanical Engineering'),
+(8, 6, 'Ethics'),
+(9, 7, 'International Relations'),
+(10, 8, 'Creative Writing'),
+(11, 9, 'Marketing'),
+(12, 10, 'Public Health'),
+(13, 11, 'Chemistry'),
+(14, 12, 'Theatre'),
+(15, 13, 'Public Policy'),
+(16, 14, 'Geographic Information Systems'),
+(17, 15, 'Art History'),
+(18, 16, 'Sociology'),
+(19, 17, 'Music Theory'),
+(1, 18, 'Psychology of Learning'),
+(2, 19, 'Entrepreneurship'),
+(3, 20, 'Humanities'),
+(4, 1, 'Statistics'),
+(6, 3, 'Economics');
 
 INSERT INTO application_metrics (student_id, metricName, obtainedAt) VALUES
 (1, 'GPA', '2024-01-01'),
