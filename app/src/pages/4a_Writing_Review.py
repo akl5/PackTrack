@@ -16,7 +16,7 @@ SideBarLinks(show_home=False)
 logger = logging.getLogger(__name__)
 
 # Backend API endpoint
-API_URL = "http://web-api:4000/create_feedback_post"
+API_URL = "http://web-api:4000/write_review"
 
 # Page Header
 st.title("Submit a New Co-op Review")
