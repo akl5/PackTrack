@@ -36,7 +36,7 @@ with col1:  # Centered column for the buttons
     """
     st.markdown(button_style, unsafe_allow_html=True)  # Apply the style
     
-    if st.button("See Company Listings by Popularity"):
+    if st.button("See All Company Listings"):
         st.switch_page("pages/10_Company_Listings.py")
 
 with col2: 
