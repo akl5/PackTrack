@@ -4,19 +4,19 @@ Coop-Postings_routes.py
 Python file that prvides the route for retrieving the co-op posts.
 
 db_connection
-Connect to MySQL 
+Connect to MySQL. 
 
 rest_entry.py
-
+Setup the Flask app.
 
 .dockerignore
 Unncessary files are excluded from the Docker build.
 
 .env.template
-
+Reference file containing environment variables for the project to run smoothly.
 
 backend_app.py
-
+Serves as entry point for Flask application.
 
 Dockerfile
 File that sets up lightweight Docker container for our Python-centered application.
