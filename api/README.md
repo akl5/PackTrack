@@ -28,4 +28,6 @@ Copies Application Code: Moves all the app files into the container.
 Exposes a Port: Opens port 4000 for external access, letting the app talk with the outside world.
 Defines the Application Entry Point: Defines that the container needs to run backend_app.py with Python upon start.
 
+
 requirements.txt
+Python package dependencies needed for our Flask project to run.
