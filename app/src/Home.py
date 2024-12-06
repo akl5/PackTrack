@@ -21,6 +21,19 @@ st.session_state.co_op_posting_id = 0
 Theme()
 SideBarLinks(show_home=False)
 
+# REMOVE THIS BUTTON WHEN DONE DEBUGGING
+def writeButton():
+        # Center the button using columns
+        col1, col2, col3 = st.columns([1, 2, 1])  # Adjust column width for centering
+        with col2:
+            if st.button("Write a Review", key="write_review"):
+                st.write("Redirecting to the writing review page...")
+                st.switch_page("pages/4a_Writing_Review.py")  # Switch to the desired page
+
+writeButton()
+
+
+
 # LOG IN TO DIFFERENT USER TYPES 
 if st.button("Log In"):
     st.switch_page("pages/2_Login.py")
