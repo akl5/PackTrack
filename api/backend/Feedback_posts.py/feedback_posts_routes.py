@@ -10,8 +10,13 @@ feedback_posts = Blueprint('feedback_post', __name__)
 @feedback_posts.route('/feedback_posts/<int:coopPosting_id>', methods=['GET'])
 def get_feedback_posts_on_coop_posting_id():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT * FROM feedback_posts
-                   WHERE coopPosting_id = %s''')
+    cursor.execute('''SELECT f.coopPosting_id as coopPosting_id,
+                    u.firstName as firstName, u.lastName as u.lastName, s.graduationYear as graduationYear, 
+                   f.writtenReview as writtenReview, f.skillsLearned as skillsLearned, f.challenges as challenges,
+                   f.returnOffer as returnOffer
+                   f.createdAT as createdAT, f.updatedAT as updatedAT
+                   FROM feedback_posts f JOIN students s ON f.student_id = s.student_id JOIN users u ON s.student_id = u.id
+                   WHERE f.coopPosting_id = %s''')
     theData = cursor.fetchone()  
     
     if not theData:
