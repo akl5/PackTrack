@@ -1,7 +1,7 @@
 import streamlit as st
 import logging
 import requests
-from modules.nav import SideBarLinks, Theme
+from modules.nav import SideBarLinks, Theme, PublicPageNav
 
 # Set up basic logging infrastructure
 logging.basicConfig(format='%(filename)s:%(lineno)s:%(levelname)s -- %(message)s', level=logging.INFO)
@@ -20,6 +20,7 @@ st.session_state.co_op_posting_id = 0
 # Apply theme settings
 Theme()
 SideBarLinks(show_home=False)
+PublicPageNav()
 
 # REMOVE THIS BUTTON WHEN DONE DEBUGGING
 def writeButton():
@@ -31,12 +32,6 @@ def writeButton():
                 st.switch_page("pages/4a_Writing_Review.py")  # Switch to the desired page
 
 writeButton()
-
-
-
-# LOG IN TO DIFFERENT USER TYPES 
-if st.button("Log In"):
-    st.switch_page("pages/2_Login.py")
 
 # The rest of your content...
 st.markdown("""
@@ -81,15 +76,6 @@ st.session_state.coopPosting_id = 0
 #PAGE SETUP + HEADERS:
 logger.info("Loading the Home page of PackTrack..")
 st.write('\n\n')
-
-# VIEW CO-OP LISTINGS SECTION + VIEW LATEST REVIEWS SECTION
-
-with st.container():
-    # Create a vertical layout (rows) using single columns
-    st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
-    st.write("")  # Adds space between the rows
-    st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS BY LATEST REVIEWS]", icon = "💡")
-
 
 # Fetch coop postings from API
 API_URL = "http://web-api:4000/coop_postings"
@@ -153,21 +139,22 @@ if coop_postings_data:
                             background-color: #DAEEFE; 
                             border-radius: 60px; 
                             padding: 10%; 
-                            width: 18rem; 
-                            height: 18rem; 
+                            width: 20rem; 
+                            height: 20rem; 
                             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
                             display: flex; 
                             flex-direction: column; 
                             justify-content: center; 
                             text-align: left;
+                            padding: 2rem;
                         ">
                             <div style="font-weight: 300; font-size: 25px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
                                 {jobTitle}
                             </div>
-                            <p style="font-size: 20px; margin:0;"> {companyName} </p>
+                            <p style="font-size: 20px; margin:0; font-weight: medium;"> {companyName} </p>
                             <p style="color:#747EAC; margin:0">{location}</p>
-                            <p>{jobDescription[:60]}...</p>
-                            <div style="font-size: 18px; color: #3E4B8B; font-weight: bold;margin:0;">
+                            <p>{jobDescription[:80]}...</p>
+                            <div style="font-size: 18px; color: #3E4B8B; font-weight: 600; margin:0;">
                                 {jobType}
                             </div>
                         </div>
@@ -175,10 +162,12 @@ if coop_postings_data:
                     )
                     # Button to navigate to full review (or any specific action)
                     st.write("\n")
-                    if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
-                        st.session_state.co_op_posting_id = coopPosting_id
-                        st.write(f"Redirecting to the full review of {jobTitle}...")
-                        st.switch_page(f"pages/3b_Coop_Posting_Single.py")
+                    col1, col2, col3 = st.columns([1, 4, 1])
+                    with col2:
+                        if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
+                            st.session_state.co_op_posting_id = coopPosting_id
+                            st.write(f"Redirecting to the full review of {jobTitle}...")
+                            st.switch_page(f"pages/3b_Coop_Posting_Single.py")
                     st.markdown("---")
 
             else:

@@ -3,13 +3,15 @@ logger = logging.getLogger(__name__)
 import streamlit as st
 import requests
 from streamlit_extras.app_logo import add_logo
-from modules.nav import SideBarLinks, Theme
+from modules.nav import SideBarLinks, Theme,PublicPageNav
 
 # Apply theme settings
 Theme()
-
 # Control the sidebar content
 SideBarLinks(show_home=False)
+#Public Page Navs 
+st.session_state['authenticated'] = False
+PublicPageNav()
 
 # API endpoint URL to fetch SQL Data from Co-Op Postings: 
 API_URL = "http://web-api:4000/coop_postings"
@@ -123,21 +125,22 @@ if coop_postings_data:
                             background-color: #DAEEFE; 
                             border-radius: 60px; 
                             padding: 10%; 
-                            width: 18rem; 
-                            height: 18rem; 
+                            width: 20rem; 
+                            height: 20rem; 
                             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
                             display: flex; 
                             flex-direction: column; 
                             justify-content: center; 
                             text-align: left;
+                            padding: 2rem;
                         ">
                             <div style="font-weight: 300; font-size: 25px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
                                 {jobTitle}
                             </div>
-                            <p style="font-size: 20px; margin:0;"> {companyName} </p>
+                            <p style="font-size: 20px; margin:0; font-weight: medium;"> {companyName} </p>
                             <p style="color:#747EAC; margin:0">{location}</p>
-                            <p>{jobDescription[:60]}...</p>
-                            <div style="font-size: 18px; color: #3E4B8B; font-weight: bold; margin:0;">
+                            <p>{jobDescription[:80]}...</p>
+                            <div style="font-size: 18px; color: #3E4B8B; font-weight: 600; margin:0;">
                                 {jobType}
                             </div>
                         </div>
@@ -149,12 +152,12 @@ if coop_postings_data:
                         st.session_state.co_op_posting_id = coopPosting_id
                         st.write(f"Redirecting to the full review of {jobTitle}...")
                         st.switch_page(f"pages/3b_Coop_Posting_Single.py")
-                    st.markdown("---")
 
             else:
                 # If there are fewer postings than columns, we leave the extra columns empty
                 with col:
                     st.markdown("")
+            st.markdown("---")
 
 else:
     st.write("No coop postings available.")

@@ -2,6 +2,8 @@ from flask import Flask
 
 from backend.db_connection import db
 from backend.coop_postings.Coop_Postings_routes import coop_postings
+from backend.feedback_posts.feedback_posts_routes import feedback_posts
+from backend.Writing_review.writing_review_routes import write_review
 # from backend.customers.customer_routes import customers
 # from backend.products.products_routes import products
 # from backend.simple.simple_routes import simple_routes
@@ -43,6 +45,7 @@ def create_app():
     # and give a url prefix to each
     app.logger.info('current_app(): registering blueprints with Flask app object.')   
     app.register_blueprint(coop_postings)
+    app.register_blueprint(feedback_posts)
 
     # Don't forget to return the app object
     return app

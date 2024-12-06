@@ -15,6 +15,16 @@ def AboutPageNav():
 def GithubRepoNav():
     st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️")
 
+def PublicPageNav(): 
+    #LOG IN BUTTON 
+    if st.button("Log In"):
+        st.switch_page("pages/2_Login.py")
+    # VIEW CO-OP LISTINGS SECTION + VIEW LATEST REVIEWS SECTION
+    with st.container():
+        # Create a vertical layout (rows) using single columns
+        st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
+        st.write("")  # Adds space between the rows
+        st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS BY LATEST REVIEWS]", icon = "💡")
 
 #Function for font styling for all pages 
 def Theme():  
@@ -25,7 +35,7 @@ def Theme():
     @import url('https://fonts.googleapis.com/css2?family=Park+Sans:wght@300..800&display=swap');
 
     /* Apply Parkinsans font to the entire app */
-    body {
+    body, p, div {
         font-family: 'Parkinsans', sans-serif;
     }
 
