@@ -35,3 +35,5 @@ on NUworks would help dozens to hundreds of students, employers, and Northeaster
 ## **Clarifications:**
 In the database, we have students and student_employees. A user can be a student but not a student employee; however, 
 a student can become a student employee once they get hired for a co-op position.
+
+## **How Do I Use PackTrack?:**
