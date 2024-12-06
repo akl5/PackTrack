@@ -127,6 +127,7 @@ def SideBarLinks(show_home=False):
         st.session_state.authenticated = False
         st.switch_page("Home.py")
 
+    st.sidebar.markdown(f"""<h1> PackTrack </h1>""",unsafe_allow_html=True)
     # Show the Home page link 
     HomeNav()
 
