@@ -4,6 +4,7 @@ import streamlit as st
 import requests
 from streamlit_extras.app_logo import add_logo
 from modules.nav import SideBarLinks, Theme,PublicPageNav
+import logging
 
 # Apply theme settings
 Theme()
@@ -11,6 +12,8 @@ PublicPageNav()
 
 # Control the sidebar content
 SideBarLinks(show_home=False)
+
+logger = logging.getLogger(__name__)
 
 # Backend API endpoint
 API_URL = "http://web-api:4000/create_feedback_post"
@@ -36,7 +39,8 @@ with st.form("new_feedback_form"):
     
     # Submit button
     submitted = st.form_submit_button("Submit Review")
-        # Submit form data to the backend API
+
+    # Submit form data to the backend API
     if submitted:
         # Prepare the payload
         payload = {
@@ -63,8 +67,8 @@ with st.form("new_feedback_form"):
                 st.error("An error occurred while submitting your review.")
         
         except requests.exceptions.RequestException as e:
+            logger.error(f"An error occurred: {e}")
             st.error(f"An error occurred: {e}")
-
 
 
 
