@@ -267,7 +267,14 @@ INSERT INTO users (firstName, middleName, lastName, mobile, email, username, pas
 ('Benjamin', 'Henry', 'Martinez', '0129876654', 'benjamin.martinez@example.com', 'benjaminmartinez', 'password123', 'UK', 'England', 'Birmingham', 'Hiring Manager'),
 ('Clara', 'Josephine', 'Gonzalez', '1230987656', 'clara.gonzalez@example.com', 'claragonzalez', 'password123', 'Australia', 'Tasmania', 'Hobart', 'System Admin'),
 ('Daniel', 'Aiden', 'Perez', '2341098760', 'daniel.perez@example.com', 'danielperez', 'password123', 'Canada', 'Ontario', 'Ottawa', 'Student'),
-('Emma', 'Grace', 'Roberts', '3452109879', 'emma.roberts@example.com', 'emmaroberts', 'password123', 'USA', 'Tennessee', 'Nashville', 'Hiring Manager');
+('Emily', 'Rose', 'Bennett', '2345678901', 'emily.bennett@example.com', 'emilybennett', 'password123', 'USA', 'California', 'San Diego', 'System Admin'),
+('George', 'Aaron', 'Moore', '3456789012', 'george.moore@example.com', 'georgemoore', 'password123', 'Australia', 'Queensland', 'Gold Coast', 'Hiring Manager'),
+('Holly', 'Jane', 'Taylor', '4567890123', 'holly.taylor@example.com', 'hollytaylor', 'password123', 'UK', 'England', 'Liverpool', 'Student'),
+('Isaac', 'Michael', 'Wilson', '5678901234', 'isaac.wilson@example.com', 'isaacwilson', 'password123', 'Canada', 'Ontario', 'Ottawa', 'Hiring Manager'),
+('Julia', 'Sophia', 'Evans', '6789012345', 'julia.evans@example.com', 'juliaevans', 'password123', 'USA', 'New York', 'Brooklyn', 'System Admin'),
+('Kevin', 'Louis', 'Hughes', '7890123456', 'kevin.hughes@example.com', 'kevinhughes', 'password123', 'Australia', 'Victoria', 'Melbourne', 'Student'),
+('Lily', 'Grace', 'Campbell', '8901234567', 'lily.campbell@example.com', 'lilycampbell', 'password123', 'UK', 'Scotland', 'Glasgow', 'Hiring Manager');
+
 
 -- Insert 5 sample companies into the 'companies' table
 INSERT INTO companies (
@@ -275,15 +282,40 @@ INSERT INTO companies (
     openPositions, registeredAT, updatedAT
 ) VALUES
 ('Roblox', 'Technology', 'San Mateo, CA', 2400, '970 Park Place, Suite 100', 'https://roblox.com', 2, NOW(), NOW()),
-
 ('MarketX Digital', 'Marketing', 'New York, NY', 250, '456 Market St, Suite 200', 'https://www.marketx.com', 5, NOW(), NOW()),
-
 ('DataSolutions Inc.', 'Data Science', 'Chicago, IL', 500, '789 Data Blvd, Floor 3', 'https://www.datasolutions.com', 8, NOW(), NOW()),
-
 ('DesignWorks Agency', 'Design', 'Los Angeles, CA', 50, '321 Design Park, Suite 201', 'https://www.designworks.com', 3, NOW(), NOW()),
-
-('HRPartners LLC', 'Human Resources', 'Dallas, TX', 100, '654 HR Lane, Office 405', 'https://www.hrpartners.com', 12, NOW(), NOW());
-
+('HRPartners LLC', 'Human Resources', 'Dallas, TX', 100, '654 HR Lane, Office 405', 'https://www.hrpartners.com', 12, NOW(), NOW()),
+('TechNova Solutions', 'Technology', 'San Francisco, CA', 150, '101 Silicon Ave, Suite 500', 'https://www.technova.com', 4, NOW(), NOW()),
+('GreenSky Industries', 'Renewable Energy', 'Denver, CO', 200, '202 Green St, Suite 305', 'https://www.greensky.com', 6, NOW(), NOW()),
+('FinSecure Technologies', 'Finance', 'New York, NY', 120, '333 Wall St, 7th Floor', 'https://www.finsecure.com', 10, NOW(), NOW()),
+('HealthPrime Innovations', 'Healthcare', 'Austin, TX', 300, '456 Wellness Blvd, Suite 700', 'https://www.healthprime.com', 15, NOW(), NOW()),
+('CloudSync Solutions', 'Cloud Computing', 'Seattle, WA', 400, '789 Cloud Rd, Suite 1200', 'https://www.cloudsync.com', 9, NOW(), NOW()),
+('SmartHome Inc.', 'Technology', 'Chicago, IL', 500, '123 Home St, Floor 4', 'https://www.smarthome.com', 8, NOW(), NOW()),
+('RetailMax Corporation', 'Retail', 'Los Angeles, CA', 800, '432 Market St, Suite 900', 'https://www.retailmax.com', 20, NOW(), NOW()),
+('ByteWave Studios', 'Entertainment', 'Hollywood, CA', 150, '678 Studio Rd, Suite 250', 'https://www.bytewave.com', 7, NOW(), NOW()),
+('FleetWorks Logistics', 'Logistics', 'Dallas, TX', 600, '234 Logistics Dr, Suite 1000', 'https://www.fleetworks.com', 14, NOW(), NOW()),
+('NextGen Labs', 'Biotechnology', 'San Diego, CA', 200, '876 Lab Park, Floor 5', 'https://www.nextgenlabs.com', 4, NOW(), NOW()),
+('CitySmart Technologies', 'Smart City Solutions', 'New York, NY', 350, '123 Urban St, Suite 800', 'https://www.citysmart.com', 12, NOW(), NOW()),
+('EduConnect Solutions', 'Education', 'Toronto, ON', 100, '456 Learning Ave, Suite 300', 'https://www.educonnect.com', 5, NOW(), NOW()),
+('MediPro Health', 'Healthcare', 'Vancouver, BC', 250, '789 Health Rd, Suite 200', 'https://www.mediprohealth.com', 6, NOW(), NOW()),
+('NextWave Digital', 'Marketing', 'Miami, FL', 150, '123 Digital Blvd, Suite 450', 'https://www.nextwavedigital.com', 3, NOW(), NOW()),
+('CyberGuard Security', 'Cybersecurity', 'San Jose, CA', 500, '234 Security St, Suite 600', 'https://www.cyberguard.com', 10, NOW(), NOW()),
+('QuantumTech Innovations', 'Technology', 'Boston, MA', 400, '500 Quantum Blvd, Suite 200', 'https://www.quantumtech.com', 5, NOW(), NOW()),
+('EcoLife Solutions', 'Environmental', 'San Francisco, CA', 150, '100 Green Lane, Suite 100', 'https://www.ecolife.com', 3, NOW(), NOW()),
+('BrightPath Education', 'Education', 'New York, NY', 80, '250 Bright Ave, Suite 300', 'https://www.brightpath.com', 4, NOW(), NOW()),
+('Vanguard Ventures', 'Finance', 'Los Angeles, CA', 350, '150 Capital Blvd, Suite 500', 'https://www.vanguardventures.com', 6, NOW(), NOW()),
+('BlueWave Industries', 'Renewable Energy', 'Houston, TX', 200, '800 BlueWave Rd, Suite 700', 'https://www.bluewaveindustries.com', 7, NOW(), NOW()),
+('FusionLabs', 'Biotechnology', 'San Diego, CA', 100, '220 Fusion St, Floor 4', 'https://www.fusionlabs.com', 3, NOW(), NOW()),
+('AeroTech Dynamics', 'Aerospace', 'Phoenix, AZ', 500, '350 Aero Park, Suite 900', 'https://www.aerotechdynamics.com', 10, NOW(), NOW()),
+('MedicarePlus', 'Healthcare', 'Chicago, IL', 800, '400 Health St, Suite 600', 'https://www.medicareplus.com', 12, NOW(), NOW()),
+('AgriMax Solutions', 'Agriculture', 'Dallas, TX', 150, '789 Farm Rd, Suite 200', 'https://www.agrimaxsolutions.com', 5, NOW(), NOW()),
+('SkyNet Technologies', 'Technology', 'Seattle, WA', 300, '600 Sky Rd, Suite 500', 'https://www.skynet.com', 9, NOW(), NOW()),
+('GreenSprout Innovations', 'Environmental', 'Portland, OR', 120, '800 GreenSprout Ave, Suite 100', 'https://www.greensprout.com', 4, NOW(), NOW()),
+('NextStep Robotics', 'Technology', 'Austin, TX', 250, '450 Robot St, Floor 5', 'https://www.nextsteprobotics.com', 6, NOW(), NOW()),
+('UrbanGrid Solutions', 'Urban Development', 'Chicago, IL', 200, '500 Urban Grid Rd, Suite 100', 'https://www.urbangridsolutions.com', 8, NOW(), NOW()),
+('MetaCloud Systems', 'Cloud Computing', 'San Jose, CA', 400, '1200 MetaCloud Dr, Suite 700', 'https://www.metacloudsystems.com', 11, NOW(), NOW()),
+('BrightFuture Innovations', 'Technology', 'Los Angeles, CA', 150, '300 BrightFuture Blvd, Suite 400', 'https://www.brightfuture.com', 7, NOW(), NOW());
 
 -- Insert data into the 'hiring_managers' table
 INSERT INTO hiring_managers (
