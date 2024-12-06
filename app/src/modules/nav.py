@@ -111,7 +111,7 @@ def Theme():
     }
 
     /* Apply to all headers (h1, h2, h3, etc.) */
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, h7, h8 {
         font-family: 'Parkinsans', sans-serif;
     }
 

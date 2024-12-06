@@ -60,9 +60,13 @@ if coopPosting_id and coopPosting_id != 0:
         jobType = data['jobType']
         pay = data['pay']
         companyBenefits = data['companyBenefits']
+        requirements = data['requirements']
+        preferredSkills = data['preferredSkills']
         hiringManagerEmail = data['hiringManagerEmail']
         startDate = data['startDate']
         endDate = data['endDate']
+        linkToApply = data['linkToApply']
+
         
         # Display the Co-op Posting Information
         st.write(f"### Co-op Posting Details for ID {coopPosting_id}")
@@ -89,16 +93,20 @@ if coopPosting_id and coopPosting_id != 0:
                     <!-- Description Section -->
                     <div style="display: flex; gap: 20px;">
                         <!-- Left Side: Descriptions -->
-                        <div style="flex: 3;">
-                            <p style="margin: 10px 0;"><strong>Position Description:</strong></p>
-                            <p style="margin: 10px 0; text-align: justify;">
-                                {jobDescription}
-                            </p>
-                            <p style="margin: 10px 0;"><strong>Company Description:</strong></p>
-                            <p style="margin: 10px 0; text-align: justify;">
-                                TO DO TO DO - REMEMBER TO QUERY. 
-                            </p>
-                        </div>
+                            <div style="flex: 3;">
+                                <p style="margin: 10px 0;"><strong>Position Description:</strong></p>
+                                <p style="margin: 10px 0; text-align: justify;">
+                                    {jobDescription}
+                                </p>
+                                <p style="margin: 10px 0;"><strong>Eligibility Requirements:</strong></p>
+                                <p style="margin: 10px 0; text-align: justify;">
+                                    {requirements}
+                                </p>
+                                <p style="margin: 10px 0;"><strong>Company Description:</strong></p>
+                                <p style="margin: 10px 0; text-align: justify;">
+                                    TO DO TO DO - REMEMBER TO QUERY. 
+                                </p>
+                            </div>
                         <!-- Right Side: Necessary Skills -->
                         <div style="flex: 1; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);">
                             <h5 style="margin: 0;">Necessary Skills</h4>
