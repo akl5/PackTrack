@@ -14,3 +14,6 @@ applicants by generating better reviews/feedback from other students.
 *When I say students providing feedback, I am talking about students who have completed at least one co-op. 
 
 ## **What Is the Motivation Behind the Project?:**
+When it comes to applying to co-ops, it is difficult to learn more about nuanced topics of a job placement such 
+as work culture, team environment, and skills learned on the job just from the generic application description 
+that includes standard work hours, average salary, and responsibilities. 
