@@ -12,7 +12,10 @@ coop_postings = Blueprint('coop_posting', __name__)
 def get_coop_postings():
     try:
         cursor = db.get_db().cursor()
-        cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, c.companyName as companyName, c.company_id as company_id, cp.hiringManager_id as hiringManager_id, 
+        cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
+                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
+                       c.company_id as company_id,
+                       cp.hiringManager_id as hiringManager_id, 
                           cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
                           cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
                           cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
@@ -38,12 +41,15 @@ def get_coop_postings():
 def get_single_coop_posting(coopPosting_id):
     # Connect to the database and fetch the coop posting by its ID
     cursor = db.get_db().cursor()
-    query = '''SELECT cp.coopPosting_id as coopPosting_id, c.companyName as companyName, c.company_id as company_id, cp.hiringManager_id as hiringManager_id, 
+    query ='''SELECT cp.coopPosting_id as coopPosting_id, 
+                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
+                       c.company_id as company_id,
+                       cp.hiringManager_id as hiringManager_id, 
                           cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
                           cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
                           cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
                           cp.createdAT as createdAT, cp.updatedAT as updatedAT
-                FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
+                         FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
                WHERE cp.coopPosting_id = %s;'''
     cursor.execute(query, (coopPosting_id,))
     theData = cursor.fetchone()  # Fetch a single record
@@ -62,12 +68,15 @@ def get_single_coop_posting(coopPosting_id):
 @coop_postings.route('/coop_postings_by_recently_updated', methods=['GET'])
 def get_coop_postings_by_date():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, c.companyName as companyName, c.company_id as company_id, cp.hiringManager_id as hiringManager_id, 
+    cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
+                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
+                       c.company_id as company_id,
+                       cp.hiringManager_id as hiringManager_id, 
                           cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
                           cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
                           cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
                           cp.createdAT as createdAT, cp.updatedAT as updatedAT
-                    FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
+                         FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
                     ORDER BY updatedAT;''')
     theData = cursor.fetchall()
     
@@ -84,7 +93,10 @@ def get_coop_postings_by_date():
 @coop_postings.route('/coop_postings_by_latest_review', methods=['GET'])
 def get_coop_postings_by_latest_review():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, c.companyName as companyName, c.company_id as company_id, cp.hiringManager_id as hiringManager_id, 
+        cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
+                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
+                       c.company_id as company_id,
+                       cp.hiringManager_id as hiringManager_id, 
                           cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
                           cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
                           cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
