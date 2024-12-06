@@ -150,11 +150,13 @@ if coop_postings_data:
                         """, unsafe_allow_html=True
                     )
                     # Button to navigate to full review (or any specific action)
+                    st.write("\n")
                     if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
                         st.session_state.coopPosting_id = coopPosting_id
                         st.write(f"Redirecting to the full review of {jobTitle}...")
                         st.switch_page(f"pages/3b_Coop_Posting_Single.py")
-                        
+                    st.markdown("---")
+
             else:
                 # If there are fewer postings than columns, we leave the extra columns empty
                 with col:
