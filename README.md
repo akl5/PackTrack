@@ -46,4 +46,4 @@ docker build
 docker compose build
 docker compose up -d
 
-
+-Now head to localhost:8501 to see the frontend on your browser.
