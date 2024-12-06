@@ -36,8 +36,9 @@ def get_feedback_posts_on_coop_posting_id(coopPosting_id):
 def create_feedback_post():
     try:
         # Get JSON data from the request body
-        data = request.json
-        
+        data = request.get_json()
+        cursor = db.get_db().cursor()
+    
         # Extract the required fields from the request
         student_id = data.get('student_id')  # Optional based on your table definition
         studentEmployee_id = data.get('studentEmployee_id')
@@ -49,11 +50,8 @@ def create_feedback_post():
         returnOffer = data.get('returnOffer')
 
         # Validate required fields
-        if not all([studentEmployee_id, coopPosting_id, writtenReview, skillsLearned, challenges, roleSuggestions, returnOffer]):
+        if not all([student_id, studentEmployee_id, coopPosting_id, writtenReview, skillsLearned, challenges, roleSuggestions, returnOffer]):
             return jsonify({"error": "Missing required fields"}), 400
-
-        # Get a database cursor
-        cursor = get_db().cursor()
 
         # Insert the new review into the feedback_posts table
         cursor.execute('''
@@ -68,8 +66,8 @@ def create_feedback_post():
                 returnOffer
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
         ''', (
-            student_id, 
-            studentEmployee_id, 
+            student_id,
+            studentEmployee_id,
             coopPosting_id, 
             writtenReview, 
             skillsLearned, 

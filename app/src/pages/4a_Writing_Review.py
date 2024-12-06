@@ -24,9 +24,9 @@ st.markdown("Please fill out the form below to share your feedback on your co-op
 
 # Form inputs
 with st.form("new_feedback_form"):
-    # st.subheader("Student Details")
-    # studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID")
-    st.subheader("Co-op Posting Details")
+    st.subheader("Student Details")
+    student_id = st.text_input("Student ID", placeholder="Enter your student ID")
+    studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your Student Employee ID")
     coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID")
     st.subheader("Review Details")
     writtenReview = st.text_area("Written Review", placeholder="Describe your experience")
@@ -43,14 +43,14 @@ with st.form("new_feedback_form"):
     if submitted:
         # Prepare the payload
         payload = {
-            "student_id": 1,
-            "studentEmployee_id": 1,
+            "student_id": int(student_id),
+            "studentEmployee_id": int(studentEmployee_id),
             "coopPosting_id": int(coopPosting_id),
             "writtenReview": writtenReview,
             "skillsLearned": skillsLearned,
             "challenges": challenges,
             "roleSuggestions": roleSuggestions,
-            "returnOffer": returnOffer
+            "returnOffer": returnOffer == "Yes"
         }
         
         try:
