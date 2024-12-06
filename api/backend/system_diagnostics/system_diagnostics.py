@@ -7,6 +7,7 @@ from backend.db_connection import db
 
 system_diagnostics = Blueprint('system_diagnostics', __name__)
 
+# RETRIEVE ALL SYSTEM DIAGNOSTICS
 @system_diagnostics.route('/system_diagnostics', methods=['GET'])
 def get_system_diagnostics():
     cursor = db.get_db().cursor()
