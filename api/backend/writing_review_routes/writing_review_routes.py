@@ -15,9 +15,9 @@ def get_write_review():
     data = request.get_json()
 
     # Extract data from the request
-    student_id = data.get('student_id')
-    studentEmployee_id = data.get('studentEmployee_id')
-    coopPosting_id = data.get('coopPosting_id')
+    int:student_id = data.get('student_id')
+    int:studentEmployee_id = data.get('studentEmployee_id')
+    int:coopPosting_id = data.get('coopPosting_id')
     created_at = datetime.now
     writtenReview = data.get('writtenReview')
     skillsLearned = data.get('skillsLearned')
