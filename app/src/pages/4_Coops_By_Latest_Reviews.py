@@ -16,15 +16,6 @@ PublicPageNav()
 # API endpoint URL to fetch SQL Data from Co-Op Postings: 
 API_URL = "http://web-api:4000/coop_postings_by_latest_review"
 
-# Fetch coop postings from API
-try:
-    response = requests.get(API_URL)
-    response.raise_for_status()
-    coop_postings_data = response.json()  # Get JSON data
-except requests.exceptions.RequestException as e:
-    logger.error(f"Error fetching data: {e}")
-    coop_postings_data = []
-
 # STYLING for Co-op listings
 st.markdown("""
    <style>

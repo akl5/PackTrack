@@ -57,5 +57,5 @@ with col2:
     """
     st.markdown(button_style, unsafe_allow_html=True)  # Apply the style
     
-    if st.button("View All Listings By Date"):
+    if st.button("View System Diagnostics"):
         st.switch_page("pages/11_Diagnostics_Dashboard.py")
