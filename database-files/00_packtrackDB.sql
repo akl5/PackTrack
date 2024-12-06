@@ -273,7 +273,7 @@ INSERT INTO companies (
     companyName, industry, headquarters, companySize, headAddress, website, 
     openPositions, registeredAT, updatedAT
 ) VALUES
-('Roblox', 'Technology', 'San Meteo, CA', 1500, '970 Park Place, Suite 100', 'https://roblox.com', 2, NOW(), NOW()),
+('Roblox', 'Technology', 'San Mateo, CA', 1500, '970 Park Place, Suite 100', 'https://roblox.com', 2, NOW(), NOW()),
 
 ('MarketX Digital', 'Marketing', 'New York, NY', 250, '456 Market St, Suite 200', 'https://www.marketx.com', 5, NOW(), NOW()),
 
