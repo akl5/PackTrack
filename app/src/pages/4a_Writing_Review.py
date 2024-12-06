@@ -34,34 +34,35 @@ with st.form("new_feedback_form"):
     returnOffer = st.radio("Did you receive a return offer?", options=["Yes", "No"], required=True)
     # Submit button
     submitted = st.form_submit_button("Submit Review")
-
-
-# Submit form data to the backend API
-if submitted:
-    # Prepare the payload
-    payload = {
-        "student_id": student_id if student_id else None,
-        "studentEmployee_id": int(studentEmployee_id),
-        "coopPosting_id": int(coopPosting_id),
-        "writtenReview": writtenReview,
-        "skillsLearned": skillsLearned,
-        "challenges": challenges,
-        "roleSuggestions": roleSuggestions,
-        "returnOffer": returnOffer
-    }
-    
-    try:
-        # Make the POST request to the backend API
-        response = requests.post(API_URL, json=payload)
+        # Submit form data to the backend API
+    if submitted:
+        # Prepare the payload
+        payload = {
+            "student_id": student_id if student_id else None,
+            "studentEmployee_id": int(studentEmployee_id),
+            "coopPosting_id": int(coopPosting_id),
+            "writtenReview": writtenReview,
+            "skillsLearned": skillsLearned,
+            "challenges": challenges,
+            "roleSuggestions": roleSuggestions,
+            "returnOffer": returnOffer
+        }
         
-        # Check the response status
-        if response.status_code == 201:
-            st.success("Review submitted successfully!")
-        elif response.status_code == 400:
-            st.warning("Please ensure all required fields are filled out correctly.")
-        else:
-            st.error("An error occurred while submitting your review.")
-    
-    except requests.exceptions.RequestException as e:
-        st.error(f"An error occurred: {e}")
+        try:
+            # Make the POST request to the backend API
+            response = requests.post(API_URL, json=payload)
+            
+            # Check the response status
+            if response.status_code == 201:
+                st.success("Review submitted successfully!")
+            elif response.status_code == 400:
+                st.warning("Please ensure all required fields are filled out correctly.")
+            else:
+                st.error("An error occurred while submitting your review.")
+        
+        except requests.exceptions.RequestException as e:
+            st.error(f"An error occurred: {e}")
+
+
+
 
