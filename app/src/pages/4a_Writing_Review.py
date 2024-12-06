@@ -23,16 +23,17 @@ st.markdown("Please fill out the form below to share your feedback on your co-op
 with st.form("new_feedback_form"):
     st.subheader("Student Details")
     student_id = st.text_input("Student ID (optional)", placeholder="Enter your student ID")
-    studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID", required=True)
+    studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID")
     st.subheader("Co-op Posting Details")
-    coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID", required=True)
+    coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID")
     st.subheader("Review Details")
-    writtenReview = st.text_area("Written Review", placeholder="Describe your experience", required=True)
-    skillsLearned = st.text_input("Skills Learned", placeholder="E.g., teamwork, problem-solving", required=True)
-    challenges = st.text_input("Challenges Faced", placeholder="E.g., tight deadlines", required=True)
-    roleSuggestions = st.text_area("Role Suggestions", placeholder="Suggestions for improving the role", required=True)
+    writtenReview = st.text_area("Written Review", placeholder="Describe your experience")
+    skillsLearned = st.text_input("Skills Learned", placeholder="E.g., teamwork, problem-solving")
+    challenges = st.text_input("Challenges Faced", placeholder="E.g., tight deadlines")
+    roleSuggestions = st.text_area("Role Suggestions", placeholder="Suggestions for improving the role")
     st.subheader("Offer Details")
-    returnOffer = st.radio("Did you receive a return offer?", options=["Yes", "No"], required=True)
+    returnOffer = st.radio("Did you receive a return offer?", options=["Yes", "No"])
+    
     # Submit button
     submitted = st.form_submit_button("Submit Review")
         # Submit form data to the backend API

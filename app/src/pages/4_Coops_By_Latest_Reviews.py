@@ -84,17 +84,24 @@ if coop_postings_data:
             if posting_idx < len(coop_postings_data):
                 posting = coop_postings_data[posting_idx]
                 try:
-                    jobTitle = posting['jobTitle']
-                    companyName = posting['companyName']
-                    location = posting['location']
-                    jobType = posting['jobType']
-                    lastUpdatedReviewDate = posting['lastUpdatedReviewDate']
-                    jobDescription = posting['jobDescription']
-                    coopPosting_id = posting['coopPosting_id']
+                    jobTitle = posting.get('jobTitle', "Unknown Title")
+                    companyName = posting.get('companyName', "Unknown Company")
+                    location = posting.get('location', "Unknown Location")
+                    jobType = posting.get('jobType', "Unknown Type")
+                    lastUpdatedReviewDate = posting.get('lastUpdatedReviewDate', None)
+                    jobDescription = posting.get('jobDescription', "No description available")
+                    coopPosting_id = posting.get('coopPosting_id', "Unknown ID")
 
                 except KeyError as e:
                     logger.error(f"Missing key: {e}")
                     continue  # Skip this posting if a key is missing
+
+                # Handle NULL or missing review date
+                review_date_display = (
+                    f"Latest review: {lastUpdatedReviewDate}"
+                    if lastUpdatedReviewDate
+                    else "No reviews yet"
+                )
 
                 # Now, display this job info dynamically inside the correct column
                 with col:
@@ -119,7 +126,7 @@ if coop_postings_data:
                             <p style="font-size: 20px; margin:0; font-weight: medium;"> {companyName} </p>
                             <p style="color:#747EAC; margin:0">{location}</p>
                             <p style="font-size:15px;"> {jobDescription[:80]}...</p>
-                            <p> <strong>Latest review: </strong>{lastUpdatedReviewDate}</p>
+                            <p> <strong>{review_date_display}</strong></p>
                         </div>
                         """, unsafe_allow_html=True
                     )
@@ -136,7 +143,5 @@ if coop_postings_data:
                 # If there are fewer postings than columns, we leave the extra columns empty
                 with col:
                     st.markdown("")
-        
-
 else:
     st.write("No coop postings available.")
