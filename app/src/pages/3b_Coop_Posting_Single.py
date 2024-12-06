@@ -123,6 +123,28 @@ if coopPosting_id and coopPosting_id != 0:
                     </div>
                 </div>
         """, unsafe_allow_html=True)
+        
+        st.markdown("""
+            <h2 style="text-align: center;">Reviews From Previous Placements</h2>
+            """, unsafe_allow_html=True)
+
+        st.markdown(
+            """
+            <div style="background-color: white; padding: 20px; border-radius: 15px; width: 90%; max-width: 1000px; margin: 50px auto; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
+                <div style="display: flex; gap: 20px;">
+                    <div style="width:20%;">
+                        <img src="https://via.placeholder.com/80" alt="Profile Image" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
+                        <p> left side left side </p>
+                    </div>
+                    <div style="width:80%;">
+                        <p> right side right side </p>
+                    </div>
+                </div>
+                <p> Last Updated: </p> 
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
     else:
         # If no data is available, display an error message

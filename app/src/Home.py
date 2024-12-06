@@ -170,7 +170,6 @@ st.markdown("""
 <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 40px 0; margin-top: 25px; margin-bottom: 0px; text-align: center; width: 100vw; 
     position: relative; left: 50%; transform: translateX(-50%); height: 600px;">
     <h2>View Roles with Latest Reviews</h2>
-    <p>Users Will Go Below</p>
     <div style="display: flex; justify-content: center; margin-top: 30px; gap: 20px; max-width: 80%; margin: 0 auto;">
         <!-- First Container -->
         <div style="background-color: white; color: #3E4B8B; border-radius: 20px; text-align: left; padding: 20px; width: 380px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
