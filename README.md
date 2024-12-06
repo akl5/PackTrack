@@ -40,3 +40,6 @@ a student can become a student employee once they get hired for a co-op position
 You need to be able to run Docker (so have it installed on your computer) and have VSCode (preferably) open so that you can boot up the program. For commands, please run the following:
 
 docker build
+
+-Create copy of .env template file; rename secret key with own password
+
