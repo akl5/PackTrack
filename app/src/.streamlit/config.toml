@@ -22,3 +22,6 @@ secondaryColor ="#747EAC"
 secondaryBackgroundColor = "#C1D9EF"
 # Global Font/Text Color Settings
 textColor = "#3E4B8B" 
+
+[server]
+enableStaticServing = true
