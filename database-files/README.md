@@ -7,5 +7,4 @@ reset.sql
 SQL script to delete all created tables and reset the database. Helpful for testing during development.
 
 How to re-bootstrap our database
-1. run the reset.sql file to drop all existing tables
-2. run the 00_packtrackDB.sql file to recreate and repopulate the tables
+rerun 00.packtrackDB.sql as it will drop the database if it already exists
