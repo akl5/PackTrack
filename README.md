@@ -19,4 +19,6 @@ as work culture, team environment, and skills learned on the job just from the g
 that includes standard work hours, average salary, and responsibilities. As students, we want to find environments 
 where our strengths can shine and ideal spaces where we can work on our weaknesses to improve our professional 
 experiences. For example, some of us may prefer to work better in smaller teams while others may prefer to work in 
-larger teams to create higher-impact projects.
+larger teams to create higher-impact projects. Some may also want different experiences out of their co-op: Those 
+who are applying to more technical positions may want to maximize their ability to use a certain skill set while 
+those who are passionate about sales may want to find positions where they can be more face-to-face with clientele.
