@@ -26,12 +26,13 @@ if st.button('Log in as Company Representative',
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'usaid_worker'
+    st.session_state['role'] = 'companyrep'
     logger.info("Logging in Company Representative...")
     st.switch_page('pages/6_Company_Representative.py')
 
 if st.button('Log in as System Administrator', 
             type = 'primary', 
             use_container_width=True):
+    st.session_state['role'] = 'systemadmin'
     st.session_state['authenticated'] = True
     st.switch_page('pages/7_System_Admin_Dashboard.py')
