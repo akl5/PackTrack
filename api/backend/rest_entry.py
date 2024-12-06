@@ -3,8 +3,8 @@ from flask import Flask
 from backend.db_connection import db
 from backend.coop_postings.Coop_Postings_routes import coop_postings
 from backend.feedback_posts.feedback_posts_routes import feedback_posts
-from backend.writing_review.writing_review_routes import write_review
 from backend.system_diagnostics.system_diagnostics import system_diagnostics
+from backend.writing_review.writing_review_routes import write_review
 
 import os
 from dotenv import load_dotenv
