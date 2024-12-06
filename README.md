@@ -33,4 +33,5 @@ We want the co-op search to be as insightful and communicative as possible, so d
 on NUworks would help dozens to hundreds of students, employers, and Northeastern administrators alike. 
 
 ## **Clarifications:**
-In the database, we have students and student_employees. A user can be a student but not a student employee; 
+In the database, we have students and student_employees. A user can be a student but not a student employee; however, 
+a student can become a student employee once they get hired for a co-op position.
