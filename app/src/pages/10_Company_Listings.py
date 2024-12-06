@@ -82,7 +82,7 @@ if coop_postings_data:
     for posting in coop_postings_data:
         try:
             company_id = posting['company_id']
-            coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
+            coopPosting_id = posting['coopPosting_id']  
             jobTitle = posting['jobTitle']
             jobDescription = posting['jobDescription']
             location = posting['location']
@@ -93,11 +93,10 @@ if coop_postings_data:
             endDate = posting['endDate']
             linkToApply = posting['linkToApply']
             hiringManagerEmail = posting['hiringManagerEmail']
-            application_count = posting['application_count']
         except KeyError as e:
-            logger.error(f"Missing key: {e}")
-            continue  # Skip this posting if a key is missing
-        
+            st.write(f"Error: {e}")
+            continue  # Skip this posting if a there's an error with this entry 
+
         # Display the data using Streamlit
         st.markdown(f"### Job Title: {jobTitle}")
         st.markdown(f"**Location:** {location}")

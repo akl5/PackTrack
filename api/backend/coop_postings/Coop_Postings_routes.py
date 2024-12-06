@@ -215,7 +215,7 @@ def get_company_coop_postings(company_id):
                          FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
                WHERE cp.company_id = %s;'''
     cursor.execute(query, (company_id,))
-    theData = cursor.fetchone()  # Fetch a single record
+    theData = cursor.fetchall()  
     # If no data is found for the given ID, return a 404 response
     if not theData:
         current_app.logger.warning(f"No data found for company_id {company_id}.")
