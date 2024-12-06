@@ -31,3 +31,5 @@ together leads into the creation of PackTrack.
 
 We want the co-op search to be as insightful and communicative as possible, so direct feedback on as many co-op posts 
 on NUworks would help dozens to hundreds of students, employers, and Northeastern administrators alike. 
+
+## **Clarifications:**
