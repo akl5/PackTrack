@@ -37,3 +37,4 @@ In the database, we have students and student_employees. A user can be a student
 a student can become a student employee once they get hired for a co-op position.
 
 ## **How Do I Use PackTrack?:**
+You need to be able to run Docker (so have it installed on your computer) and have VSCode (preferably) open so that you can boot up the program. For commands, please run the following:
