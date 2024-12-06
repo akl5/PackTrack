@@ -11,6 +11,7 @@ Theme()
 # Control the sidebar content
 SideBarLinks(show_home=False)
 
+st.markdown(f"""<h3 style="margin:0;"> Welcome, Company Representative from TechCorp Solutions!</h3>""", unsafe_allow_html=True)
 
 # Center the buttons and style them
 col1, col2, col3 = st.columns([1, 1, 1])  # Center the buttons by using empty columns on the sides
@@ -36,7 +37,7 @@ with col1:  # Centered column for the buttons
     st.markdown(button_style, unsafe_allow_html=True)  # Apply the style
     
     if st.button("See Company Listings by Popularity"):
-        st.switch_page("pages/10_Company_Listings_Popularity.py")
+        st.switch_page("pages/10_Company_Listings.py")
 
 with col2: 
     button_style = """

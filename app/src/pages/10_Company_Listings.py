@@ -13,7 +13,7 @@ Theme()
 SideBarLinks(show_home=False)
 
 # URL endpoint
-API_URL = "http://web-api:4000/coop_postings_by_popularity"
+API_URL = "http://web-api:4000/coop_postings/company/1"
 DELETE_URL = "http://web-api:4000/delete_coop_posting/"
 
 # Fetch coop postings from API
@@ -81,6 +81,7 @@ st.markdown("""
 if coop_postings_data:
     for posting in coop_postings_data:
         try:
+            company_id = posting['company_id']
             coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
             jobTitle = posting['jobTitle']
             jobDescription = posting['jobDescription']

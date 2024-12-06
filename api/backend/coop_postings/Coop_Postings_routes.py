@@ -198,3 +198,31 @@ def get_coop_postings_by_popularity():
     except Exception as e:
         current_app.logger.error(f"Error executing query: {str(e)}")
         return make_response(jsonify({"error": "Internal server error"}), 500)
+
+#FETCH A ROUTE BASED ON A COMPANY ID
+@coop_postings.route('/coop_postings/company/<int:company_id>', methods=['GET'])
+def get_company_coop_postings(company_id):
+    # Connect to the database and fetch the coop posting by its ID
+    cursor = db.get_db().cursor()
+    query ='''SELECT cp.coopPosting_id as coopPosting_id, 
+                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
+                       c.company_id as company_id,
+                       cp.hiringManager_id as hiringManager_id, 
+                          cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
+                          cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
+                          cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
+                          cp.createdAT as createdAT, cp.updatedAT as updatedAT
+                         FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id
+               WHERE cp.company_id = %s;'''
+    cursor.execute(query, (company_id,))
+    theData = cursor.fetchone()  # Fetch a single record
+    # If no data is found for the given ID, return a 404 response
+    if not theData:
+        current_app.logger.warning(f"No data found for company_id {company_id}.")
+        return make_response(jsonify({"error": "Not found"}), 404)
+    else:
+        current_app.logger.info(f"Fetched record for company_id {company_id}.")
+    # Return the fetched data as JSON
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    return the_response
