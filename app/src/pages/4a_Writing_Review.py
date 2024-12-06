@@ -23,21 +23,18 @@ with st.form("new_feedback_form"):
     st.subheader("Student Details")
     student_id = st.text_input("Student ID (optional)", placeholder="Enter your student ID")
     studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID", required=True)
-    
     st.subheader("Co-op Posting Details")
     coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID", required=True)
-    
     st.subheader("Review Details")
     writtenReview = st.text_area("Written Review", placeholder="Describe your experience", required=True)
     skillsLearned = st.text_input("Skills Learned", placeholder="E.g., teamwork, problem-solving", required=True)
     challenges = st.text_input("Challenges Faced", placeholder="E.g., tight deadlines", required=True)
     roleSuggestions = st.text_area("Role Suggestions", placeholder="Suggestions for improving the role", required=True)
-    
     st.subheader("Offer Details")
     returnOffer = st.radio("Did you receive a return offer?", options=["Yes", "No"], required=True)
-    
     # Submit button
     submitted = st.form_submit_button("Submit Review")
+
 
 # Submit form data to the backend API
 if submitted:
@@ -67,3 +64,4 @@ if submitted:
     
     except requests.exceptions.RequestException as e:
         st.error(f"An error occurred: {e}")
+
