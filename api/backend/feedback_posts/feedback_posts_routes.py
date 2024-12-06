@@ -141,3 +141,32 @@ def update_feedback(feedback_id):
     except Exception as e:
         db.get_db().rollback()
         return jsonify({"error": f"An error occurred while updating your feedback: {str(e)}"}), 500
+
+# A ROUTE TO DELETE A CERTAIN FEEBACK POST
+@feedback_posts.route('/delete_feedback_post/<int:feedbackPost_id>', methods=['DELETE'])
+def delete_feedback_posting(feedbackPost_id):
+    try:
+        # Get database cursor
+        cursor = db.get_db().cursor()
+        
+        # Check if the record exists
+        cursor.execute('SELECT * FROM feedback_posts WHERE feedbackPost_id = %s;', (feedbackPost_id))
+        record = cursor.fetchone()
+        
+        if not record:
+            # If no record is found, return a 404 response
+            current_app.logger.warning(f"Feedback post with ID {feedbackPost_id} not found.")
+            return make_response(jsonify({"error": "Feedback post not found"}), 404)
+        
+        # Delete the record
+        cursor.execute('DELETE FROM feedback_posts WHERE feedbackPost_id = %s;', (feedbackPost_id))
+        db.get_db().commit()
+        
+        # Log and respond with success
+        current_app.logger.info(f"Feedback post with ID {feedbackPost_id} successfully deleted.")
+        return make_response(jsonify({"message": "Feedback post deleted successfully"}), 200)
+    
+    except Exception as e:
+        # Log any errors
+        current_app.logger.error(f"Error deleting feedback post: {e}")
+        return make_response(jsonify({"error": "Internal server error"}), 500)
