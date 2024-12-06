@@ -649,7 +649,27 @@ INSERT INTO majors (student_id, department_id, name) VALUES
 (2, 2, 'Marketing'),
 (3, 3, 'Data Science'),
 (4, 4, 'Mechanical Engineering'),
-(5, 3, 'Human Resources');
+(5, 3, 'Human Resources'),
+(6, 1, 'Physics'),
+(7, 5, 'Electrical Engineering'),
+(8, 6, 'Philosophy'),
+(9, 7, 'Sociology'),
+(10, 8, 'Psychology'),
+(11, 9, 'Political Science'),
+(12, 10, 'History'),
+(13, 11, 'Biology'),
+(14, 12, 'Law'),
+(15, 13, 'Nursing'),
+(16, 14, 'Environmental Science'),
+(17, 15, 'Art History'),
+(18, 16, 'Architecture'),
+(19, 17, 'Music'),
+(1, 18, 'Dance'),
+(2, 19, 'Economics'),
+(3, 20, 'Geography'),
+(4, 1, 'Mechanical Engineering'),
+(5, 2, 'Civil Engineering'),
+(6, 3, 'Aerospace Engineering');
 
 INSERT INTO minors (student_id, department_id, name) VALUES
 (1, 2, 'Business Administration'),
