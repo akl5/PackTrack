@@ -18,4 +18,5 @@ When it comes to applying to co-ops, it is difficult to learn more about nuanced
 as work culture, team environment, and skills learned on the job just from the generic application description 
 that includes standard work hours, average salary, and responsibilities. As students, we want to find environments 
 where our strengths can shine and ideal spaces where we can work on our weaknesses to improve our professional 
-experiences.
+experiences. For example, some of us may prefer to work better in smaller teams while others may prefer to work in 
+larger teams to create higher-impact projects.
