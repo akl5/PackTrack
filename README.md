@@ -25,4 +25,5 @@ those who are passionate about sales may want to find positions where they can b
 When it comes to the current NUworks job search platform, the standard application description fails to capture 
 these nuances and does not allow students to understand their compatibility with the role outside of basic required 
 skills. For universities who offer a co-operative education program, program administrators want to learn more about 
-the roles and companies that a university works with.
+the roles and companies that a university works with. The standard application dashboard on NUworks does not provide 
+opportunities for program administrators to receive feedback to improve the experience(s) for students.
