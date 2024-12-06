@@ -142,3 +142,54 @@ def delete_coop_posting(coopPosting_id):
         # Log any errors
         current_app.logger.error(f"Error deleting co-op posting: {e}")
         return make_response(jsonify({"error": "Internal server error"}), 500)
+
+# A ROUTE TO RETRIEVE BY POPULARITY
+@coop_postings.route('/coop_postings_by_popularity', methods=['GET'])
+def get_coop_postings_by_popularity():
+    cursor = db.get_db().cursor()
+
+    try:
+        # Execute the query to get co-ops by popularity (based on the number of applications)
+        cursor.execute('''
+        SELECT  cp.coopPosting_id as coopPosting_id, 
+                cp.hiringManager_id as hiringManager_id, 
+                cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
+                cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
+                cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
+                cp.createdAT as createdAT, cp.updatedAT as updatedAT,
+            COUNT(a.application_id) AS application_count
+        FROM 
+            coop_postings cp
+        LEFT JOIN 
+            applications a 
+            ON cp.coopPosting_id = a.coopPosting_id
+        GROUP BY 
+            cp.coopPosting_id, 
+            cp.jobTitle, 
+            cp.jobDescription, 
+            cp.location, 
+            cp.jobType, 
+            cp.pay, 
+            cp.companyBenefits,
+            cp.startDate, 
+            cp.endDate, 
+            cp.linkToApply,
+            cp.hiringManagerEmail
+        ORDER BY 
+            application_count DESC;
+        ''')
+
+        theData = cursor.fetchall()
+        
+        if not theData:
+            current_app.logger.warning("No data found in coop_postings.")
+        else:
+            current_app.logger.info(f"Fetched {len(theData)} records.")
+        
+        the_response = make_response(jsonify(theData))
+        the_response.status_code = 200
+        return the_response
+
+    except Exception as e:
+        current_app.logger.error(f"Error executing query: {str(e)}")
+        return make_response(jsonify({"error": "Internal server error"}), 500)
