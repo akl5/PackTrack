@@ -15,7 +15,7 @@ SideBarLinks(show_home=False)
 # API endpoint URL to fetch SQL Data from Co-Op Postings: 
 API_URL = "http://web-api:4000/coop_postings"
 DELETE_URL = "http://web-api:4000/delete_coop_posting/"
-
+UPDATE_PAY = "http://web-api:4000/update_pay/"
 
 # Fetch coop postings from API
 try:
@@ -121,10 +121,11 @@ if coop_postings_data:
                 payload = {"pay": new_pay}
                 
                 # Send request to the backend
-                update_response = requests.put(f"http://web-api:4000/update_pay/{coopPosting_id}", json=payload)
+                update_response = requests.put(f"{UPDATE_PAY}{coopPosting_id}", json=payload)
                 
                 if update_response.status_code == 200:
-                    st.success(f"Pay updated successfully for {jobTitle}!")
+                    # st.success(f"Pay updated successfully for {jobTitle}!")
+                    time.sleep(1)
                     st.experimental_rerun()  # Refresh page to show updated data
                 elif update_response.status_code == 404:
                     st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
@@ -138,8 +139,8 @@ if coop_postings_data:
             response = delete_coop_posting(coopPosting_id)  # Call the delete function
             if response.status_code == 200:
                 # st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
-                time.sleep(500)
-                st.experimental_rerun()  # Refresh the page after deletion
+                time.sleep(1)
+                st.rerun()  # Refresh the page after deletion
                 # st.rerun()  # Refresh the page to show updated data
             elif response.status_code == 404:
                 st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
