@@ -54,6 +54,7 @@ if coopPosting_id and coopPosting_id != 0:
         
         #VARIABLES TO STORE THE DATA FROM THIS CO OP LISTING: 
         company_id = data['company_id']
+        companyName = data['companyName']
         jobTitle = data['jobTitle']
         jobDescription = data['jobDescription']
         location = data['location']
@@ -86,35 +87,39 @@ if coopPosting_id and coopPosting_id != 0:
                 <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 900px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                     <!-- Header Section -->
                     <div style="margin-bottom: 20px;">
-                        <h2 style="margin: 0;">Co-op Role: {jobTitle} </h2>
-                        <h4 style="margin: 5px 0;">Company: TO DO TO DO - REMEMBER TO QUERY.  </h4>
-                        <h5 style="margin: 5px 0;">{location}</h5>
+                        <h1 style="margin: 0;">Co-op Role: {jobTitle} </h1>
+                        <h3 style="margin: 5px 0;">{companyName}</h3>
+                        <h5 style="margin: 5px, font-weight:700;">{location}</h5>
                     </div>
                     <!-- Description Section -->
                     <div style="display: flex; gap: 20px;">
                         <!-- Left Side: Descriptions -->
                             <div style="flex: 3;">
-                                <p style="margin: 10px 0;"><strong>Position Description:</strong></p>
-                                <p style="margin: 10px 0; text-align: justify;">
+                                <h3> Position Overview </h3>
+                                <p style="font-weight:300"; text-align: justify;">
                                     {jobDescription}
                                 </p>
-                                <p style="margin: 10px 0;"><strong>Eligibility Requirements:</strong></p>
-                                <p style="margin: 10px 0; text-align: justify;">
+                                <h3> Eligibility </h3>
+                                <p style="font-weight:300"; text-align: justify;">
                                     {requirements}
                                 </p>
-                                <p style="margin: 10px 0;"><strong>Company Description:</strong></p>
-                                <p style="margin: 10px 0; text-align: justify;">
+                                <p style="margin: 10px 0;"><strong>Preferred Skills</strong></p>
+                                <p style="font-weight:300"; text-align: justify;">
+                                    TO DO TO DO - REMEMBER TO QUERY. 
+                                </p>
+                                <p style="margin: 0;"><strong>Company Description:</strong></p>
+                                <p style="font-weight:300"; text-align: justify;">
                                     TO DO TO DO - REMEMBER TO QUERY. 
                                 </p>
                             </div>
-                        <!-- Right Side: Necessary Skills -->
+                        <!-- Right Side: Job Information -->
                         <div style="flex: 1; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);">
-                            <h5 style="margin: 0;">Necessary Skills</h4>
-                            <ul style="margin: 15px 0 0 20px; padding: 0; list-style: disc;">
-                                TO DO TO DO - REMEMBER TO QUERY. 
-                            </ul>
-                            <h5>More Information</h5>
-                            <p> <strong> Contact: </strong> Hiring Manager <a href="mailto:{hiringManagerEmail}" target="_blank">{hiringManagerEmail}</a></p>
+                            <h5> Information</h5>
+                            <p style="margin: 0;"> <strong> Start Date:</strong> {startDate}</p> 
+                            <p style="margin: 0;"> <strong> End Date:</strong> {endDate}</p> 
+                            <p style="margin: 0;"> Pay: ${pay}/hr</p> 
+                            <h5> More Information </h5>
+                            <p style="margin: 0;"> <strong> Contact: </strong> Hiring Manager <a href="mailto:{hiringManagerEmail}" target="_blank">{hiringManagerEmail}</a></p>
                             <!-- Apply Now Button -->
                                 <div style="text-align: center; margin-top: 20px;">
                                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none; background-color: #003366; color: white;
