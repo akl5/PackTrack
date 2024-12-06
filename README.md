@@ -43,3 +43,6 @@ docker build
 
 -Create copy of .env template file; rename secret key with own password
 
+docker compose build
+
+
