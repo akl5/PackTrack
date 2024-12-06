@@ -16,6 +16,7 @@ SideBarLinks(show_home=False)
 API_URL = "http://web-api:4000/coop_postings"
 DELETE_URL = "http://web-api:4000/delete_coop_posting/"
 
+
 # Fetch coop postings from API
 try:
     response = requests.get(API_URL)
@@ -40,6 +41,8 @@ def delete_coop_posting(coopPosting_id):
             st.error("Failed to delete co-op posting.")
     except Exception as e:
         st.error(f"An error occurred: {e}")
+
+
 
 # STYLING for Co-op listings
 st.markdown("""
@@ -107,6 +110,28 @@ if coop_postings_data:
         st.markdown(f"**Hiring Manager Email:** {hiringManagerEmail}")
         st.markdown(f"**Job Description:** {jobDescription}")
         st.markdown(f"**Link to Apply:** {linkToApply}")
+
+        # Editable Pay Field
+        new_pay = st.text_input(f"Edit Pay for {jobTitle}", value=str(pay), key=f"edit-pay-{coopPosting_id}")
+        
+        # Add Update Pay button
+        if st.button(f"Update Pay for {jobTitle}", key=f"update-pay-{coopPosting_id}"):
+            try:
+                # Prepare payload
+                payload = {"pay": new_pay}
+                
+                # Send request to the backend
+                update_response = requests.put(f"http://web-api:4000/update_pay/{coopPosting_id}", json=payload)
+                
+                if update_response.status_code == 200:
+                    st.success(f"Pay updated successfully for {jobTitle}!")
+                    st.experimental_rerun()  # Refresh page to show updated data
+                elif update_response.status_code == 404:
+                    st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
+                else:
+                    st.error("Failed to update pay.")
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
 
         # Add Delete button
         if st.button(f"Delete {posting.get('jobTitle')}", key=f"delete-{coopPosting_id}"):
