@@ -96,7 +96,7 @@ def update_review(feedback_post_id):
     # Get the review from the database
     feedback_post = feedback_posts.query.get(feedback_post_id)
     
-    if not review:
+    if not feedback_post:
         return jsonify({'error': 'Review not found'}), 404
     
     # Get the updated data from the request
