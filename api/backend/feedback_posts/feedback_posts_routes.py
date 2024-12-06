@@ -7,6 +7,7 @@ from backend.db_connection import db
 
 feedback_posts = Blueprint('feedback_posts', __name__)
 
+# ROUTE TO RETRIEVE ALL THE FEEDBACK POSTS FOR A SPECIFIED CO-OP POST
 @feedback_posts.route('/feedback_posts/<int:coopPosting_id>', methods=['GET'])
 def get_feedback_posts_on_coop_posting_id(coopPosting_id):
     cursor = db.get_db().cursor()
