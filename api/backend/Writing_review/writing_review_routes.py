@@ -8,7 +8,7 @@ from datetime import datetime
 
 write_review = Blueprint('write_review', __name__)
 
-@write_review.route('/create_feedback_post', methods=['POST'])
+@write_review.route('/write_review', methods=['POST'])
 def get_write_review():
     # Parse JSON payload
     data = request.get_json()
