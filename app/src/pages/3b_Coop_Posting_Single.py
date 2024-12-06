@@ -7,8 +7,8 @@ Theme()
 SideBarLinks()
 
 # Set the URL for the API endpoint
-API_URL = "http://web-api:4000/coop_postings"
-
+COOP_POSTINGS_API_URL = "http://web-api:4000/coop_postings"
+FEEDBACK_POSTS_API_URL = "http://web-api:4000/feedback_posts"
 # Ensure 'coopPosting_id' exists in session state, otherwise initialize it with a default value (1 in this case)
 if 'co_op_posting_id' not in st.session_state or not st.session_state.co_op_posting_id:
     st.session_state.coopPosting_id = 1  # Default to ID 1 (or any default ID you want)
@@ -20,7 +20,7 @@ if coopPosting_id and coopPosting_id != 0:
     with st.spinner(f"Fetching data for Co-op Posting ID {coopPosting_id}..."):
         try:
             # Send GET request to the API to get the co-op posting data
-            response = requests.get(f"{API_URL}/{coopPosting_id}")
+            response = requests.get(f"{COOP_POSTINGS_API_URL}/{coopPosting_id}")
 
             # Check if the response is successful (status code 200)
             if response.status_code == 200:
@@ -102,11 +102,64 @@ if coopPosting_id and coopPosting_id != 0:
                         </div>
                     </div>
                 """, unsafe_allow_html=True)
+
+                #DISPLAYING THE REVIEWS
+                feedbackresponse = requests.get(f"{FEEDBACK_POSTS_API_URL}/{coopPosting_id}")
+                feedback = feedbackresponse.json()
+                if feedbackresponse.status_code == 200 and feedbackresponse != None:
+                    rows = len(feedback)
+                    for i in range(rows):
+                        f = feedback[i-1]
+                        firstName = f['firstName']
+                        lastName = f['lastName']
+                        graduationYear = f['graduationYear']
+
+                        writtenReview = f['writtenReview']
+                        skillsLearned = f['skillsLearned']
+                        challenges = f['challenges']
+                        returnOffer = f['returnOffer']
+
+                        createdAT = f['createdAT']
+                        updatedAT = f['updatedAT']  
+
+                        st.markdown(f"""
+                            <div style="background-color: white; padding: 20px; border-radius: 15px; width: 90%; max-width: 1000px; margin: 50px auto; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
+                                <div style="display: flex; gap: 20px;">
+                                    <div style="width:20%;">
+                                        <img src="https://via.placeholder.com/80" alt="Profile Image" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
+                                        <p> <strong> Created: </strong>{createdAT}</p>
+                                        <p> <strong> Last Updated: </strong>{updatedAT}
+                                    </div>
+                                    <div style="width:80%;">
+                                        <p> left side left side </p>
+                                        <h7> {firstName} {lastName} </h7>
+                                        <p> Class of {graduationYear} </p>
+                                        <p> <strong> Return Offer: </strong>{returnOffer}</p>
+                                        <h7> Review </h7> 
+                                        <p> {writtenReview} </p>
+                                        <p> <strong> Skills Learned: </strong>{skillsLearned}</p>
+                                        <p> <strong> Challenges: </strong>{challenges}</p>
+                                    </div>
+                                </div>
+                                <p> Last Updated: </p> 
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+                else: 
+                    # If the response status code is not 200, show an error
+                    st.write("### Error fetching data from API. Status Code:", response.status_code)
+                    st.write("Response Text:", response.text)
+
+                rows = len(feedback)
                 
                 st.markdown("""
                     <h2 style="text-align: center;">Reviews From Previous Placements</h2>
                 """, unsafe_allow_html=True)
 
+
+                
                 st.markdown(
                     """
                     <div style="background-color: white; padding: 20px; border-radius: 15px; width: 90%; max-width: 1000px; margin: 50px auto; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
