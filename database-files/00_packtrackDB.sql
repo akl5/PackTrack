@@ -569,6 +569,46 @@ INSERT INTO departments (departmentName) VALUES ('Business');
 INSERT INTO departments (departmentName) VALUES ('College of Social Sciences');
 INSERT INTO departments (departmentName) VALUES ('Engineering');
 INSERT INTO departments (departmentName) VALUES ('Computer Science');
+INSERT INTO departments (departmentName) VALUES ('Physics');
+INSERT INTO departments (departmentName) VALUES ('Mathematics');
+INSERT INTO departments (departmentName) VALUES ('Chemistry');
+INSERT INTO departments (departmentName) VALUES ('Biology');
+INSERT INTO departments (departmentName) VALUES ('English');
+INSERT INTO departments (departmentName) VALUES ('History');
+INSERT INTO departments (departmentName) VALUES ('Philosophy');
+INSERT INTO departments (departmentName) VALUES ('Linguistics');
+INSERT INTO departments (departmentName) VALUES ('Psychology');
+INSERT INTO departments (departmentName) VALUES ('Political Science');
+INSERT INTO departments (departmentName) VALUES ('Sociology');
+INSERT INTO departments (departmentName) VALUES ('Economics');
+INSERT INTO departments (departmentName) VALUES ('Education');
+INSERT INTO departments (departmentName) VALUES ('Law');
+INSERT INTO departments (departmentName) VALUES ('Public Health');
+INSERT INTO departments (departmentName) VALUES ('Nursing');
+INSERT INTO departments (departmentName) VALUES ('Environmental Science');
+INSERT INTO departments (departmentName) VALUES ('Art History');
+INSERT INTO departments (departmentName) VALUES ('Architecture');
+INSERT INTO departments (departmentName) VALUES ('Music');
+INSERT INTO departments (departmentName) VALUES ('Theatre');
+INSERT INTO departments (departmentName) VALUES ('Dance');
+INSERT INTO departments (departmentName) VALUES ('Anthropology');
+INSERT INTO departments (departmentName) VALUES ('Geography');
+INSERT INTO departments (departmentName) VALUES ('Civil Engineering');
+INSERT INTO departments (departmentName) VALUES ('Mechanical Engineering');
+INSERT INTO departments (departmentName) VALUES ('Electrical Engineering');
+INSERT INTO departments (departmentName) VALUES ('Chemical Engineering');
+INSERT INTO departments (departmentName) VALUES ('Aerospace Engineering');
+INSERT INTO departments (departmentName) VALUES ('Computer Engineering');
+INSERT INTO departments (departmentName) VALUES ('Biomedical Engineering');
+INSERT INTO departments (departmentName) VALUES ('Industrial Engineering');
+INSERT INTO departments (departmentName) VALUES ('Information Technology');
+INSERT INTO departments (departmentName) VALUES ('Cognitive Science');
+INSERT INTO departments (departmentName) VALUES ('Marketing');
+INSERT INTO departments (departmentName) VALUES ('Finance');
+INSERT INTO departments (departmentName) VALUES ('Management');
+INSERT INTO departments (departmentName) VALUES ('Accounting');
+INSERT INTO departments (departmentName) VALUES ('Entrepreneurship');
+
 
 INSERT INTO majors (student_id, department_id, name) VALUES
 (1, 5, 'Computer Science'),
