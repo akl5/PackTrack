@@ -14,7 +14,7 @@ def get_system_diagnostics():
     theData = cursor.fetchall()
     
     if not theData:
-        current_app.logger.warning("No data found in feedback_posts.")
+        current_app.logger.warning("No data found in system diagostics.")
     else:
         current_app.logger.info(f"Fetched {len(theData)} records.")
         
