@@ -93,16 +93,21 @@ def get_coop_postings_by_date():
 @coop_postings.route('/coop_postings_by_latest_review', methods=['GET'])
 def get_coop_postings_by_latest_review():
     cursor = db.get_db().cursor()
-    cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
-                       c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
-                       c.company_id as company_id,
-                       cp.hiringManager_id as hiringManager_id, 
-                          cp.jobTitle as jobTitle, cp.jobDescription as jobDescription, cp.location as location, cp.jobType as jobType, cp.pay as pay,
-                          cp.companyBenefits as companyBenefits, DATE(cp.startDate) as startDate, DATE(cp.endDate) as endDate, cp.linkToApply as linkToApply, 
-                          cp.hiringManagerEmail as hiringManagerEmail, cp.requirements as requirements, cp.preferredSkills as preferredSkills,
-                          cp.createdAT as createdAT, cp.updatedAT as updatedAT
-                        FROM coop_postings cp JOIN companies c ON cp.company_id = c.company_id JOIN feedback_posts fp 
-                           ON cp.coopPosting_id = fp.coopPosting.id ORDER BY fp.updatedAT;''')
+    cursor.execute('''SELECT cp.coopPosting_id AS coopPosting_id, 
+                             c.companyName AS companyName, 
+                             cp.jobTitle AS jobTitle, 
+                             cp.location AS location, 
+                             cp.jobType AS jobType, 
+                             cp.jobDescription AS jobDescription, 
+                             cp.coopPosting_id AS coopPosting_id,
+                             MAX(fp.updatedAT) AS lastUpdatedReviewDate
+                      FROM coop_postings cp 
+                      JOIN companies c ON cp.company_id = c.company_id 
+                      JOIN feedback_posts fp 
+                          ON cp.coopPosting_id = fp.coopPosting_id
+                      GROUP BY cp.coopPosting_id, c.companyName, cp.jobTitle, cp.location, cp.jobType, cp.jobDescription
+                      ORDER BY lastUpdatedReviewDate DESC;''')
+    
     theData = cursor.fetchall()
     
     if not theData:
@@ -112,7 +117,7 @@ def get_coop_postings_by_latest_review():
         
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
-    return the_response    
+    return the_response 
 
 # A ROUTE TO DELETE A CERTAIN CO-OP POSTING
 @coop_postings.route('/delete_coop_posting/<int:coopPosting_id>', methods=['DELETE'])

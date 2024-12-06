@@ -8,7 +8,7 @@ from backend.db_connection import db
 write_review = Blueprint('write_review', __name__)
 
 @write_review.route('/write_review', methods=['POST'])
-def write_review():
+def get_write_review():
     cursor = db.get_db().cursor()
     cursor.execute('''INSERT INTO feedback_posts (coopPosting_id, student_Name, student_id, studentEmployee_id, returnOffer, 
                    skillsLearned, challenges, writtenReview)

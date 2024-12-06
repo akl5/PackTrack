@@ -216,8 +216,8 @@ CREATE TABLE feedback_posts (
     student_id INT,
     studentEmployee_id INT NOT NULL,
     coopPosting_id INT NOT NULL,
-    createdAT DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    updatedAT DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    createdAT DATETIME NOT NULL,
+    updatedAT DATETIME ON UPDATE CURRENT_TIMESTAMP,
     writtenReview TEXT NOT NULL,
     skillsLearned TEXT NOT NULL,
     challenges TEXT NOT NULL,
@@ -308,27 +308,27 @@ INSERT INTO coop_postings (
 (1, 1, 'Software Engineer Intern', 'As a software engineering intern, you will assist in developing cutting-edge software applications.', 'San Francisco, CA', 'Internship', 25.00, 
 'Health insurance, 401k matching, Paid time off', '2024-01-15', '2024-06-15', 'https://example.com/apply/software-engineer', 'hiring.manager1@example.com', 
 'Currently enrolled in a computer science or related field program. Basic knowledge of programming languages such as Java, Python, or C++ is required.', 
-'Java, Python, C++, Problem-solving skills', NOW(), NOW()),
+'Java, Python, C++, Problem-solving skills', '2024-12-01', '2024-12-05'),
 
 (2, 2, 'Marketing Assistant', 'Assist in creating and managing digital marketing campaigns, content creation, and social media strategy.', 'New York, NY', 'Full-time', 20.00, 
 'Health insurance, Paid sick leave, Free gym membership', '2024-02-01', '2024-08-01', 'https://example.com/apply/marketing-assistant', 'hiring.manager2@example.com', 
 'Strong communication skills, Familiarity with social media platforms like Instagram, Facebook, and Twitter. Experience in marketing preferred.', 
-'Digital marketing, Content creation, Social media management', NOW(), NOW()),
+'Digital marketing, Content creation, Social media management', '2024-11-26', '2024-12-02'),
 
 (3, 3, 'Data Analyst Intern', 'We are looking for a data analyst intern to help with data processing, statistical analysis, and visualization projects.', 'Chicago, IL', 'Internship', 22.50, 
 'Health benefits, Transportation stipend, Paid vacation', '2024-03-01', '2024-07-01', 'https://example.com/apply/data-analyst', 'hiring.manager3@example.com', 
 'Currently pursuing a degree in data science, mathematics, or statistics. Familiarity with data analysis tools like Excel or Tableau is a plus.', 
-'Excel, Tableau, Data analysis, Statistical modeling', NOW(), NOW()),
+'Excel, Tableau, Data analysis, Statistical modeling', '2024-11-20', '2024-11-25'),
 
 (4, 4, 'Graphic Design Intern', 'Join our creative team and assist in creating engaging visuals, web designs, and brand assets.', 'Los Angeles, CA', 'Internship', 18.00, 
 'Creative freedom, Health benefits, Paid holidays', '2024-04-01', '2024-09-01', 'https://example.com/apply/graphic-design', 'hiring.manager4@example.com', 
 'Experience with Adobe Creative Suite (Photoshop, Illustrator, InDesign). A strong portfolio showcasing design skills is preferred.', 
-'Adobe Photoshop, Adobe Illustrator, Graphic design, Branding', NOW(), NOW()),
+'Adobe Photoshop, Adobe Illustrator, Graphic design, Branding', '2024-11-10', '2024-11-15'),
 
 (5, 5, 'Human Resources Intern', 'Assist with recruitment, employee onboarding, and HR administrative tasks within the organization.', 'Dallas, TX', 'Internship', 20.00, 
 'Health insurance, Paid time off, Professional development opportunities', '2024-05-15', '2024-08-15', 'https://example.com/apply/hr-intern', 'hiring.manager5@example.com', 
 'Currently pursuing a degree in Human Resources or related field. Strong organizational skills and attention to detail.', 
-'Human resources, Recruitment, Employee onboarding', NOW(), NOW());
+'Human resources, Recruitment, Employee onboarding', '2024-11-15', '2024-11-18');
 
 
 
@@ -401,42 +401,43 @@ INSERT INTO applications (student_id, coopPosting_id, resume, coverLetter, statu
 (4, 4, 'Resume content for graphic designer', 'Cover letter content for graphic designer', 'Waiting'),
 (5, 5, 'Resume content for HR intern', 'Cover letter content for HR intern', 'Accepted');
 
-INSERT INTO feedback_posts (student_id, studentEmployee_id, coopPosting_id, writtenReview, skillsLearned, challenges, roleSuggestions, returnOffer) VALUES
-(1, 1, 1, 
+INSERT INTO feedback_posts (student_id, studentEmployee_id, coopPosting_id, createdAT, updatedAT, writtenReview, skillsLearned, challenges, roleSuggestions, returnOffer) VALUES
+(1, 1, 1, '2024-11-10 10:00:00', '2024-12-05 12:00:00',
     'I had a fantastic experience working with the development team during my internship. The team was very supportive, and I learned a great deal about software development processes. I worked on a variety of projects, including debugging existing code, implementing new features, and collaborating with team members to resolve issues. The work was challenging but rewarding, and I felt like my contributions were genuinely valued. The exposure to real-world software engineering practices was incredibly valuable, and I am excited to apply what I learned in future projects.',
     'Java, Problem-solving, Software Development, Git',
     'One of the biggest challenges I faced was understanding the full scope of some of the projects, especially those with complex codebases that had been built over time. Additionally, dealing with tight deadlines and balancing multiple tasks simultaneously was a bit overwhelming at times. However, the team was always there to help when I needed guidance.',
     'I think it would be helpful to provide more initial training on the company’s internal systems and tools. Having a better understanding of the architecture upfront would have made it easier to contribute more quickly to the team’s projects. Overall, the experience was very positive, and I feel I was able to grow significantly as a developer.',
     'Yes'
 ),
-(2, 2, 2, 
+(2, 2, 2, '2024-11-12 09:30:00', '2024-12-04 15:30:00', 
     'This internship provided me with an incredible opportunity to learn about the fast-paced world of digital marketing. I had the chance to work on various campaigns, create content for social media, and assist with market research. I gained hands-on experience in content creation, audience targeting, and performance analysis. The best part was working closely with senior marketers, who provided valuable insights into strategic decision-making. I also had the opportunity to contribute to some high-visibility projects, which was a great learning experience.',
     'Content Creation, Social Media Strategy, Market Research, Google Analytics',
     'One of the biggest challenges was managing multiple projects with tight deadlines. Sometimes it felt like I had too many tasks to juggle at once, and it was difficult to prioritize effectively. Also, some campaigns had last-minute changes, which made it hard to keep everything on track. Despite this, I managed to adapt and learned how to work efficiently under pressure.',
     'I believe that having more structured timelines for each project would help interns manage expectations and workload more effectively. It would also be helpful to have a more clear onboarding process to get up to speed with the marketing tools and platforms the company uses.',
     'No'
 ),
-(3, 3, 3, 
+(3, 3, 3, '2024-11-14 10:45:00', '2024-12-03 17:00:00',
     'My time as a Data Analyst Intern was a truly valuable experience. I worked on a variety of data-related tasks, including cleaning datasets, performing analysis using statistical software, and creating visualizations to present our findings. The team was extremely collaborative, and I had the opportunity to learn new techniques in data wrangling and visualization. I was also involved in interpreting data for client reports, which gave me a deeper understanding of how data analysis can influence business decisions.',
     'Excel, Data Visualization, Data Cleaning, SQL',
     'The most challenging aspect was dealing with extremely large datasets that sometimes contained inconsistencies or missing values. Cleaning and preparing the data for analysis was time-consuming, and it was difficult to ensure that the data was completely accurate. Additionally, while I had some experience with statistical software, the learning curve was steep, and I often had to spend extra time figuring out how to use advanced features.',
     'More hands-on training with statistical tools like R or Python would have been helpful, especially for interns who might not be familiar with these technologies. A clearer structure for data cleaning tasks and more guidance on data accuracy could also help to streamline the process.',
     'Yes'
 ),
-(4, 4, 4, 
+(4, 4, 4, '2024-11-18 11:00:00', '2024-12-02 14:45:00',
     'As a Graphic Design Intern, I had the opportunity to work on a variety of creative projects, from designing social media graphics to creating print advertisements. The best part was working alongside a talented design team that provided constructive feedback and helped me improve my skills. I was also responsible for creating visual concepts for new campaigns, which required me to think creatively and develop ideas that aligned with the company’s branding strategy. Overall, it was an incredibly fulfilling experience, and I feel much more confident in my design abilities.',
     'Adobe Photoshop, Adobe Illustrator, Typography, Branding',
     'The biggest challenge I faced was trying to meet the expectations for design work while working under tight deadlines. At times, I struggled with balancing creativity and practicality, especially when there were last-minute changes to the project scope. Additionally, I found it difficult to manage my time between multiple ongoing design tasks, which sometimes caused stress and delays.',
     'I would recommend having a clearer timeline and more structured feedback sessions, so that designers can refine their concepts without feeling rushed. Additionally, it would be helpful to have more collaboration between the design team and other departments to ensure alignment on project objectives from the start.',
     'Yes'
 ),
-(5, 5, 5, 
+(5, 5, 5, '2024-11-20 08:15:00', '2024-12-01 13:30:00',
     'Working in HR as an intern was an eye-opening experience. I had the chance to assist with a range of tasks, including recruitment, employee onboarding, and preparing training materials. I learned a great deal about the importance of maintaining employee relations and the intricacies of handling sensitive HR issues. The most valuable part of the experience was seeing how HR decisions directly impact employee satisfaction and retention. I also had the chance to sit in on meetings with senior HR leaders, which helped me gain a better understanding of strategic HR practices.',
     'Recruitment, Employee Onboarding, HRIS Systems, Conflict Resolution',
     'The most challenging aspect of this internship was managing multiple tasks that required a great deal of attention to detail. For example, during the recruitment process, it was essential to keep track of many applicants and ensure that all documentation was up to date. Additionally, I had to learn how to navigate the company’s HRIS system, which had a steep learning curve.',
     'It would be helpful to provide more training on the company’s HR systems early in the internship. Additionally, having more opportunities to shadow senior HR staff during interviews or meetings would have given me more insights into the strategic decision-making process.',
     'No'
 );
+
 
 -- -- USERS
 -- insert into users (id, firstName, middleName, lastName, mobile, email, username, password, country, state, town, AccountStatus, idx_mobile, userRole) values (1, 'Maire', 'Cariotta', 'Lenoir', '387-730-8923', 'clenoir0@washingtonpost.com', 'clenoir0', 'eG9=OtmlFZovj>5', 'Indonesia', null, 'Birowo', false, false, 'Hiring Manager');

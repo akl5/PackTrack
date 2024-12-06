@@ -29,20 +29,6 @@ def get_feedback_posts_on_coop_posting_id(coopPosting_id):
     the_response.status_code = 200
     return the_response
 
-@feedback_posts.route('/feedback_posts', methods=['GET'])
-def get_feedback_posts():
-    cursor = db.get_db().cursor()
-    cursor.execute('''SELECT * FROM feedback_posts;''')
-    theData = cursor.fetchall()
-    
-    if not theData:
-        current_app.logger.warning("No data found in feedback_posts.")
-    else:
-        current_app.logger.info(f"Fetched {len(theData)} records.")
-        
-    the_response = make_response(jsonify(theData))
-    the_response.status_code = 200
-    return the_response
 
 # ROUTE TO CREATE A FEEDBACK POST
 @feedback_posts.route('/create_feedback_post', methods=['POST'])

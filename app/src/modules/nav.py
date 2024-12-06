@@ -24,7 +24,7 @@ def PublicPageNav():
         # Create a vertical layout (rows) using single columns
         st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
         st.write("")  # Adds space between the rows
-        st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS BY LATEST REVIEWS]", icon = "💡")
+        st.page_link("pages/4_Coops_By_Latest_Reviews.py", label="[VIEW CO-OP LISTINGS BY LATEST REVIEWS]", icon = "💡")
 
 #Function for font styling for all pages 
 def Theme():  

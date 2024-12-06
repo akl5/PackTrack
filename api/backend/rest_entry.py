@@ -3,10 +3,8 @@ from flask import Flask
 from backend.db_connection import db
 from backend.coop_postings.Coop_Postings_routes import coop_postings
 from backend.feedback_posts.feedback_posts_routes import feedback_posts
-from backend.Writing_review.writing_review_routes import write_review
-# from backend.customers.customer_routes import customers
-# from backend.products.products_routes import products
-# from backend.simple.simple_routes import simple_routes
+from backend.writing_review.writing_review_routes import write_review
+from backend.system_diagnostics.system_diagnostics import system_diagnostics
 
 import os
 from dotenv import load_dotenv
@@ -46,10 +44,8 @@ def create_app():
     app.logger.info('current_app(): registering blueprints with Flask app object.')   
     app.register_blueprint(coop_postings)
     app.register_blueprint(feedback_posts)
+    app.register_blueprint(write_review)
+    app.register_blueprint(system_diagnostics)
 
     # Don't forget to return the app object
     return app
-
-
-
-#Mihalis: VERY IMPORTANT FILE... PLEASE READ!!!
