@@ -315,7 +315,32 @@ INSERT INTO companies (
 ('NextStep Robotics', 'Technology', 'Austin, TX', 250, '450 Robot St, Floor 5', 'https://www.nextsteprobotics.com', 6, NOW(), NOW()),
 ('UrbanGrid Solutions', 'Urban Development', 'Chicago, IL', 200, '500 Urban Grid Rd, Suite 100', 'https://www.urbangridsolutions.com', 8, NOW(), NOW()),
 ('MetaCloud Systems', 'Cloud Computing', 'San Jose, CA', 400, '1200 MetaCloud Dr, Suite 700', 'https://www.metacloudsystems.com', 11, NOW(), NOW()),
-('BrightFuture Innovations', 'Technology', 'Los Angeles, CA', 150, '300 BrightFuture Blvd, Suite 400', 'https://www.brightfuture.com', 7, NOW(), NOW());
+('BrightFuture Innovations', 'Technology', 'Los Angeles, CA', 150, '300 BrightFuture Blvd, Suite 400', 'https://www.brightfuture.com', 7, NOW(), NOW()),
+('SolarTech Industries', 'Renewable Energy', 'Denver, CO', 250, '123 Solar Way, Suite 150', 'https://www.solartech.com', 5, NOW(), NOW()),
+('CodeCraft Studios', 'Software Development', 'Austin, TX', 100, '789 Code St, Suite 350', 'https://www.codecraft.com', 4, NOW(), NOW()),
+('SmartAgri Solutions', 'Agriculture Technology', 'Des Moines, IA', 300, '234 Agri Rd, Floor 2', 'https://www.smartagri.com', 8, NOW(), NOW()),
+('Visionary Films', 'Entertainment', 'Los Angeles, CA', 120, '567 Vision Blvd, Suite 200', 'https://www.visionaryfilms.com', 3, NOW(), NOW()),
+('Quantum Logistics', 'Logistics', 'Memphis, TN', 400, '901 Quantum Ave, Suite 600', 'https://www.quantumlogistics.com', 10, NOW(), NOW()),
+('BioCare Pharma', 'Pharmaceuticals', 'Boston, MA', 500, '789 Care Rd, Suite 900', 'https://www.biocarepharma.com', 6, NOW(), NOW()),
+('NextGen AI', 'Artificial Intelligence', 'San Francisco, CA', 150, '450 AI Blvd, Suite 300', 'https://www.nextgenai.com', 9, NOW(), NOW()),
+('EnviroWave Tech', 'Environmental Technology', 'Portland, OR', 200, '678 Green Lane, Suite 150', 'https://www.envirowave.com', 7, NOW(), NOW()),
+('CyberDefend Solutions', 'Cybersecurity', 'San Jose, CA', 500, '321 Cyber Dr, Suite 800', 'https://www.cyberdefend.com', 12, NOW(), NOW()),
+('MegaRetail Corp', 'Retail', 'New York, NY', 1000, '150 Retail Park, Suite 500', 'https://www.megaretail.com', 20, NOW(), NOW()),
+('CleanEnergy Tech', 'Renewable Energy', 'Denver, CO', 220, '234 Clean Blvd, Suite 300', 'https://www.cleanenergy.com', 5, NOW(), NOW()),
+('FutureMeds Inc.', 'Healthcare', 'Houston, TX', 400, '567 Med Rd, Suite 200', 'https://www.futuremeds.com', 11, NOW(), NOW()),
+('UrbanConnect Solutions', 'Smart City Solutions', 'Chicago, IL', 350, '123 Urban Ave, Suite 400', 'https://www.urbanconnect.com', 6, NOW(), NOW()),
+('BioTech Advanced', 'Biotechnology', 'San Diego, CA', 450, '789 Bio Park, Floor 3', 'https://www.biotechadvanced.com', 4, NOW(), NOW()),
+('EcomWorks', 'E-commerce', 'Seattle, WA', 300, '567 Ecom Rd, Suite 700', 'https://www.ecomworks.com', 9, NOW(), NOW()),
+('FinancePros', 'Finance', 'New York, NY', 600, '456 Wall St, Suite 600', 'https://www.financepros.com', 12, NOW(), NOW()),
+('EduBridge Tech', 'Education Technology', 'Toronto, ON', 200, '345 Bridge Ave, Suite 100', 'https://www.edubridge.com', 3, NOW(), NOW()),
+('Wellness Solutions', 'Healthcare', 'Vancouver, BC', 250, '789 Wellness Rd, Suite 250', 'https://www.wellnesssolutions.com', 8, NOW(), NOW()),
+('GreenEarth Industries', 'Environmental', 'San Francisco, CA', 150, '300 Green Blvd, Suite 100', 'https://www.greenearth.com', 5, NOW(), NOW()),
+('TechFlow Innovations', 'Technology', 'Austin, TX', 100, '567 Flow Blvd, Suite 150', 'https://www.techflow.com', 2, NOW(), NOW()),
+('BrightVision Media', 'Marketing', 'Miami, FL', 80, '123 Vision Blvd, Suite 200', 'https://www.brightvision.com', 6, NOW(), NOW()),
+('SecureNet Systems', 'Cybersecurity', 'San Jose, CA', 500, '890 Security Ave, Suite 600', 'https://www.securenetsystems.com', 7, NOW(), NOW()),
+('EcoSmart Innovations', 'Environmental', 'Portland, OR', 200, '789 Eco St, Suite 300', 'https://www.ecosmart.com', 4, NOW(), NOW()),
+('BlueSky Aviation', 'Aerospace', 'Phoenix, AZ', 300, '567 Sky Ave, Suite 200', 'https://www.blueskyaviation.com', 9, NOW(), NOW()),
+('RetailHub Corporation', 'Retail', 'Los Angeles, CA', 800, '450 Retail Blvd, Suite 400', 'https://www.retailhub.com', 15, NOW(), NOW());
 
 -- Insert data into the 'hiring_managers' table
 INSERT INTO hiring_managers (
