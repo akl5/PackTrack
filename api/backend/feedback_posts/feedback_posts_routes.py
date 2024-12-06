@@ -89,24 +89,57 @@ def create_feedback_post():
         # Log the error and return an error response
         current_app.logger.error(f"Error creating feedback post: {e}")
         return jsonify({"error": "Internal server error"}), 500
+ 
     
+from datetime import datetime    
 # UPDATE A FEEDBACK POST    
-@feedback_posts.route('/feedback/<int:feedback_post_id>', methods=['PUT'])
-def update_review(feedback_post_id):
-    # Get the review from the database
-    feedback_post = feedback_posts.query.get(feedback_post_id)
-    
-    if not feedback_post:
-        return jsonify({'error': 'Review not found'}), 404
-    
-    # Get the updated data from the request
-    data = request.json
-    
-    # Update the review fields
-    feedback_post.content = data.get('content', feedback_post.content)
-    feedback_post.rating = data.get('rating', feedback_post.rating)
-    
-    # Save the changes to the database
-    db.session.commit()
-    
-    return jsonify({'message': 'Review updated successfully'}), 200
+@feedback_posts.route('/update_feedback/<int:feedback_id>', methods=['PUT'])
+def update_feedback(feedback_id):
+    # Parse JSON payload
+    data = request.get_json()
+
+    # Get the current date and time for 'updatedAT'
+    updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Create a database cursor
+    cursor = db.get_db().cursor()
+
+    # Prepare the SQL update query
+    update_query = "UPDATE feedback_posts SET updatedAT = %s"
+    update_params = [updated_at]
+
+    # Check which fields are provided in the request and add them to the query
+    if 'writtenReview' in data:
+        update_query += ", writtenReview = %s"
+        update_params.append(data['writtenReview'])
+    if 'skillsLearned' in data:
+        update_query += ", skillsLearned = %s"
+        update_params.append(data['skillsLearned'])
+    if 'challenges' in data:
+        update_query += ", challenges = %s"
+        update_params.append(data['challenges'])
+    if 'roleSuggestions' in data:
+        update_query += ", roleSuggestions = %s"
+        update_params.append(data['roleSuggestions'])
+    if 'returnOffer' in data:
+        update_query += ", returnOffer = %s"
+        update_params.append(data['returnOffer'])
+
+    # Add the WHERE clause to update the specific feedback post
+    update_query += " WHERE feedbackPost_id = %s"
+    update_params.append(feedback_id)
+
+    # Execute SQL Update query
+    try:
+        cursor.execute(update_query, update_params)
+        db.get_db().commit()
+
+        # Check if any rows were affected
+        if cursor.rowcount == 0:
+            return jsonify({"error": "Feedback post not found"}), 404
+
+        # Send success response
+        return jsonify({"message": "Feedback updated successfully!"}), 200
+    except Exception as e:
+        db.get_db().rollback()
+        return jsonify({"error": f"An error occurred while updating your feedback: {str(e)}"}), 500
