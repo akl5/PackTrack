@@ -86,7 +86,7 @@ def create_feedback_post():
         ))
 
         # Commit the transaction
-        get_db().commit()
+        db.commit()
 
         # Log success and return a success response
         current_app.logger.info("New feedback post created successfully.")

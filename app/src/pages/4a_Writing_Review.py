@@ -11,48 +11,59 @@ Theme()
 # Control the sidebar content
 SideBarLinks(show_home=False)
 
+# Backend API endpoint
+API_URL = "http://web-api:4000/create_feedback_post"
 
-def write_review_form():
+# Page Header
+st.title("Submit a New Co-op Review")
+st.markdown("Please fill out the form below to share your feedback on your co-op experience.")
 
-    # Retrieve coop_id from query parameters
-    query_params = st.query_params()
-    coop_id = query_params.get("coop_id", [None])[0]
+# Form inputs
+with st.form("new_feedback_form"):
+    st.subheader("Student Details")
+    student_id = st.text_input("Student ID (optional)", placeholder="Enter your student ID")
+    studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID", required=True)
+    
+    st.subheader("Co-op Posting Details")
+    coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID", required=True)
+    
+    st.subheader("Review Details")
+    writtenReview = st.text_area("Written Review", placeholder="Describe your experience", required=True)
+    skillsLearned = st.text_input("Skills Learned", placeholder="E.g., teamwork, problem-solving", required=True)
+    challenges = st.text_input("Challenges Faced", placeholder="E.g., tight deadlines", required=True)
+    roleSuggestions = st.text_area("Role Suggestions", placeholder="Suggestions for improving the role", required=True)
+    
+    st.subheader("Offer Details")
+    returnOffer = st.radio("Did you receive a return offer?", options=["Yes", "No"], required=True)
+    
+    # Submit button
+    submitted = st.form_submit_button("Submit Review")
 
-    if not coop_id:
-        st.error("No Co-op selected. Please return to the reviews page.")
-        return
-
-    # Create a white container
-    with st.container():
-        st.title(f"Write a Review for Co-op ID {coop_id}")
-
-        # Input boxes for each field
-        name = st.text_input("Your Name")
-        student_id = st.text_input("Student ID")
-        employee_id = st.text_input("Student Employee ID")
-        return_offer = st.radio("Return Offer (Yes or No)", ("Yes", "No"))
-        skills_learned = st.text_area("Skills Learned")
-        challenges = st.text_area("Challenges")
-        written_review = st.text_area("Written Review")
-
-        # Submit button
-        if st.button("Submit"):
-            # Validation
-            if not all([name, student_id, employee_id, skills_learned, challenges, written_review]):
-                st.error("Please fill out all fields before submitting.")
-            else:
-                # Display entered data for now (can be extended to save to a database)
-                st.success(f"Review submitted for Co-op ID {coop_id}!")
-                st.write("### Review Summary")
-                st.write(f"**Name:** {name}")
-                st.write(f"**Student ID:** {student_id}")
-                st.write(f"**Student Employee ID:** {employee_id}")
-                st.write(f"**Return Offer:** {return_offer}")
-                st.write(f"**Skills Learned:** {skills_learned}")
-                st.write(f"**Challenges:** {challenges}")
-                st.write(f"**Written Review:** {written_review}")
-
-# Display the review form
-write_review_form()
-
-# "We need to add a route here to have the review inserted into a specific posting" -Danny
+# Submit form data to the backend API
+if submitted:
+    # Prepare the payload
+    payload = {
+        "student_id": student_id if student_id else None,
+        "studentEmployee_id": int(studentEmployee_id),
+        "coopPosting_id": int(coopPosting_id),
+        "writtenReview": writtenReview,
+        "skillsLearned": skillsLearned,
+        "challenges": challenges,
+        "roleSuggestions": roleSuggestions,
+        "returnOffer": returnOffer
+    }
+    
+    try:
+        # Make the POST request to the backend API
+        response = requests.post(API_URL, json=payload)
+        
+        # Check the response status
+        if response.status_code == 201:
+            st.success("Review submitted successfully!")
+        elif response.status_code == 400:
+            st.warning("Please ensure all required fields are filled out correctly.")
+        else:
+            st.error("An error occurred while submitting your review.")
+    
+    except requests.exceptions.RequestException as e:
+        st.error(f"An error occurred: {e}")
