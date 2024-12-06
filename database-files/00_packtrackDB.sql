@@ -309,15 +309,6 @@ INSERT INTO coop_postings (
 'Currently enrolled in a computer science or related field program. Basic knowledge of programming languages such as Java, Python, or C++ is required.', 
 'Java, Python, C++, Problem-solving skills', '2024-12-01', '2024-12-05'),
 
-(1, 1, 'Machine Learning Intern', 
-    'As a Machine Learning Intern, you will assist in developing machine learning models, analyzing datasets, and applying AI techniques to real-world problems.', 
-    'San Francisco, CA', 'Internship', 30.00, 
-    'Health insurance, 401k matching, Paid time off', '2024-01-15', '2024-06-15', 
-    'https://example.com/apply/machine-learning-intern', 'hiring.manager1@example.com', 
-    'Currently enrolled in a computer science, data science, or related field program. Basic knowledge of machine learning algorithms, data preprocessing, and Python is required.', 
-    'Python, TensorFlow, Scikit-learn, Data preprocessing, Machine learning algorithms', 
-    '2024-12-01', '2024-12-05');
-
 (2, 2, 'Marketing Assistant', 'Assist in creating and managing digital marketing campaigns, content creation, and social media strategy.', 'New York, NY', 'Full-time', 20.00, 
 'Health insurance, Paid sick leave, Free gym membership', '2024-02-01', '2024-08-01', 'https://example.com/apply/marketing-assistant', 'hiring.manager2@example.com', 
 'Strong communication skills, Familiarity with social media platforms like Instagram, Facebook, and Twitter. Experience in marketing preferred.', 
@@ -338,6 +329,14 @@ INSERT INTO coop_postings (
 'Currently pursuing a degree in Human Resources or related field. Strong organizational skills and attention to detail.', 
 'Human resources, Recruitment, Employee onboarding', '2024-11-15', '2024-11-18');
 
+(1, 1, 'Machine Learning Intern', 
+    'As a Machine Learning Intern, you will assist in developing machine learning models, analyzing datasets, and applying AI techniques to real-world problems.', 
+    'San Francisco, CA', 'Internship', 30.00, 
+    'Health insurance, 401k matching, Paid time off', '2024-01-15', '2024-06-15', 
+    'https://example.com/apply/machine-learning-intern', 'hiring.manager1@example.com', 
+    'Currently enrolled in a computer science, data science, or related field program. Basic knowledge of machine learning algorithms, data preprocessing, and Python is required.', 
+    'Python, TensorFlow, Scikit-learn, Data preprocessing, Machine learning algorithms', 
+    '2024-12-01', '2024-12-05');
 
 
 INSERT INTO students (nu_id, enrollmentDate, graduationYear, gpa, transcript, resume, coverLetter) VALUES
@@ -417,6 +416,16 @@ INSERT INTO feedback_posts (student_id, studentEmployee_id, coopPosting_id, crea
     'I think it would be helpful to provide more initial training on the company’s internal systems and tools. Having a better understanding of the architecture upfront would have made it easier to contribute more quickly to the team’s projects. Overall, the experience was very positive, and I feel I was able to grow significantly as a developer.',
     'Yes'
 ),
+INSERT INTO feedback_posts (student_id, studentEmployee_id, coopPosting_id, createdAT, updatedAT, writtenReview, skillsLearned, challenges, roleSuggestions, returnOffer) 
+VALUES
+(2, 2, 1, '2024-11-12 11:30:00', '2024-12-05 14:00:00',
+    'I had an amazing time working as a Software Development Intern. My tasks involved writing and debugging code, as well as assisting with feature implementation and testing. I had the opportunity to work with a talented team of developers who helped me improve my coding and problem-solving skills. I learned how to navigate version control systems like Git and got hands-on experience working with modern software development tools and practices. The work was challenging but fulfilling, and I felt that my contributions truly impacted the team’s progress.',
+    'Java, Software Development, Git, Debugging, Problem-solving',
+    'One of the challenges I faced was integrating new features into an existing codebase, especially when the code was complex and undocumented. There were times when it was difficult to identify the root cause of bugs, and working with legacy code required a bit more time than I expected. Additionally, working under tight deadlines and prioritizing tasks efficiently was an ongoing challenge.',
+    'I would suggest providing more training on internal tools and frameworks that are used in development. A deeper understanding of the company’s coding standards and architecture early on would help new interns feel more prepared to contribute effectively from the beginning.',
+    'Yes'
+);
+
 (2, 2, 2, '2024-11-12 09:30:00', '2024-12-04 15:30:00', 
     'This internship provided me with an incredible opportunity to learn about the fast-paced world of digital marketing. I had the chance to work on various campaigns, create content for social media, and assist with market research. I gained hands-on experience in content creation, audience targeting, and performance analysis. The best part was working closely with senior marketers, who provided valuable insights into strategic decision-making. I also had the opportunity to contribute to some high-visibility projects, which was a great learning experience.',
     'Content Creation, Social Media Strategy, Market Research, Google Analytics',
