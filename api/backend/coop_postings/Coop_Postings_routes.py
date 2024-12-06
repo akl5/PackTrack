@@ -256,3 +256,25 @@ def get_company_coop_postings_by_date(company_id):
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response
+
+@coop_postings.route('/update_pay', methods=['PUT'])
+def update_pay():
+    cursor = db.get_db().cursor()
+    data = request.get_json()
+    new_pay = data.get('pay')
+    coop_posting_id = data.get('coop_posting_id')
+
+    if new_pay is None:
+        return jsonify({"error": "Missing required field: pay"}), 400
+
+    cursor.execute('''
+        UPDATE coop_postings
+        SET pay = %s
+        WHERE coopPosting_id = %s
+        ''', (new_pay, coop_posting_id))  # Ensure variable names match
+
+    if cursor.rowcount == 0:
+        return jsonify({"error": f"Co-op posting with ID {coop_posting_id} not found."}), 404
+
+    db.get_db().commit()
+    return jsonify({"message": f"Pay for coopPosting_id {coop_posting_id} updated successfully."}), 200

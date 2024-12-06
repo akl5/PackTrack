@@ -15,7 +15,7 @@ SideBarLinks(show_home=False)
 # API endpoint URL to fetch SQL Data from Co-Op Postings: 
 API_URL = "http://web-api:4000/coop_postings"
 DELETE_URL = "http://web-api:4000/delete_coop_posting/"
-UPDATE_PAY = "http://web-api:4000/update_pay/"
+UPDATE_PAY = "http://web-api:4000/update_pay"
 
 # Fetch coop postings from API
 try:
@@ -32,9 +32,8 @@ def delete_coop_posting(coopPosting_id):
     try:
         response = requests.delete(f"{DELETE_URL}{coopPosting_id}")
         if response.status_code == 200:
-            # st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+            st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
             time.sleep(0.1)
-            st.rerun()
         elif response.status_code == 404:
             st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
         else:
@@ -111,6 +110,7 @@ if coop_postings_data:
         st.markdown(f"**Job Description:** {jobDescription}")
         st.markdown(f"**Link to Apply:** {linkToApply}")
 
+
         # Editable Pay Field
         new_pay = st.text_input(f"Edit Pay for {jobTitle}", value=str(pay), key=f"edit-pay-{coopPosting_id}")
         
@@ -118,19 +118,20 @@ if coop_postings_data:
         if st.button(f"Update Pay for {jobTitle}", key=f"update-pay-{coopPosting_id}"):
             try:
                 # Prepare payload
-                payload = {"pay": new_pay}
+                payload = {
+                    "pay": new_pay,
+                    "coop_posting_id": coopPosting_id
+                           }
                 
                 # Send request to the backend
-                update_response = requests.put(f"{UPDATE_PAY}{coopPosting_id}", json=payload)
+                update_response = requests.put(f"{UPDATE_PAY}", json=payload)
                 
                 if update_response.status_code == 200:
-                    # st.success(f"Pay updated successfully for {jobTitle}!")
+                    st.success(f"Pay updated successfully for {jobTitle}!")
                     time.sleep(1)
-                    st.experimental_rerun()  # Refresh page to show updated data
-                elif update_response.status_code == 404:
-                    st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
+                    st.rerun()  # Refresh page to show updated data
                 else:
-                    st.error("Failed to update pay.")
+                    st.error(f"Error:{update_response.status_code}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
 
@@ -138,12 +139,12 @@ if coop_postings_data:
         if st.button(f"Delete {posting.get('jobTitle')}", key=f"delete-{coopPosting_id}"):
             response = delete_coop_posting(coopPosting_id)  # Call the delete function
             if response.status_code == 200:
-                # st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
+                st.success(f"Successfully deleted co-op posting with ID {coopPosting_id}.")
                 time.sleep(1)
                 st.rerun()  # Refresh the page after deletion
                 # st.rerun()  # Refresh the page to show updated data
             elif response.status_code == 404:
-                st.warning(f"Co-op posting with ID {coopPosting_id} not found.")
+                st.warning(f"Error:{response.status_code}")
             else:
                 st.error("Failed to delete co-op posting.")
         
