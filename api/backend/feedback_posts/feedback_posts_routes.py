@@ -89,3 +89,24 @@ def create_feedback_post():
         # Log the error and return an error response
         current_app.logger.error(f"Error creating feedback post: {e}")
         return jsonify({"error": "Internal server error"}), 500
+    
+# UPDATE A FEEDBACK POST    
+@feedback_posts.route('/feedback/<int:feedback_post_id>', methods=['PUT'])
+def update_review(feedback_post_id):
+    # Get the review from the database
+    feedback_post = feedback_posts.query.get(feedback_post_id)
+    
+    if not review:
+        return jsonify({'error': 'Review not found'}), 404
+    
+    # Get the updated data from the request
+    data = request.json
+    
+    # Update the review fields
+    feedback_post.content = data.get('content', feedback_post.content)
+    feedback_post.rating = data.get('rating', feedback_post.rating)
+    
+    # Save the changes to the database
+    db.session.commit()
+    
+    return jsonify({'message': 'Review updated successfully'}), 200
