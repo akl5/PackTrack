@@ -60,35 +60,92 @@ st.markdown("""
    </style>
 """, unsafe_allow_html=True)
 
+# Fetch coop postings from API
+API_URL = "http://web-api:4000/coop_postings"
+try:
+    response = requests.get(API_URL)
+    response.raise_for_status()
+    coop_postings_data = response.json()  # Get JSON data
+except requests.exceptions.RequestException as e:
+    logger.error(f"Error fetching data: {e}")
+    coop_postings_data = []
+
+# PAGE SETUP + HEADERS:
+logger.info("Loading the Home page of PackTrack..")
+st.write('\n\n')
+
+st.markdown(f"""<h3 style="margin:0;"> All Active Co-Op Listings </h3>""", unsafe_allow_html=True)
+
+# API fetch and iteration through coop postings
 if coop_postings_data:
-    for posting in coop_postings_data:
-        try:
-            coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
-            jobTitle = posting['jobTitle']
-            jobDescription = posting['jobDescription']
-            location = posting['location']
-            jobType = posting['jobType']
-            pay = posting['pay']
-            companyBenefits = posting['companyBenefits']
-            startDate = posting['startDate']
-            endDate = posting['endDate']
-            linkToApply = posting['linkToApply']
-            hiringManagerEmail = posting['hiringManagerEmail']
-        except KeyError as e:
-            logger.error(f"Missing key: {e}")
-            continue  # Skip this posting if a key is missing
+    # Create a container for the columns (3 columns in each row)
+    num_columns = 3
+    num_rows = len(coop_postings_data) // num_columns + (1 if len(coop_postings_data) % num_columns else 0)
+
+    # Loop over the rows
+    for row_idx in range(num_rows):
+        cols = st.columns(num_columns)
         
-        # Display the data using Streamlit
-        st.markdown(f"### Job Title: {jobTitle}")
-        st.markdown(f"**Location:** {location}")
-        st.markdown(f"**Job Type:** {jobType}")
-        st.markdown(f"**Pay:** ${pay}")
-        st.markdown(f"**Company Benefits:** {companyBenefits}")
-        st.markdown(f"**Start Date:** {startDate}")
-        st.markdown(f"**End Date:** {endDate}")
-        st.markdown(f"**Hiring Manager Email:** {hiringManagerEmail}")
-        st.markdown(f"**Job Description:** {jobDescription}")
-        st.markdown(f"**Link to Apply:** {linkToApply}")
-        st.markdown("---")
+        # Loop over the columns in this row
+        for col_idx, col in enumerate(cols):
+            posting_idx = row_idx * num_columns + col_idx  # Calculate which posting we're at
+
+            if posting_idx < len(coop_postings_data):
+                posting = coop_postings_data[posting_idx]
+                try:
+                    coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
+                    jobTitle = posting['jobTitle']
+                    jobDescription = posting['jobDescription']
+                    location = posting['location']
+                    jobType = posting['jobType']
+                    pay = posting['pay']
+                    companyBenefits = posting['companyBenefits']
+                    startDate = posting['startDate']
+                    endDate = posting['endDate']
+                    linkToApply = posting['linkToApply']
+                    hiringManagerEmail = posting['hiringManagerEmail']
+                except KeyError as e:
+                    logger.error(f"Missing key: {e}")
+                    continue  # Skip this posting if a key is missing
+
+                # Now, display this job info dynamically inside the correct column
+                with col:
+                    st.markdown(
+                        f"""
+                        <div style="
+                            background-color: #DAEEFE; 
+                            border-radius: 60px; 
+                            padding: 10%; 
+                            width: 18rem; 
+                            height: 18rem; 
+                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+                            display: flex; 
+                            flex-direction: column; 
+                            justify-content: center; 
+                            text-align: left;
+                        ">
+                            <div style="font-size: 22px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
+                                {jobTitle}
+                            </div>
+                            <p>{jobDescription[:100]}...</p>
+                            <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
+                                {location} | {jobType}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True
+                    )
+                    # Button to navigate to full review (or any specific action)
+                    st.write("\n")
+                    if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
+                        st.session_state.coopPosting_id = coopPosting_id
+                        st.write(f"Redirecting to the full review of {jobTitle}...")
+                        st.switch_page(f"pages/3b_Coop_Posting_Single.py")
+                    st.markdown("---")
+
+            else:
+                # If there are fewer postings than columns, we leave the extra columns empty
+                with col:
+                    st.markdown("")
+
 else:
     st.write("No coop postings available.")
