@@ -75,7 +75,7 @@ with st.container():
     # Create a vertical layout (rows) using single columns
     st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS]", icon = "👀")
     st.write("")  # Adds space between the rows
-    st.page_link("pages/3_Coop_Listings.py", label="[VIEW LATEST REVIEWS]", icon = "💡")
+    st.page_link("pages/3_Coop_Listings.py", label="[VIEW CO-OP LISTINGS BY LATEST REVIEWS]", icon = "💡")
 
 
 # Fetch coop postings from API
@@ -109,17 +109,25 @@ if coop_postings_data:
             if posting_idx < len(coop_postings_data):
                 posting = coop_postings_data[posting_idx]
                 try:
-                    coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
+                    coopPosting_id =posting['coopPosting_id']
+                    company_id = posting['company_id']
+                    companyName = posting['companyName']
+                    companyIndustry = posting['companyIndustry']
+                    companySize = posting['companySize']
+                    companyHeadquarters = posting['companyHeadquarters']
+
                     jobTitle = posting['jobTitle']
                     jobDescription = posting['jobDescription']
                     location = posting['location']
                     jobType = posting['jobType']
                     pay = posting['pay']
                     companyBenefits = posting['companyBenefits']
+                    requirements = posting['requirements']
+                    preferredSkills = posting['preferredSkills']
+                    hiringManagerEmail = posting['hiringManagerEmail']
                     startDate = posting['startDate']
                     endDate = posting['endDate']
                     linkToApply = posting['linkToApply']
-                    hiringManagerEmail = posting['hiringManagerEmail']
                 except KeyError as e:
                     logger.error(f"Missing key: {e}")
                     continue  # Skip this posting if a key is missing
@@ -140,12 +148,14 @@ if coop_postings_data:
                             justify-content: center; 
                             text-align: left;
                         ">
-                            <div style="font-size: 22px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
+                            <div style="font-weight: 300; font-size: 25px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
                                 {jobTitle}
                             </div>
-                            <p>{jobDescription[:100]}...</p>
-                            <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
-                                {location} | {jobType}
+                            <p style="font-size: 20px; margin:0;"> {companyName} </p>
+                            <p style="color:#747EAC; margin:0">{location}</p>
+                            <p>{jobDescription[:60]}...</p>
+                            <div style="font-size: 18px; color: #3E4B8B; font-weight: bold;margin:0;">
+                                {jobType}
                             </div>
                         </div>
                         """, unsafe_allow_html=True

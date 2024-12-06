@@ -45,7 +45,6 @@ st.markdown("""
            display: flex;  /* Use flexbox to make sure content stays inside the container */
            justify-content: center;
            flex-direction: column;
-           text-align: center;  /* Left align the text */
            padding-left: 2rem; /* Add padding to the left to align the text better */
            cursor: pointer;  /* Make the container appear clickable */
        }
@@ -93,17 +92,25 @@ if coop_postings_data:
             if posting_idx < len(coop_postings_data):
                 posting = coop_postings_data[posting_idx]
                 try:
-                    coopPosting_id = posting['coopPosting_id']  # Correct key from the API response
+                    coopPosting_id =posting['coopPosting_id']
+                    company_id = posting['company_id']
+                    companyName = posting['companyName']
+                    companyIndustry = posting['companyIndustry']
+                    companySize = posting['companySize']
+                    companyHeadquarters = posting['companyHeadquarters']
+
                     jobTitle = posting['jobTitle']
                     jobDescription = posting['jobDescription']
                     location = posting['location']
                     jobType = posting['jobType']
                     pay = posting['pay']
                     companyBenefits = posting['companyBenefits']
+                    requirements = posting['requirements']
+                    preferredSkills = posting['preferredSkills']
+                    hiringManagerEmail = posting['hiringManagerEmail']
                     startDate = posting['startDate']
                     endDate = posting['endDate']
                     linkToApply = posting['linkToApply']
-                    hiringManagerEmail = posting['hiringManagerEmail']
                 except KeyError as e:
                     logger.error(f"Missing key: {e}")
                     continue  # Skip this posting if a key is missing
@@ -124,12 +131,14 @@ if coop_postings_data:
                             justify-content: center; 
                             text-align: left;
                         ">
-                            <div style="font-size: 22px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
+                            <div style="font-weight: 300; font-size: 25px; font-weight: light; text-decoration: underline; margin-bottom: 10px;">
                                 {jobTitle}
                             </div>
-                            <p>{jobDescription[:100]}...</p>
-                            <div style="font-size: 14px; margin-top: 15px; color: #3E4B8B; font-weight: bold;">
-                                {location} | {jobType}
+                            <p style="font-size: 20px; margin:0;"> {companyName} </p>
+                            <p style="color:#747EAC; margin:0">{location}</p>
+                            <p>{jobDescription[:60]}...</p>
+                            <div style="font-size: 18px; color: #3E4B8B; font-weight: bold; margin:0;">
+                                {jobType}
                             </div>
                         </div>
                         """, unsafe_allow_html=True
@@ -137,7 +146,7 @@ if coop_postings_data:
                     # Button to navigate to full review (or any specific action)
                     st.write("\n")
                     if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
-                        st.session_state.coopPosting_id = coopPosting_id
+                        st.session_state.co_op_posting_id = coopPosting_id
                         st.write(f"Redirecting to the full review of {jobTitle}...")
                         st.switch_page(f"pages/3b_Coop_Posting_Single.py")
                     st.markdown("---")
