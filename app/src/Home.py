@@ -15,6 +15,7 @@ placeholder = st.sidebar.empty()
 
 # If a user is at this page, we assume they are not authenticated.
 st.session_state['authenticated'] = False
+st.session_state.co_op_posting_id = 0
 
 # Apply theme settings
 Theme()
@@ -152,7 +153,7 @@ if coop_postings_data:
                     # Button to navigate to full review (or any specific action)
                     st.write("\n")
                     if st.button(f"View Full Review", key=f"view_{coopPosting_id}"):
-                        st.session_state.coopPosting_id = coopPosting_id
+                        st.session_state.co_op_posting_id = coopPosting_id
                         st.write(f"Redirecting to the full review of {jobTitle}...")
                         st.switch_page(f"pages/3b_Coop_Posting_Single.py")
                     st.markdown("---")

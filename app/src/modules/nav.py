@@ -6,16 +6,13 @@ import streamlit as st
 
 #### ------------------------ General ------------------------
 def HomeNav():
-    st.session_state.coopPosting_id = 0
     st.sidebar.page_link("Home.py", label="Home", icon="🏠")
 
 
 def AboutPageNav():
-    st.session_state.coopPosting_id = 0
     st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
 
 def GithubRepoNav():
-    st.session_state.coopPosting_id = 0
     st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️")
 
 
