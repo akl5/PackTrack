@@ -24,9 +24,8 @@ st.markdown("Please fill out the form below to share your feedback on your co-op
 
 # Form inputs
 with st.form("new_feedback_form"):
-    st.subheader("Student Details")
-    student_id = st.text_input("Student ID (optional)", placeholder="Enter your student ID")
-    studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID")
+    # st.subheader("Student Details")
+    # studentEmployee_id = st.text_input("Student Employee ID", placeholder="Enter your employee ID")
     st.subheader("Co-op Posting Details")
     coopPosting_id = st.text_input("Co-op Posting ID", placeholder="Enter the co-op posting ID")
     st.subheader("Review Details")
@@ -44,8 +43,8 @@ with st.form("new_feedback_form"):
     if submitted:
         # Prepare the payload
         payload = {
-            "student_id": student_id if student_id else None,
-            "studentEmployee_id": int(studentEmployee_id),
+            "student_id": 1,
+            "studentEmployee_id": 1,
             "coopPosting_id": int(coopPosting_id),
             "writtenReview": writtenReview,
             "skillsLearned": skillsLearned,
@@ -56,16 +55,14 @@ with st.form("new_feedback_form"):
         
         try:
             # Make the POST request to the backend API
-            response = requests.post(API_URL, json=payload)
-            
+            response = requests.post(API_URL, json=payload)    
             # Check the response status
             if response.status_code == 201:
                 st.success("Review submitted successfully!")
-            elif response.status_code == 400:
-                st.warning("Please ensure all required fields are filled out correctly.")
-            else:
-                st.error("An error occurred while submitting your review.")
-        
+            # elif response.status_code == 400:
+            #     st.warning("Please ensure all required fields are filled out correctly.")
+            # else:
+            #     st.error(f"An error occurred while submitting your review:")
         except requests.exceptions.RequestException as e:
             logger.error(f"An error occurred: {e}")
             st.error(f"An error occurred: {e}")
