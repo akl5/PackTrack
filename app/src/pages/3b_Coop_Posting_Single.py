@@ -54,7 +54,11 @@ if coopPosting_id and coopPosting_id != 0:
         
         #VARIABLES TO STORE THE DATA FROM THIS CO OP LISTING: 
         company_id = data['company_id']
-        companyName = data['companyName']
+        companyName = data['companyName']   
+        companyIndustry = data['companyIndustry']
+        companySize = data['companySize']
+        companyHeadquarters = data['companyHeadquarters']
+
         jobTitle = data['jobTitle']
         jobDescription = data['jobDescription']
         location = data['location']
@@ -67,7 +71,6 @@ if coopPosting_id and coopPosting_id != 0:
         startDate = data['startDate']
         endDate = data['endDate']
         linkToApply = data['linkToApply']
-
         
         # Display the Co-op Posting Information
         st.write(f"### Co-op Posting Details for ID {coopPosting_id}")
@@ -82,14 +85,13 @@ if coopPosting_id and coopPosting_id != 0:
         st.write("**Start Date**:", startDate)
         st.write("**End Date**:", endDate)
 
-        #NEW SECTION OF STYLING THAT ALICE IS TESTING: 
         st.markdown(f"""
                 <div style="background-color: #DBEFFF; color: #3E4B8B; padding: 30px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 900px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                     <!-- Header Section -->
                     <div style="margin-bottom: 20px;">
-                        <h1 style="margin: 0;">Co-op Role: {jobTitle} </h1>
-                        <h3 style="margin: 5px 0;">{companyName}</h3>
-                        <h5 style="margin: 5px, font-weight:700;">{location}</h5>
+                        <h1 style="margin: 0;">{jobTitle}</h1>
+                        <h5 style="margin: 5px 0;">{companyName}</h5>
+                        <h6 style="margin:0, font-weight:700;">{location}</h6>
                     </div>
                     <!-- Description Section -->
                     <div style="display: flex; gap: 20px;">
@@ -99,26 +101,26 @@ if coopPosting_id and coopPosting_id != 0:
                                 <p style="font-weight:300"; text-align: justify;">
                                     {jobDescription}
                                 </p>
-                                <h3> Eligibility </h3>
+                                <h5> Eligibility </h5>
                                 <p style="font-weight:300"; text-align: justify;">
                                     {requirements}
                                 </p>
-                                <p style="margin: 10px 0;"><strong>Preferred Skills</strong></p>
+                                <p style="margin:0;"><strong>Preferred Skills</strong></p>
                                 <p style="font-weight:300"; text-align: justify;">
-                                    TO DO TO DO - REMEMBER TO QUERY. 
+                                    {preferredSkills}
                                 </p>
-                                <p style="margin: 0;"><strong>Company Description:</strong></p>
-                                <p style="font-weight:300"; text-align: justify;">
-                                    TO DO TO DO - REMEMBER TO QUERY. 
-                                </p>
+                                <h5>About the Company</h5>
+                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Industry:</strong>{companyIndustry}</p>
+                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Company Size:</strong>{companySize}</p>
+                                <p style="font-weight:300", margin:0, text-align: justify;"><strong>Company Headquarters:</strong>{companyHeadquarters}</p>                                
                             </div>
                         <!-- Right Side: Job Information -->
                         <div style="flex: 1; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);">
                             <h5> Information</h5>
-                            <p style="margin: 0;"> <strong> Start Date:</strong> {startDate}</p> 
-                            <p style="margin: 0;"> <strong> End Date:</strong> {endDate}</p> 
-                            <p style="margin: 0;"> Pay: ${pay}/hr</p> 
-                            <h5> More Information </h5>
+                            <p style="margin: 0;"> <strong>Start Date:</strong> {startDate}</p> 
+                            <p style="margin: 0;"> <strong>End Date:</strong> {endDate}</p> 
+                            <p> <strong>Pay:</strong> ${pay}/hr</p> 
+                            <h5>More Information</h5>
                             <p style="margin: 0;"> <strong> Contact: </strong> Hiring Manager <a href="mailto:{hiringManagerEmail}" target="_blank">{hiringManagerEmail}</a></p>
                             <!-- Apply Now Button -->
                                 <div style="text-align: center; margin-top: 20px;">

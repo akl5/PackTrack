@@ -93,7 +93,7 @@ def get_coop_postings_by_date():
 @coop_postings.route('/coop_postings_by_latest_review', methods=['GET'])
 def get_coop_postings_by_latest_review():
     cursor = db.get_db().cursor()
-        cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
+    cursor.execute('''SELECT cp.coopPosting_id as coopPosting_id, 
                        c.companyName as companyName, c.industry as companyIndustry, c.companySize as companySize, c.headquarters as companyHeadquarters,
                        c.company_id as company_id,
                        cp.hiringManager_id as hiringManager_id, 
