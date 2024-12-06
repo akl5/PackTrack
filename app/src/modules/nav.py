@@ -6,17 +6,17 @@ import streamlit as st
 
 #### ------------------------ General ------------------------
 def HomeNav():
-    st.sidebar.page_link("Home.py", label="Home", icon="🏠")
     st.session_state.coopPosting_id = 0
+    st.sidebar.page_link("Home.py", label="Home", icon="🏠")
 
 
 def AboutPageNav():
-    st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
     st.session_state.coopPosting_id = 0
+    st.sidebar.page_link("pages/1_About.py", label = "About PackTrack", icon="🧠")
 
 def GithubRepoNav():
-    st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️")
     st.session_state.coopPosting_id = 0
+    st.sidebar.page_link("https://github.com/akl5/PackTrack", label = "See Github Source Repo", icon="⚙️")
 
 
 #Function for font styling for all pages 
@@ -122,25 +122,6 @@ def SideBarLinks(show_home=False):
 
     # Show the Home page link 
     HomeNav()
-
-    # # Show the other page navigators depending on the users' role.
-    # if st.session_state["authenticated"]:
-
-    #     # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
-    #     if st.session_state["role"] == "pol_strat_advisor":
-    #         PolStratAdvHomeNav()
-    #         WorldBankVizNav()
-    #         MapDemoNav()
-
-    #     # If the user role is usaid worker, show the Api Testing page
-    #     if st.session_state["role"] == "usaid_worker":
-    #         PredictionNav()
-    #         ApiTestNav()
-    #         ClassificationNav()
-
-    #     # If the user is an administrator, give them access to the administrator pages
-    #     if st.session_state["role"] == "administrator":
-    #         AdminPageNav()
 
     # Always show the About and Github Repo pages at the bottom of the list of links
     Theme()
