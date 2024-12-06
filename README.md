@@ -22,3 +22,6 @@ experiences. For example, some of us may prefer to work better in smaller teams 
 larger teams to create higher-impact projects. Some may also want different experiences out of their co-op: Those 
 who are applying to more technical positions may want to maximize their ability to use a certain skill set while 
 those who are passionate about sales may want to find positions where they can be more face-to-face with clientele.
+When it comes to the current NUworks job search platform, the standard application description fails to capture 
+these nuances and does not allow students to understand their compatibility with the role outside of basic required 
+skills.
