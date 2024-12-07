@@ -61,3 +61,6 @@ interface (app).
 
 The app communicates with the API, and then the API fetches data from the database; keep in mind that the API will 
 send said data back to the Streamlit application to then be displayed on screen, in whatever context is necessary. 
+
+We used routes in the backend within the api component to be able to run queries that would then fetch data from 
+the database. 
