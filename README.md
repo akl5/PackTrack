@@ -66,3 +66,4 @@ We used routes in the backend within the api component to be able to run queries
 the database. 
 
 ## **Program Features**
+PackTrack can handle many features that would help various users complete certain tasks. 
