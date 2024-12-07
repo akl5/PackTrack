@@ -56,4 +56,5 @@ which would take more time.
 
 ## **Programming Tools and Other Technical Features:**
 For PackTrack, we used a variety of tools to build up the project. These include MySQL, Python, Flask, Docker, and 
-more. We used MySQL to handle the database (db) and Flask to build our API (api);
+more. We used MySQL to handle the database (db) and Flask to build our API (api); we also created a Streamlit user 
+interface (app). 
