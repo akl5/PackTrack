@@ -53,3 +53,6 @@ docker compose up -d
 If we had more time, we would improve some of the finer details such as creating a larger database to handle more 
 individuals using the application. Moreover, if this application obtains good reviews, we would need to scale it, 
 which would take more time. 
+
+## **Programming Tools and Other Technical Features:**
+
