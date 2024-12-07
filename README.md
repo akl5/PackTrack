@@ -50,3 +50,5 @@ docker compose up -d
 -Now head to localhost:8501 to see the frontend on your browser.
 
 ## **Limitations and Room for Improvement:**
+If we had more time, we would improve some of the finer details such as creating a larger database to handle more 
+individuals using the application.
