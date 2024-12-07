@@ -71,3 +71,5 @@ are a few notable ones:
 -Student-employees can leave (write) feedback/reviews on co-op postings in NUworks
 -Login (without a username/password, as specified by the assignment) as a persona like a co-op manager
 -Company representatives can view all company listings
+
+## **Recommended Setup**
