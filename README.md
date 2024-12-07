@@ -59,4 +59,5 @@ For PackTrack, we used a variety of tools to build up the project. These include
 more. We used MySQL to handle the database (db) and Flask to build our API (api); we also created a Streamlit user 
 interface (app). 
 
-The app communicates with the API, and then the API fetches data from the database;
+The app communicates with the API, and then the API fetches data from the database; keep in mind that the API will 
+send said data back to the Streamlit application to then be displayed on screen, in whatever context is necessary. 
