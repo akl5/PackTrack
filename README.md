@@ -65,12 +65,12 @@ send said data back to the Streamlit application to then be displayed on screen,
 We used routes in the backend within the api component to be able to run queries that would then fetch data from 
 the database. 
 
-## **Program Features**
+## **Program Features:**
 PackTrack can handle many features that would help various users complete certain tasks. There are many, but here
 are a few notable ones:
 -Student-employees can leave (write) feedback/reviews on co-op postings in NUworks
 -Login (without a username/password, as specified by the assignment) as a persona like a co-op manager
 -Company representatives can view all company listings
 
-## **Recommended Setup**
+## **Recommended Setup:**
 To check out this program best, we will recommend Visual Studio Code. That was where we originally designed our project. 
