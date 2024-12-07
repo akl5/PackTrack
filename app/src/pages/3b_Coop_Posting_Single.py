@@ -154,6 +154,16 @@ if coopPosting_id and coopPosting_id != 0:
                         """,
                         unsafe_allow_html=True,
                     )
+            # REMOVE THIS BUTTON WHEN DONE DEBUGGING
+            def writeButton():
+                    # Center the button using columns
+                    col1, col2, col3 = st.columns([1, 2, 1])  # Adjust column width for centering
+                    with col2:
+                        if st.button("Write a Review", key="write_review"):
+                            st.write("Redirecting to the writing review page...")
+                            st.switch_page("pages/4a_Writing_Review.py")  # Switch to the desired page
+
+            writeButton()
         else: 
             # If the response status code is not 200, show an error
             st.write(f"Error Response Text: {feedback.status_code}")
