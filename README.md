@@ -73,3 +73,4 @@ are a few notable ones:
 -Company representatives can view all company listings
 
 ## **Recommended Setup**
+To check out this program best, we will recommend Visual Studio Code. That was where we originally designed our project. 
