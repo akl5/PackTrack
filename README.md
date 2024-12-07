@@ -64,3 +64,5 @@ send said data back to the Streamlit application to then be displayed on screen,
 
 We used routes in the backend within the api component to be able to run queries that would then fetch data from 
 the database. 
+
+## **Program Features**
