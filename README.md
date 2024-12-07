@@ -66,4 +66,8 @@ We used routes in the backend within the api component to be able to run queries
 the database. 
 
 ## **Program Features**
-PackTrack can handle many features that would help various users complete certain tasks. 
+PackTrack can handle many features that would help various users complete certain tasks. There are many, but here
+are a few notable ones:
+-Student-employees can leave feedback/reviews on co-op postings in NUworks
+-
+-
