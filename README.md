@@ -55,4 +55,4 @@ individuals using the application. Moreover, if this application obtains good re
 which would take more time. 
 
 ## **Programming Tools and Other Technical Features:**
-For PackTrack, we used a variety of tools to build up the project.
+For PackTrack, we used a variety of tools to build up the project. These include MySQL, Python, Flask, Docker, and more.
