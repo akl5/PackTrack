@@ -15,6 +15,10 @@ applicants by generating better reviews/feedback from other students.
 
 On a special note, thank you to Mark Fontenot for teaching us the skills necessary to complete this project. 
 
+## **Video Link**
+Here is the link to the PackTrack demo, hosted on Vimeo: https://vimeo.com/1036948088?share=copy 
+Please check submission document for Phase 3 for the password. 
+
 ## **What Is the Motivation Behind the Project?:**
 When it comes to applying to co-ops, it is difficult to learn more about nuanced topics of a job placement such 
 as work culture, team environment, and skills learned on the job just from the generic application description 
