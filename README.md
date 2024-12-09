@@ -1,6 +1,6 @@
 # **PackTrack** 
 
-### **Created by::**
+### **Created by:**
 Mihalis Koutouvos, Alice Lee, Daniel Valentine, Tarun Iyer, and Daniel Zeng
 
 ## **Introduction:**
