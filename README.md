@@ -14,7 +14,7 @@ applicants by generating better reviews/feedback from other students.
 On a special note, thank you to Professor Mark Fontenot for teaching us the skills necessary to complete this project. 
 
 ## **Video Link**
-Here is the link to the PackTrack demo, hosted on Vimeo: https://vimeo.com/1036948088?share=copy 
+Here is the link to the PackTrack demo, hosted on Vimeo: https://vimeo.com/1036948088?share=copy.
 Please check submission document for Phase 3 for the password. 
 
 ## **What Is the Motivation Behind the Project?:**
